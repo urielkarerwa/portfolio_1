@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uriel Karerwa — UX Research & AI Interaction Design</title>
+<meta name="description" content="Uriel Karerwa researches and designs how people interact with AI systems. UX research, neuroscience, and service design, based in Montréal.">
+<meta name="theme-color" content="#F2F0EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141518" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Uriel Karerwa — UX Research & AI Interaction Design">
+<meta property="og:description" content="I research and design how people interact with AI systems.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F2F0EC;
+    --ink:#1A1C1F;
+    --muted:#6B6F76;
+    --line:#D6D2C9;
+    --line-strong:#C5C0B5;
+    --signal:#2F5BEA;
+    --signal-dim:#A9BBF4;
+    --signal-soft:rgba(47,91,234,.06);
+    --surface:#FBFAF7;
+    --surface-2:#FFFFFF;
+    --shadow:0 1px 2px rgba(26,28,31,.04), 0 12px 30px -16px rgba(26,28,31,.18);
+    --shadow-lift:0 2px 4px rgba(26,28,31,.05), 0 22px 48px -20px rgba(47,91,234,.30);
+    --grain:.035;
+    --maxw:1080px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  html[data-theme="dark"]{
+    --bg:#131417;
+    --ink:#ECEAE4;
+    --muted:#9DA1A9;
+    --line:#2B2D32;
+    --line-strong:#3A3D43;
+    --signal:#7C93FF;
+    --signal-dim:#3C4A86;
+    --signal-soft:rgba(124,147,255,.08);
+    --surface:#1A1C20;
+    --surface-2:#212328;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 34px -18px rgba(0,0,0,.7);
+    --shadow-lift:0 2px 4px rgba(0,0,0,.5), 0 24px 52px -20px rgba(124,147,255,.30);
+    --grain:.05;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Inter",system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    transition:background .5s var(--ease), color .5s var(--ease);
+  }
+  /* fine grain texture for depth */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    opacity:var(--grain);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    transition:opacity .5s var(--ease);
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;position:relative;z-index:1}
+  a{color:var(--signal);text-decoration:none}
+  a:hover{text-decoration:underline}
+  :focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:2px}
+
+  /* skip link */
+  .skip{
+    position:absolute;left:-9999px;top:8px;z-index:60;
+    background:var(--signal);color:#fff;padding:8px 14px;border-radius:4px;
+    font-family:"IBM Plex Mono",monospace;font-size:13px
+  }
+  .skip:focus{left:16px}
+
+  /* scroll progress — a signal line */
+  .progress{
+    position:fixed;top:0;left:0;height:2px;width:100%;z-index:50;
+    transform:scaleX(0);transform-origin:0 50%;
+    background:linear-gradient(90deg,var(--signal),var(--signal-dim));
+    box-shadow:0 0 10px var(--signal-dim)
+  }
+
+  /* utility / mono labels */
+  .mono{font-family:"IBM Plex Mono",monospace;font-weight:400}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--muted);
+  }
+  /* animated underline links */
+  .ulink{position:relative}
+  .ulink:hover{text-decoration:none}
+  .ulink::after{
+    content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;
+    background:currentColor;transform:scaleX(0);transform-origin:0 50%;
+    transition:transform .35s var(--ease)
+  }
+  .ulink:hover::after,.ulink:focus-visible::after{transform:scaleX(1)}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:40;padding:22px 0;
+    background:color-mix(in srgb, var(--bg) 78%, transparent);
+    backdrop-filter:saturate(140%) blur(10px);
+    -webkit-backdrop-filter:saturate(140%) blur(10px);
+    border-bottom:1px solid transparent;
+    transition:padding .35s var(--ease), border-color .35s var(--ease), background .5s var(--ease);
+  }
+  header.scrolled{padding:13px 0;border-bottom-color:var(--line)}
+  .topbar{display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .topbar .name{
+    font-family:"IBM Plex Mono",monospace;font-size:14px;letter-spacing:.04em;
+    display:inline-flex;align-items:center;gap:9px;color:var(--ink)
+  }
+  .topbar .name:hover{text-decoration:none}
+  .pulse-dot{
+    width:8px;height:8px;border-radius:50%;background:var(--signal);
+    box-shadow:0 0 0 0 var(--signal-dim);animation:pulse 2.6s var(--ease) infinite
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--signal) 55%, transparent)}
+    70%{box-shadow:0 0 0 9px transparent}
+    100%{box-shadow:0 0 0 0 transparent}
+  }
+  .topbar nav{display:flex;align-items:center;gap:22px}
+  .topbar nav a{color:var(--ink);font-size:14px}
+  .topbar nav a.active{color:var(--signal)}
+  .theme-toggle{
+    appearance:none;border:1px solid var(--line-strong);background:var(--surface);
+    color:var(--ink);width:34px;height:34px;border-radius:50%;cursor:pointer;
+    display:inline-flex;align-items:center;justify-content:center;
+    transition:transform .4s var(--ease), border-color .3s var(--ease), background .3s var(--ease)
+  }
+  .theme-toggle:hover{transform:rotate(18deg) scale(1.06);border-color:var(--signal)}
+  .theme-toggle svg{width:17px;height:17px;stroke:var(--ink);fill:none;stroke-width:1.8;stroke-linecap:round}
+  .theme-toggle .sun{display:none}
+  html[data-theme="dark"] .theme-toggle .sun{display:block}
+  html[data-theme="dark"] .theme-toggle .moon{display:none}
+
+  /* ---------- hero ---------- */
+  .hero{padding:96px 0 0}
+  .hero .badge{
+    display:inline-flex;align-items:center;gap:9px;margin-bottom:26px;
+    font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--muted);
+    border:1px solid var(--line);background:var(--surface);
+    padding:6px 13px;border-radius:100px
+  }
+  .hero .badge .dot{width:7px;height:7px;border-radius:50%;background:#27a35a;box-shadow:0 0 0 0 rgba(39,163,90,.5);animation:pulse 2.6s var(--ease) infinite}
+  .hero h1{
+    font-family:"Fraunces",serif;
+    font-weight:500;
+    font-size:clamp(38px,6.2vw,76px);
+    line-height:1.02;
+    letter-spacing:-.015em;
+    max-width:15ch;
+  }
+  .hero h1 .accent{font-style:italic;font-weight:400;color:var(--signal);position:relative;white-space:nowrap}
+  .hero .sub{
+    margin-top:26px;
+    font-size:clamp(18px,2.2vw,22px);
+    max-width:46ch;
+    color:var(--ink);
+  }
+  .hero .meta{margin-top:24px;color:var(--muted);font-size:15px;display:flex;flex-wrap:wrap;gap:8px 0;align-items:center}
+  .hero .meta span:not(:last-child)::after{content:"·";margin:0 12px;color:var(--line-strong)}
+  .trace-band{margin:54px 0 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .trace-band svg{display:block;width:100%;height:84px}
+  .trace-path{fill:none;stroke:var(--signal);stroke-width:1.5}
+  .trace-pulse{fill:var(--signal);filter:drop-shadow(0 0 6px var(--signal))}
+
+  /* ---------- intro ---------- */
+  .intro{padding:64px 0 20px}
+  .intro p.lead{font-size:clamp(20px,2.4vw,26px);line-height:1.5;max-width:30ch;font-family:"Fraunces",serif;font-weight:400}
+  .intro .detail{font-family:"Inter",sans-serif;font-size:17px;max-width:62ch;margin-top:24px;color:var(--ink);line-height:1.65}
+
+  /* ---------- section heading ---------- */
+  .section-head{
+    display:flex;align-items:baseline;gap:14px;
+    padding:70px 0 6px;
+    border-top:1px solid var(--line);margin-top:40px;
+  }
+  .section-head h2{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+  .section-head h2::before{content:"//";color:var(--signal);margin-right:8px}
+  .section-head .count{color:var(--muted);font-family:"IBM Plex Mono",monospace;font-size:13px}
+
+  /* ---------- case ---------- */
+  .case{padding:46px 0;border-top:1px solid var(--line);position:relative}
+  .case:first-of-type{border-top:none}
+  .case::before{
+    content:"";position:absolute;left:-28px;top:46px;bottom:46px;width:2px;
+    background:var(--signal);transform:scaleY(0);transform-origin:50% 0;
+    transition:transform .8s var(--ease) .1s;border-radius:2px
+  }
+  .case.in::before{transform:scaleY(1)}
+  @media(max-width:1140px){.case::before{display:none}}
+  .case-num{font-family:"IBM Plex Mono",monospace;color:var(--signal);font-size:13px;letter-spacing:.1em}
+  .tags{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
+  .tag{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;
+    color:var(--signal);border:1px solid var(--signal-dim);
+    padding:3px 9px;border-radius:2px;background:var(--signal-soft);
+    transition:background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease)
+  }
+  .tag:hover{background:var(--signal);color:#fff;border-color:var(--signal)}
+  .case h3{
+    font-family:"Fraunces",serif;font-weight:500;
+    font-size:clamp(27px,3.6vw,40px);line-height:1.08;letter-spacing:-.01em;
+    margin-top:16px;max-width:22ch;
+  }
+  .case-meta{
+    margin-top:14px;display:flex;flex-wrap:wrap;gap:6px 22px;
+    font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted)
+  }
+  .case-meta b{color:var(--ink);font-weight:500}
+
+  .blocks{margin-top:30px;display:grid;gap:24px}
+  @media(min-width:740px){.blocks{grid-template-columns:repeat(3,1fr);gap:30px}}
+  .block .lbl{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted);
+    padding-bottom:8px;margin-bottom:10px;border-bottom:1px solid var(--line);
+    display:flex;align-items:center;gap:7px
+  }
+  .block .lbl::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--signal);flex:0 0 auto}
+  .block p{font-size:15.5px;line-height:1.6}
+
+  .metrics{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
+  .metric{
+    background:var(--surface);border:1px solid var(--line);border-radius:5px;
+    padding:13px 16px;min-width:120px;
+    transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease)
+  }
+  .metric:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift);border-color:var(--signal-dim)}
+  .metric .v{font-family:"Fraunces",serif;font-size:26px;font-weight:500;line-height:1;color:var(--signal)}
+  .metric .k{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);margin-top:7px;letter-spacing:.03em}
+
+  /* media slots */
+  .media{margin-top:30px;display:grid;gap:16px}
+  @media(min-width:740px){.media.two{grid-template-columns:1.4fr 1fr}}
+  .slot{
+    border:1px dashed var(--signal-dim);border-radius:6px;background:var(--surface);
+    min-height:230px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:24px;color:var(--muted);gap:8px;
+    transition:border-color .3s var(--ease), background .3s var(--ease)
+  }
+  .slot:hover{border-color:var(--signal);background:var(--signal-soft)}
+  .slot .ico{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;color:var(--signal)}
+  .slot .hint{font-size:13px;max-width:34ch}
+  /* When you replace a slot with a real image, use: <img class="shot" src="..."> */
+  .shot{width:100%;border:1px solid var(--line);border-radius:6px;display:block}
+  .ratio-video{position:relative;width:100%;padding-top:56.25%;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  .ratio-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  /* ---------- more work ---------- */
+  .more-grid{display:grid;gap:0;border-top:1px solid var(--line);margin-top:8px}
+  @media(min-width:680px){.more-grid{grid-template-columns:1fr 1fr}}
+  .more-item{padding:26px 0;border-bottom:1px solid var(--line);transition:background .3s var(--ease)}
+  .more-item:hover{background:var(--signal-soft)}
+  @media(min-width:680px){
+    .more-item{padding:26px 26px 26px 0}
+    .more-item:nth-child(odd){border-right:1px solid var(--line);padding-right:34px}
+    .more-item:nth-child(even){padding-left:34px}
+    .more-item:hover{border-radius:6px}
+  }
+  .more-item .mt{font-family:"Fraunces",serif;font-size:21px;font-weight:500;display:flex;align-items:center;gap:10px}
+  .more-item .mt .arr{color:var(--signal);opacity:0;transform:translateX(-6px);transition:opacity .3s var(--ease),transform .3s var(--ease)}
+  .more-item:hover .mt .arr{opacity:1;transform:none}
+  .more-item .mtag{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;color:var(--signal);text-transform:uppercase}
+  .more-item p{font-size:14.5px;color:var(--muted);margin-top:8px;line-height:1.55}
+
+  /* ---------- footer ---------- */
+  footer{padding:90px 0 70px;border-top:1px solid var(--line);margin-top:60px}
+  footer .big{
+    font-family:"Fraunces",serif;font-weight:500;
+    font-size:clamp(30px,5vw,56px);line-height:1.05;letter-spacing:-.01em
+  }
+  footer .big a{
+    color:var(--ink);background:linear-gradient(var(--signal),var(--signal)) no-repeat;
+    background-size:0% 2px;background-position:0 92%;
+    transition:background-size .4s var(--ease), color .3s var(--ease)
+  }
+  footer .big a:hover{color:var(--signal);text-decoration:none;background-size:100% 2px}
+  footer .frow{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px 28px;font-family:"IBM Plex Mono",monospace;font-size:14px}
+  footer .frow a{color:var(--ink)}
+  .colophon{margin-top:46px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted);letter-spacing:.03em}
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    .case::before{transform:scaleY(1);transition:none}
+    .trace-path{animation:none!important}
+    .pulse-dot,.hero .badge .dot{animation:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header id="site-header">
+  <div class="wrap topbar">
+    <a class="name" href="#top"><span class="pulse-dot" aria-hidden="true"></span>URIEL KARERWA</a>
+    <nav>
+      <a href="#work" class="ulink">Work</a>
+      <a href="https://www.linkedin.com/in/uriel-karerwa" target="_blank" rel="noopener" class="ulink">LinkedIn</a>
+      <a href="mailto:karerwau@gmail.com" class="ulink">Email</a>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<section class="hero wrap">
+  <span class="badge"><span class="dot" aria-hidden="true"></span>Open to UX research &amp; AI design roles</span>
+  <h1>I research and design how people <span class="accent">interact</span> with AI systems.</h1>
+  <p class="sub">Grounded in UX research, neuroscience, and service design. I study what happens inside an interaction, not only what it produces.</p>
+  <p class="meta mono"><span>Montréal</span><span>M.Sc. User Experience, HEC Montréal</span><span>CAPM</span></p>
+</section>
+
+<div class="trace-band wrap" aria-hidden="true">
+  <svg viewBox="0 0 1080 84" preserveAspectRatio="none">
+    <path class="trace-path" id="trace"></path>
+    <circle class="trace-pulse" id="trace-pulse" r="3" style="display:none"></circle>
+  </svg>
+</div>
+
+<main id="main">
+<section class="intro wrap">
+  <p class="lead">Most research stops at the outcome. I measure the experience underneath it.</p>
+  <p class="detail">I am a UX researcher and designer with three years of work across government, nonprofit, and private sectors, and a research background in neuroscience and AI-mediated learning. My master's work at HEC Montréal's Tech3Lab used EEG and pupillometry to study how people learn from AI tutors. I work across the full range, from one-on-one interviews to physiological measurement, and I am interested in AI systems that hold up to real human use.</p>
+</section>
+
+<div class="section-head wrap" id="work">
+  <h2>Selected Work</h2>
+  <span class="count">04 case studies</span>
+</div>
+
+<div class="wrap">
+
+  <!-- ============ CASE 01 — THESIS ============ -->
+  <article class="case reveal">
+    <div class="case-num">01</div>
+    <div class="tags">
+      <span class="tag">Conversation Design</span>
+      <span class="tag">Human–AI Interaction</span>
+      <span class="tag">Applied Research</span>
+    </div>
+    <h3>Does changing how an AI tutor talks change how people learn?</h3>
+    <div class="case-meta">
+      <span><b>Role</b> Lead researcher</span>
+      <span><b>Lab</b> Tech3Lab, HEC Montréal</span>
+      <span><b>Period</b> 2024–2026</span>
+      <span><b>Method</b> EEG · Pupillometry · Behavioural · 40 participants</span>
+    </div>
+
+    <div class="blocks">
+      <div class="block">
+        <div class="lbl">The problem</div>
+        <p>AI tutors are being adopted faster than anyone has measured their effect on the learner. I wanted to know whether adapting only the tutor's communication style, not its content, would change how people learn math. The obvious answer is that it should help. The honest answer needed evidence.</p>
+      </div>
+      <div class="block">
+        <div class="lbl">What I did</div>
+        <p>I built tutors that adapted their delivery to each learner: more concrete and example-driven for some, more abstract and pattern-focused for others, mapped to Felder-Silverman learner profiles and written entirely into the system prompt. That choice matters for industry: it costs almost nothing to add to a real LLM product. Forty people worked through blocks on Venn diagrams, logarithms, and parabolas while I measured quiz scores, interaction logs, subjective load, pupillometry, and EEG.</p>
+      </div>
+      <div class="block">
+        <div class="lbl">What changed</div>
+        <p>The quiz scores stayed flat. The physiology did not. Pupil dilation during tutoring was significantly lower with the personalized tutor, meaning learners processed the same material under less cognitive load. They also engaged more, skipping fewer questions and writing out more notation as they worked. A tool can leave test scores untouched and still change the experience underneath. For anyone building EdTech: if you only measure outcomes, you miss most of what happens.</p>
+      </div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric"><div class="v">40</div><div class="k">participants · 3 sessions each</div></div>
+      <div class="metric"><div class="v">↓ load</div><div class="k">lower pupil dilation, personalized</div></div>
+      <div class="metric"><div class="v">EEG</div><div class="k">frontal-theta / parietal-alpha</div></div>
+      <div class="metric"><div class="v">FLAIRS</div><div class="k">published &amp; presented</div></div>
+    </div>
+
+    <div class="media two">
+      <!-- IMAGE SLOT: replace this whole .slot div with: <img class="shot" src="images/thesis-tutor.png" alt="AI tutor interface"> -->
+      <div class="slot">
+        <span class="ico">IMAGE</span>
+        <span class="hint">Screenshot of the AI tutor interface or an experiment-setup / EEG photo. Drop file in <span class="mono">images/</span> and swap this block for an &lt;img&gt;.</span>
+      </div>
+      <!-- VIDEO SLOT (optional): replace inner with a real iframe (YouTube/Vimeo) or delete -->
+      <div class="slot">
+        <span class="ico">VIDEO (optional)</span>
+        <span class="hint">A short walkthrough of the tutor or a finding clip. Paste an embed iframe here, or remove this slot.</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============ CASE 02 — ESDC AI ============ -->
+  <article class="case reveal">
+    <div class="case-num">02</div>
+    <div class="tags">
+      <span class="tag">AI Implementation</span>
+      <span class="tag">Conversation Design</span>
+      <span class="tag">Public Sector</span>
+    </div>
+    <h3>Putting AI tools into the hands of 40,000 public servants.</h3>
+    <div class="case-meta">
+      <span><b>Role</b> UX design &amp; research</span>
+      <span><b>Client</b> Employment and Social Development Canada</span>
+      <span><b>Period</b> 2024–present</span>
+    </div>
+
+    <div class="blocks">
+      <div class="block">
+        <div class="lbl">The problem</div>
+        <p>ESDC was adopting AI tools faster than its people could use them well. The Workplace Mental Health team wanted AI that fit how public servants actually work, in both official languages, without creating new risk or confusion in a sensitive domain.</p>
+      </div>
+      <div class="block">
+        <div class="lbl">What I did</div>
+        <p>I tested AI systems including agents and retrieval-augmented generation, then designed personalized solutions for the team. I consulted on AI implementation strategy aligned with the psychological factors of a healthy workplace, and wrote AI training resources and reference guides so colleagues could use the tools on the network effectively rather than cautiously.</p>
+      </div>
+      <div class="block">
+        <div class="lbl">What changed</div>
+        <p>The team moved from ad-hoc experimentation to a documented, teachable practice. Reference guides meant the knowledge survived past any single person, and AI use was framed around real tasks instead of novelty.</p>
+      </div>
+    </div>
+
+    <div class="media two">
+      <div class="slot">
+        <span class="ico">IMAGE</span>
+        <span class="hint">Screenshot of a reference guide, an agent/RAG flow diagram, or a training resource. Drop in <span class="mono">images/</span>.</span>
+      </div>
+      <div class="slot">
+        <span class="ico">VIDEO (optional)</span>
+        <span class="hint">Optional demo of the tool or workflow. Paste an embed iframe, or remove this slot.</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============ CASE 03 — CALGARY ============ -->
+  <article class="case reveal">
+    <div class="case-num">03</div>
+    <div class="tags">
+      <span class="tag">UX Research</span>
+      <span class="tag">Research Operations</span>
+      <span class="tag">Service Design</span>
+    </div>
+    <h3>Bringing the people most affected by digital services back into the test.</h3>
+    <div class="case-meta">
+      <span><b>Role</b> Project lead, research operations</span>
+      <span><b>Partner</b> IncluCity × City of Calgary</span>
+      <span><b>Period</b> 2023–2024</span>
+      <span><b>Scale</b> 7 services · 4 equity groups · 35 participants</span>
+    </div>
+
+    <div class="blocks">
+      <div class="block">
+        <div class="lbl">The problem</div>
+        <p>Calgary had tested its digital services for years, but the testers showing up were not the people most affected when those services failed. Newcomers, older adults, and people with disabilities using assistive technology were largely absent from the design loop.</p>
+      </div>
+      <div class="block">
+        <div class="lbl">What I did</div>
+        <p>I led recruitment, project management, and volunteer coordination across roughly 20 researchers between the two teams, with a target of four equity groups and eight participants each. Recruiting participants with disabilities broke the original plan: none of our 600+ existing testers matched the full criteria. I put three changes in place, a referral program with incentives that opened snowball recruitment, removal of a screening rule that filtered out eligible people, and high-touch onboarding for testers who weren't answering email.</p>
+      </div>
+      <div class="block">
+        <div class="lbl">What changed</div>
+        <p>The pilot mapped 18 distinct equity challenges across seven services. Three city service teams adopted the findings (Recreation, myID, Parks), a follow-up study on people with disabilities was approved, and mobile-plus-desktop testing for the same audience became standard.</p>
+      </div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric"><div class="v">18</div><div class="k">equity challenges mapped</div></div>
+      <div class="metric"><div class="v">3</div><div class="k">service teams adopted findings</div></div>
+      <div class="metric"><div class="v">+1</div><div class="k">follow-up study approved</div></div>
+      <div class="metric"><div class="v">35</div><div class="k">participants · 4 equity groups</div></div>
+    </div>
+
+    <div class="media two">
+      <div class="slot">
+        <span class="ico">IMAGE</span>
+        <span class="hint">Miro analysis board, the services-tested grid, or a session photo. Drop in <span class="mono">images/</span>.</span>
+      </div>
+      <div class="slot">
+        <span class="ico">VIDEO (optional)</span>
+        <span class="hint">Optional. Remove if not used.</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============ CASE 04 — BENEVA ============ -->
+  <article class="case reveal">
+    <div class="case-num">04</div>
+    <div class="tags">
+      <span class="tag">UX Research</span>
+      <span class="tag">Usability Evaluation</span>
+      <span class="tag">Private Sector</span>
+    </div>
+    <h3>Finding the one button that broke an insurance quote flow.</h3>
+    <div class="case-meta">
+      <span><b>Role</b> UX researcher (4-person team)</span>
+      <span><b>Client</b> Beneva, with HEC Montréal UX Lab</span>
+      <span><b>Period</b> 2025</span>
+      <span><b>Scale</b> 2 products · 4 scenarios · 12 participants</span>
+    </div>
+
+    <div class="blocks">
+      <div class="block">
+        <div class="lbl">The problem</div>
+        <p>Beneva, one of Canada's largest mutual insurers, wanted to know whether real users could complete home and car quotes as smoothly as competitors advertised, and how their live flow compared on effectiveness, efficiency, and satisfaction.</p>
+      </div>
+      <div class="block">
+        <div class="lbl">What I did</div>
+        <p>I contributed to study design, moderated sessions, coded the qualitative data, and built the severity-by-impact-and-effort matrix used to rank the final recommendations. We ran twelve participants who had shopped for insurance in the past year through four task scenarios on the live product.</p>
+      </div>
+      <div class="block">
+        <div class="lbl">What changed</div>
+        <p>The home-quote edit flow broke the study: six of twelve participants failed it because the price card still read $0.00 and they never noticed the Recalculate button at the top of the page. We flagged it as the lead usability catastrophe and delivered eight prioritized fixes with severity ratings the product team could act on.</p>
+      </div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric"><div class="v">6/12</div><div class="k">stalled on one hidden button</div></div>
+      <div class="metric"><div class="v">79</div><div class="k">SUS baseline for re-testing</div></div>
+      <div class="metric"><div class="v">8</div><div class="k">prioritized fixes delivered</div></div>
+      <div class="metric"><div class="v">58%</div><div class="k">success on the failing flow</div></div>
+    </div>
+
+    <div class="media two">
+      <div class="slot">
+        <span class="ico">IMAGE</span>
+        <span class="hint">The quote flow, the severity matrix, or the CSAT-by-task chart. Drop in <span class="mono">images/</span>.</span>
+      </div>
+      <div class="slot">
+        <span class="ico">VIDEO (optional)</span>
+        <span class="hint">Optional session clip. Remove if not used.</span>
+      </div>
+    </div>
+  </article>
+
+</div>
+
+<div class="section-head wrap">
+  <h2>More Work</h2>
+  <span class="count">04</span>
+</div>
+
+<section class="wrap">
+  <div class="more-grid">
+    <div class="more-item reveal">
+      <div class="mtag">AI Implementation · Process Design</div>
+      <div class="mt"><span class="arr">→</span>SEXODEV research-chair automations</div>
+      <p>Designed AI-driven workflows turning meeting recordings into assigned tasks and filed documentation for a remote research team at UQAM, with a Notion workspace as the single source of truth.</p>
+    </div>
+    <div class="more-item reveal">
+      <div class="mtag">Service Design · IA</div>
+      <div class="mt"><span class="arr">→</span>ESDC Wellness Gym SharePoint redesign</div>
+      <p>Led interviews and two rounds of tree testing to rebuild the information architecture of a workplace mental-health hub serving 40,000+ public servants in both official languages.</p>
+    </div>
+    <div class="more-item reveal">
+      <div class="mtag">Research Operations</div>
+      <div class="mt"><span class="arr">→</span>IncluCity research-ops framework</div>
+      <p>Built the operations backbone for an inclusive-research society: participant onboarding, training, and data management supporting 50+ researchers and 140+ interviews.</p>
+    </div>
+    <div class="more-item reveal">
+      <div class="mtag">UX Research · AI Product</div>
+      <div class="mt"><span class="arr">→</span>Weever.ai shopping-assistant evaluation</div>
+      <p>Mixed-method usability evaluation of a consumer AI shopping assistant, surfacing trust and clarity barriers in a conversational commerce experience.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Let's talk. <a href="mailto:karerwau@gmail.com">karerwau@gmail.com</a></div>
+    <div class="frow">
+      <a href="mailto:karerwau@gmail.com" class="ulink">karerwau@gmail.com</a>
+      <a href="https://www.linkedin.com/in/uriel-karerwa" target="_blank" rel="noopener" class="ulink">LinkedIn</a>
+      <span>Montréal, QC</span>
+    </div>
+    <div class="colophon">Uriel Karerwa · UX Research &amp; AI Interaction Design · Built 2026</div>
+  </div>
+</footer>
+
+<script>
+  // --- theme: respect stored choice, then system preference ---
+  (function(){
+    var root = document.documentElement;
+    var stored = null;
+    try{ stored = localStorage.getItem('theme'); }catch(e){}
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    root.setAttribute('data-theme', theme);
+    var btn = document.getElementById('theme-toggle');
+    if(btn){
+      btn.addEventListener('click', function(){
+        var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try{ localStorage.setItem('theme', next); }catch(e){}
+      });
+    }
+  })();
+
+  // --- signal trace: a quiet EEG-style waveform, generated once ---
+  (function(){
+    var path = document.getElementById('trace');
+    if(!path) return;
+    var W = 1080, H = 84, mid = H/2, n = 540, step = W/n;
+    var d = 'M 0 ' + mid;
+    var seed = 7;
+    function rnd(){ seed = (seed*9301+49297)%233280; return seed/233280; }
+    for(var i=1;i<=n;i++){
+      var x = i*step;
+      // baseline drift + occasional spikes, like a clean readout
+      var base = Math.sin(i*0.06)*4 + Math.sin(i*0.013)*3;
+      var spike = 0;
+      if(rnd() > 0.965){ spike = (rnd()-0.5) * 46; }
+      var y = mid - base - spike;
+      d += ' L ' + x.toFixed(1) + ' ' + y.toFixed(1);
+    }
+    path.setAttribute('d', d);
+
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // subtle draw-in animation unless reduced motion
+    if(!reduce){
+      var len = path.getTotalLength();
+      path.style.strokeDasharray = len;
+      path.style.strokeDashoffset = len;
+      path.getBoundingClientRect();
+      path.style.transition = 'stroke-dashoffset 2.2s ease-out';
+      path.style.strokeDashoffset = '0';
+    }
+
+    // a pulse riding the waveform — pauses when off-screen, off on reduced motion
+    var pulse = document.getElementById('trace-pulse');
+    if(pulse && !reduce && typeof path.getPointAtLength === 'function'){
+      var total = path.getTotalLength();
+      var band = path.closest('.trace-band');
+      var visible = true, last = 0, dist = 0, speed = total/9000; // px of path per ms
+      pulse.style.display = 'block';
+      if('IntersectionObserver' in window && band){
+        new IntersectionObserver(function(es){ visible = es[0].isIntersecting; })
+          .observe(band);
+      }
+      function frame(ts){
+        if(!last) last = ts;
+        var dt = ts - last; last = ts;
+        if(visible){
+          dist = (dist + dt*speed) % total;
+          var pt = path.getPointAtLength(dist);
+          pulse.setAttribute('cx', pt.x); pulse.setAttribute('cy', pt.y);
+        }
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    }
+  })();
+
+  // --- reveal on scroll (staggered for grouped children) ---
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in')}); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    },{threshold:0.12});
+    els.forEach(function(e){ io.observe(e); });
+  })();
+
+  // --- scroll progress bar + condensed sticky header ---
+  (function(){
+    var bar = document.getElementById('progress');
+    var header = document.getElementById('site-header');
+    function onScroll(){
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      var p = max > 0 ? h.scrollTop / max : 0;
+      if(bar) bar.style.transform = 'scaleX(' + p + ')';
+      if(header) header.classList.toggle('scrolled', h.scrollTop > 12);
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  })();
+
+  // --- active nav highlight ---
+  (function(){
+    var sections = [].slice.call(document.querySelectorAll('[id="work"]'));
+    var workLink = document.querySelector('nav a[href="#work"]');
+    if(!workLink || !sections.length || !('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ workLink.classList.toggle('active', en.isIntersecting); });
+    },{rootMargin:'-40% 0px -55% 0px'});
+    sections.forEach(function(s){ io.observe(s); });
+  })();
+</script>
+</body>
+</html>
