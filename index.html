@@ -65,7 +65,7 @@
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     transition:opacity .5s var(--ease);
   }
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;position:relative;z-index:1}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(24px,5vw,52px);position:relative;z-index:1}
   a{color:var(--signal);text-decoration:none}
   a:hover{text-decoration:underline}
   :focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:2px}
@@ -177,8 +177,10 @@
 
   /* ---------- intro ---------- */
   .intro{padding:64px 0 20px}
-  .intro p.lead{font-size:clamp(20px,2.4vw,26px);line-height:1.5;max-width:30ch;font-family:"Fraunces",serif;font-weight:400}
+  .intro p.lead{font-size:clamp(22px,2.6vw,30px);line-height:1.42;max-width:24ch;font-family:"Fraunces",serif;font-weight:400}
+  .intro p.lead .hl{color:var(--signal);font-style:italic}
   .intro .detail{font-family:"Inter",sans-serif;font-size:17px;max-width:62ch;margin-top:24px;color:var(--ink);line-height:1.65}
+  .intro .detail.em{font-weight:600;font-size:19px;color:var(--ink);max-width:60ch}
 
   /* ---------- section heading ---------- */
   .section-head{
@@ -241,22 +243,57 @@
   .metric .v{font-family:"Fraunces",serif;font-size:26px;font-weight:500;line-height:1;color:var(--signal)}
   .metric .k{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);margin-top:7px;letter-spacing:.03em}
 
-  /* media slots */
+  /* media — responsive image grids */
   .media{margin-top:30px;display:grid;gap:16px}
-  @media(min-width:740px){.media.two{grid-template-columns:1.4fr 1fr}}
-  .slot{
-    border:1px dashed var(--signal-dim);border-radius:6px;background:var(--surface);
-    min-height:230px;display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;padding:24px;color:var(--muted);gap:8px;
-    transition:border-color .3s var(--ease), background .3s var(--ease)
+  .media.grid-2{grid-template-columns:1fr}
+  @media(min-width:640px){.media.grid-2{grid-template-columns:1fr 1fr}}
+  .media.grid-3{grid-template-columns:1fr}
+  @media(min-width:560px){.media.grid-3{grid-template-columns:1fr 1fr}}
+  @media(min-width:860px){.media.grid-3{grid-template-columns:repeat(3,1fr)}}
+
+  .shot-fig{
+    margin:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;
+    background:var(--surface);box-shadow:var(--shadow);
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease)
   }
-  .slot:hover{border-color:var(--signal);background:var(--signal-soft)}
-  .slot .ico{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;color:var(--signal)}
-  .slot .hint{font-size:13px;max-width:34ch}
-  /* When you replace a slot with a real image, use: <img class="shot" src="..."> */
-  .shot{width:100%;border:1px solid var(--line);border-radius:6px;display:block}
-  .ratio-video{position:relative;width:100%;padding-top:56.25%;border:1px solid var(--line);border-radius:6px;overflow:hidden}
-  .ratio-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .shot-fig:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift);border-color:var(--signal-dim)}
+  .shot-link{display:block;color:var(--ink);text-decoration:none}
+  .shot-link:hover{text-decoration:none}
+  .shot{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;background:var(--surface);transition:transform .6s var(--ease)}
+  .shot-link:hover .shot{transform:scale(1.04)}
+  .shot-cap{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:11px 14px;border-top:1px solid var(--line);background:var(--surface-2);
+    font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.03em;color:var(--ink)
+  }
+  .shot-cap .ar{color:var(--signal);transition:transform .3s var(--ease)}
+  .shot-link:hover .shot-cap{color:var(--signal)}
+  .shot-link:hover .shot-cap .ar{transform:translate(3px,-3px)}
+
+  /* placeholder shown until the real file lands in images/ */
+  .shot-ph{display:none;min-height:172px;flex-direction:column;align-items:center;justify-content:center;gap:7px;text-align:center;padding:22px;background:var(--surface)}
+  .shot-fig.pending{border-style:dashed;border-color:var(--signal-dim);box-shadow:none}
+  .shot-fig.pending .shot{display:none}
+  .shot-fig.pending .shot-ph{display:flex}
+  .shot-ph .pl{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;color:var(--signal)}
+  .shot-ph .pn{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);word-break:break-all}
+
+  /* locked image — content behind closed doors, unlock by contacting */
+  .shot-wrap{position:relative;display:block}
+  .shot-fig.locked .shot{filter:blur(15px) saturate(.85);transform:scale(1.08)}
+  .lock-overlay{
+    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:9px;text-align:center;padding:20px;color:#fff;
+    background:linear-gradient(180deg, color-mix(in srgb,var(--ink) 30%, transparent), color-mix(in srgb,var(--ink) 55%, transparent));
+    transition:background .3s var(--ease)
+  }
+  .shot-fig.locked:hover .lock-overlay{background:linear-gradient(180deg, color-mix(in srgb,var(--signal) 40%, transparent), color-mix(in srgb,var(--signal) 62%, transparent))}
+  .lock-overlay .lock-ico{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.5)}
+  .lock-overlay .lock-ico svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2}
+  .lock-overlay .lock-t{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;max-width:22ch;line-height:1.4}
+
+  /* in-case note (e.g. contact prompt) */
+  .case-note{margin-top:24px;font-size:16px;color:var(--muted);line-height:1.6}
 
   /* ---------- more work ---------- */
   .more-grid{display:grid;gap:0;border-top:1px solid var(--line);margin-top:8px}
@@ -274,6 +311,8 @@
   .more-item:hover .mt .arr{opacity:1;transform:none}
   .more-item .mtag{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;color:var(--signal);text-transform:uppercase}
   .more-item p{font-size:14.5px;color:var(--muted);margin-top:8px;line-height:1.55}
+  a.more-item{display:block;color:inherit;text-decoration:none}
+  a.more-item:hover{text-decoration:none}
 
   /* ---------- footer ---------- */
   footer{padding:90px 0 70px;border-top:1px solid var(--line);margin-top:60px}
@@ -326,9 +365,9 @@
 <span id="top"></span>
 
 <section class="hero wrap">
-  <span class="badge"><span class="dot" aria-hidden="true"></span>Open to UX research &amp; AI design roles</span>
-  <h1>I research and design how people <span class="accent">interact</span> with AI systems.</h1>
-  <p class="sub">Grounded in UX research, neuroscience, and service design. I study what happens inside an interaction, not only what it produces.</p>
+  <span class="badge"><span class="dot" aria-hidden="true"></span>Open to UX research, Research Operations &amp; AI design roles</span>
+  <h1>I research and design how people <span class="accent">interact</span> with <span class="accent">AI</span> systems.</h1>
+  <p class="sub">A data-driven, human-centered user researcher helping you personalize and integrate responsible AI — and design better systems, with or without it.</p>
   <p class="meta mono"><span>Montréal</span><span>M.Sc. User Experience, HEC Montréal</span><span>CAPM</span></p>
 </section>
 
@@ -341,8 +380,9 @@
 
 <main id="main">
 <section class="intro wrap">
-  <p class="lead">Most research stops at the outcome. I measure the experience underneath it.</p>
-  <p class="detail">I am a UX researcher and designer with three years of work across government, nonprofit, and private sectors, and a research background in neuroscience and AI-mediated learning. My master's work at HEC Montréal's Tech3Lab used EEG and pupillometry to study how people learn from AI tutors. I work across the full range, from one-on-one interviews to physiological measurement, and I am interested in AI systems that hold up to real human use.</p>
+  <p class="lead">A researcher who also builds — and who <span class="hl">measures what a survey can't see</span>.</p>
+  <p class="detail em">I am a UX researcher and designer with three years of work across government, nonprofit, and private sectors, and a research background in neuroscience and human-centred AI.</p>
+  <p class="detail">My master's work at HEC Montréal's Tech3Lab, Canada's largest UX Research Lab, used EEG and pupillometry to study the differences in how people learn from AI tutors. I work across the full range (qual and quant), from behavioural, self-reported to physiological measurement to inform design decisions. I'm interested in designing accessible and responsible AI systems that drive business goals and solve real human problems.</p>
 </section>
 
 <div class="section-head wrap" id="work">
@@ -360,7 +400,7 @@
       <span class="tag">Human–AI Interaction</span>
       <span class="tag">Applied Research</span>
     </div>
-    <h3>Does changing how an AI tutor talks change how people learn?</h3>
+    <h3>How important is an AI tutor's communication style in the learner's experience?</h3>
     <div class="case-meta">
       <span><b>Role</b> Lead researcher</span>
       <span><b>Lab</b> Tech3Lab, HEC Montréal</span>
@@ -385,22 +425,26 @@
 
     <div class="metrics">
       <div class="metric"><div class="v">40</div><div class="k">participants · 3 sessions each</div></div>
-      <div class="metric"><div class="v">↓ load</div><div class="k">lower pupil dilation, personalized</div></div>
+      <div class="metric"><div class="v">↓ Cognitive Load</div><div class="k">lower pupil dilation &amp; EEG indices</div></div>
       <div class="metric"><div class="v">EEG</div><div class="k">frontal-theta / parietal-alpha</div></div>
       <div class="metric"><div class="v">FLAIRS</div><div class="k">published &amp; presented</div></div>
     </div>
 
-    <div class="media two">
-      <!-- IMAGE SLOT: replace this whole .slot div with: <img class="shot" src="images/thesis-tutor.png" alt="AI tutor interface"> -->
-      <div class="slot">
-        <span class="ico">IMAGE</span>
-        <span class="hint">Screenshot of the AI tutor interface or an experiment-setup / EEG photo. Drop file in <span class="mono">images/</span> and swap this block for an &lt;img&gt;.</span>
-      </div>
-      <!-- VIDEO SLOT (optional): replace inner with a real iframe (YouTube/Vimeo) or delete -->
-      <div class="slot">
-        <span class="ico">VIDEO (optional)</span>
-        <span class="hint">A short walkthrough of the tutor or a finding clip. Paste an embed iframe here, or remove this slot.</span>
-      </div>
+    <div class="media grid-2">
+      <figure class="shot-fig">
+        <a class="shot-link" href="https://hecmontreal.on.worldcat.org/oclc/1578112535" target="_blank" rel="noopener">
+          <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/thesis-eeg-results.png</span></span>
+          <img class="shot" src="images/thesis-eeg-results.png" alt="EEG results from the AI tutor study" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+          <span class="shot-cap">Read the full thesis <span class="ar">↗</span></span>
+        </a>
+      </figure>
+      <figure class="shot-fig">
+        <a class="shot-link" href="https://journals.flvc.org/FLAIRS/article/view/141860" target="_blank" rel="noopener">
+          <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/thesis-tester-view.png</span></span>
+          <img class="shot" src="images/thesis-tester-view.png" alt="The AI tutor interface as seen by study participants" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+          <span class="shot-cap">Conference publication <span class="ar">↗</span></span>
+        </a>
+      </figure>
     </div>
   </article>
 
@@ -412,21 +456,22 @@
       <span class="tag">Conversation Design</span>
       <span class="tag">Public Sector</span>
     </div>
-    <h3>Putting AI tools into the hands of 40,000 public servants.</h3>
+    <h3>Responsible AI use in Government: training and advocacy.</h3>
     <div class="case-meta">
       <span><b>Role</b> UX design &amp; research</span>
       <span><b>Client</b> Employment and Social Development Canada</span>
       <span><b>Period</b> 2024–present</span>
+      <span><b>Method</b> Internal interviews &amp; surveys with team members</span>
     </div>
 
     <div class="blocks">
       <div class="block">
         <div class="lbl">The problem</div>
-        <p>ESDC was adopting AI tools faster than its people could use them well. The Workplace Mental Health team wanted AI that fit how public servants actually work, in both official languages, without creating new risk or confusion in a sensitive domain.</p>
+        <p>ESDC was adopting AI tools faster than its people could use them well. The Workplace Mental Health team wanted AI that fit how public servants actually work, in both official languages, without creating new risks or confusion in a sensitive domain. <em>They also wanted to find ways to improve their own outputs using AI but were unsure how.</em></p>
       </div>
       <div class="block">
         <div class="lbl">What I did</div>
-        <p>I tested AI systems including agents and retrieval-augmented generation, then designed personalized solutions for the team. I consulted on AI implementation strategy aligned with the psychological factors of a healthy workplace, and wrote AI training resources and reference guides so colleagues could use the tools on the network effectively rather than cautiously.</p>
+        <p>I fine-tuned and tested a retrieval-augmented generation (RAG) system intended for broad internal use to improve access to mental health resources. I designed personalized, agentic solutions to increase productivity and wrote AI training resources and reference guides to help colleagues use the tools. I consulted on AI implementation strategy aligned with the 13 psychological factors of a healthy workplace at ESDC action group meetings.</p>
       </div>
       <div class="block">
         <div class="lbl">What changed</div>
@@ -434,15 +479,28 @@
       </div>
     </div>
 
-    <div class="media two">
-      <div class="slot">
-        <span class="ico">IMAGE</span>
-        <span class="hint">Screenshot of a reference guide, an agent/RAG flow diagram, or a training resource. Drop in <span class="mono">images/</span>.</span>
-      </div>
-      <div class="slot">
-        <span class="ico">VIDEO (optional)</span>
-        <span class="hint">Optional demo of the tool or workflow. Paste an embed iframe, or remove this slot.</span>
-      </div>
+    <div class="metrics">
+      <div class="metric"><div class="v">8</div><div class="k">personalized learning modules</div></div>
+      <div class="metric"><div class="v">3</div><div class="k">agents created for the team</div></div>
+      <div class="metric"><div class="v">RAG</div><div class="k">mental-health system tested &amp; fine-tuned</div></div>
+      <div class="metric"><div class="v">13</div><div class="k">psychological factors advised on</div></div>
+    </div>
+
+    <div class="media grid-2">
+      <figure class="shot-fig">
+        <a class="shot-link" href="https://docs.google.com/presentation/d/1cgMEV4WBNWvOtYo0ix8ckcS5aXyAW74B/edit?usp=sharing&ouid=105141349933021285173&rtpof=true&sd=true" target="_blank" rel="noopener">
+          <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/esdc-ai-chosing-model.png</span></span>
+          <img class="shot" src="images/esdc-ai-chosing-model.png" alt="Guidance slide on choosing an AI model" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+          <span class="shot-cap">Download the deck <span class="ar">↗</span></span>
+        </a>
+      </figure>
+      <figure class="shot-fig">
+        <a class="shot-link" href="https://docs.google.com/presentation/d/1GUnzGEXYaDkGnYJrs56MjqIrRhVzpQCV/edit?usp=sharing&ouid=105141349933021285173&rtpof=true&sd=true" target="_blank" rel="noopener">
+          <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/esdc-ai-custom-instr.png</span></span>
+          <img class="shot" src="images/esdc-ai-custom-instr.png" alt="Guidance slide on writing custom AI instructions" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+          <span class="shot-cap">Download the deck <span class="ar">↗</span></span>
+        </a>
+      </figure>
     </div>
   </article>
 
@@ -454,7 +512,7 @@
       <span class="tag">Research Operations</span>
       <span class="tag">Service Design</span>
     </div>
-    <h3>Bringing the people most affected by digital services back into the test.</h3>
+    <h3>Digital equity and inclusive design starts with inclusive research practices.</h3>
     <div class="case-meta">
       <span><b>Role</b> Project lead, research operations</span>
       <span><b>Partner</b> IncluCity × City of Calgary</span>
@@ -465,7 +523,7 @@
     <div class="blocks">
       <div class="block">
         <div class="lbl">The problem</div>
-        <p>Calgary had tested its digital services for years, but the testers showing up were not the people most affected when those services failed. Newcomers, older adults, and people with disabilities using assistive technology were largely absent from the design loop.</p>
+        <p>The City of Calgary digital team had tested its digital services for years, but the testers showing up were not the people most affected when those services failed. Newcomers, older adults, and people with disabilities using assistive technology were largely absent from the design loop. Our job at IncluCity was to support the city's efforts to recruit underrepresented groups for testing.</p>
       </div>
       <div class="block">
         <div class="lbl">What I did</div>
@@ -484,15 +542,24 @@
       <div class="metric"><div class="v">35</div><div class="k">participants · 4 equity groups</div></div>
     </div>
 
-    <div class="media two">
-      <div class="slot">
-        <span class="ico">IMAGE</span>
-        <span class="hint">Miro analysis board, the services-tested grid, or a session photo. Drop in <span class="mono">images/</span>.</span>
-      </div>
-      <div class="slot">
-        <span class="ico">VIDEO (optional)</span>
-        <span class="hint">Optional. Remove if not used.</span>
-      </div>
+    <p class="case-note">To learn more about this project, <a href="mailto:karerwau@gmail.com?subject=IncluCity%20%C3%97%20Calgary%20project&body=I%27d%20like%20to%20know%20more%20about%20your%20IncluCity%20project">contact me directly</a>.</p>
+
+    <div class="media grid-3">
+      <figure class="shot-fig">
+        <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/calgary-311.png</span></span>
+        <img class="shot" src="images/calgary-311.png" alt="Calgary 311 service tested in the pilot" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+        <figcaption class="shot-cap">311 service</figcaption>
+      </figure>
+      <figure class="shot-fig">
+        <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/calgary-fair-entry.png</span></span>
+        <img class="shot" src="images/calgary-fair-entry.png" alt="Calgary Fair Entry service tested in the pilot" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+        <figcaption class="shot-cap">Fair Entry</figcaption>
+      </figure>
+      <figure class="shot-fig">
+        <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/calgary-rec.png</span></span>
+        <img class="shot" src="images/calgary-rec.png" alt="Calgary Recreation service tested in the pilot" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+        <figcaption class="shot-cap">Recreation</figcaption>
+      </figure>
     </div>
   </article>
 
@@ -534,15 +601,30 @@
       <div class="metric"><div class="v">58%</div><div class="k">success on the failing flow</div></div>
     </div>
 
-    <div class="media two">
-      <div class="slot">
-        <span class="ico">IMAGE</span>
-        <span class="hint">The quote flow, the severity matrix, or the CSAT-by-task chart. Drop in <span class="mono">images/</span>.</span>
-      </div>
-      <div class="slot">
-        <span class="ico">VIDEO (optional)</span>
-        <span class="hint">Optional session clip. Remove if not used.</span>
-      </div>
+    <div class="media grid-3">
+      <figure class="shot-fig locked">
+        <a class="shot-link" href="mailto:karerwau@gmail.com?subject=Beneva%20project&body=I%27d%20like%20to%20know%20more%20about%20your%20beneva%20project">
+          <span class="shot-wrap">
+            <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/beneva-hidden-nps.png</span></span>
+            <img class="shot" src="images/beneva-hidden-nps.png" alt="Confidential Beneva findings, available on request" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+            <span class="lock-overlay" aria-hidden="true">
+              <span class="lock-ico"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>
+              <span class="lock-t">Locked — contact me to view</span>
+            </span>
+          </span>
+          <span class="shot-cap">Ask me about this project <span class="ar">✉</span></span>
+        </a>
+      </figure>
+      <figure class="shot-fig">
+        <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/beneva-quote.png</span></span>
+        <img class="shot" src="images/beneva-quote.png" alt="Beneva insurance quote flow" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+        <figcaption class="shot-cap">Quote flow</figcaption>
+      </figure>
+      <figure class="shot-fig">
+        <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/beneva-website.png</span></span>
+        <img class="shot" src="images/beneva-website.png" alt="Beneva live website" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+        <figcaption class="shot-cap">Live website</figcaption>
+      </figure>
     </div>
   </article>
 
@@ -560,11 +642,11 @@
       <div class="mt"><span class="arr">→</span>SEXODEV research-chair automations</div>
       <p>Designed AI-driven workflows turning meeting recordings into assigned tasks and filed documentation for a remote research team at UQAM, with a Notion workspace as the single source of truth.</p>
     </div>
-    <div class="more-item reveal">
+    <a class="more-item reveal" href="https://app.notion.com/p/ESDC-Work-Portfolio-2f67856cf32c80799f05e9aa9ddd8df5" target="_blank" rel="noopener">
       <div class="mtag">Service Design · IA</div>
       <div class="mt"><span class="arr">→</span>ESDC Wellness Gym SharePoint redesign</div>
       <p>Led interviews and two rounds of tree testing to rebuild the information architecture of a workplace mental-health hub serving 40,000+ public servants in both official languages.</p>
-    </div>
+    </a>
     <div class="more-item reveal">
       <div class="mtag">Research Operations</div>
       <div class="mt"><span class="arr">→</span>IncluCity research-ops framework</div>
