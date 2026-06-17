@@ -241,22 +241,40 @@
   .metric .v{font-family:"Fraunces",serif;font-size:26px;font-weight:500;line-height:1;color:var(--signal)}
   .metric .k{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);margin-top:7px;letter-spacing:.03em}
 
-  /* media slots */
+  /* media — responsive image grids */
   .media{margin-top:30px;display:grid;gap:16px}
-  @media(min-width:740px){.media.two{grid-template-columns:1.4fr 1fr}}
-  .slot{
-    border:1px dashed var(--signal-dim);border-radius:6px;background:var(--surface);
-    min-height:230px;display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;padding:24px;color:var(--muted);gap:8px;
-    transition:border-color .3s var(--ease), background .3s var(--ease)
+  .media.grid-2{grid-template-columns:1fr}
+  @media(min-width:640px){.media.grid-2{grid-template-columns:1fr 1fr}}
+  .media.grid-3{grid-template-columns:1fr}
+  @media(min-width:560px){.media.grid-3{grid-template-columns:1fr 1fr}}
+  @media(min-width:860px){.media.grid-3{grid-template-columns:repeat(3,1fr)}}
+
+  .shot-fig{
+    margin:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;
+    background:var(--surface);box-shadow:var(--shadow);
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease)
   }
-  .slot:hover{border-color:var(--signal);background:var(--signal-soft)}
-  .slot .ico{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;color:var(--signal)}
-  .slot .hint{font-size:13px;max-width:34ch}
-  /* When you replace a slot with a real image, use: <img class="shot" src="..."> */
-  .shot{width:100%;border:1px solid var(--line);border-radius:6px;display:block}
-  .ratio-video{position:relative;width:100%;padding-top:56.25%;border:1px solid var(--line);border-radius:6px;overflow:hidden}
-  .ratio-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .shot-fig:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift);border-color:var(--signal-dim)}
+  .shot-link{display:block;color:var(--ink);text-decoration:none}
+  .shot-link:hover{text-decoration:none}
+  .shot{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;background:var(--surface);transition:transform .6s var(--ease)}
+  .shot-link:hover .shot{transform:scale(1.04)}
+  .shot-cap{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:11px 14px;border-top:1px solid var(--line);background:var(--surface-2);
+    font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.03em;color:var(--ink)
+  }
+  .shot-cap .ar{color:var(--signal);transition:transform .3s var(--ease)}
+  .shot-link:hover .shot-cap{color:var(--signal)}
+  .shot-link:hover .shot-cap .ar{transform:translate(3px,-3px)}
+
+  /* placeholder shown until the real file lands in images/ */
+  .shot-ph{display:none;min-height:172px;flex-direction:column;align-items:center;justify-content:center;gap:7px;text-align:center;padding:22px;background:var(--surface)}
+  .shot-fig.pending{border-style:dashed;border-color:var(--signal-dim);box-shadow:none}
+  .shot-fig.pending .shot{display:none}
+  .shot-fig.pending .shot-ph{display:flex}
+  .shot-ph .pl{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;color:var(--signal)}
+  .shot-ph .pn{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);word-break:break-all}
 
   /* ---------- more work ---------- */
   .more-grid{display:grid;gap:0;border-top:1px solid var(--line);margin-top:8px}
@@ -390,17 +408,21 @@
       <div class="metric"><div class="v">FLAIRS</div><div class="k">published &amp; presented</div></div>
     </div>
 
-    <div class="media two">
-      <!-- IMAGE SLOT: replace this whole .slot div with: <img class="shot" src="images/thesis-tutor.png" alt="AI tutor interface"> -->
-      <div class="slot">
-        <span class="ico">IMAGE</span>
-        <span class="hint">Screenshot of the AI tutor interface or an experiment-setup / EEG photo. Drop file in <span class="mono">images/</span> and swap this block for an &lt;img&gt;.</span>
-      </div>
-      <!-- VIDEO SLOT (optional): replace inner with a real iframe (YouTube/Vimeo) or delete -->
-      <div class="slot">
-        <span class="ico">VIDEO (optional)</span>
-        <span class="hint">A short walkthrough of the tutor or a finding clip. Paste an embed iframe here, or remove this slot.</span>
-      </div>
+    <div class="media grid-2">
+      <figure class="shot-fig">
+        <a class="shot-link" href="https://hecmontreal.on.worldcat.org/oclc/1578112535" target="_blank" rel="noopener">
+          <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/thesis-eeg-results.png</span></span>
+          <img class="shot" src="images/thesis-eeg-results.png" alt="EEG results from the AI tutor study" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+          <span class="shot-cap">Read the full thesis <span class="ar">↗</span></span>
+        </a>
+      </figure>
+      <figure class="shot-fig">
+        <a class="shot-link" href="https://journals.flvc.org/FLAIRS/article/view/141860" target="_blank" rel="noopener">
+          <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/thesis-tester-view.jpg</span></span>
+          <img class="shot" src="images/thesis-tester-view.jpg" alt="The AI tutor interface as seen by study participants" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+          <span class="shot-cap">Conference publication <span class="ar">↗</span></span>
+        </a>
+      </figure>
     </div>
   </article>
 
@@ -434,15 +456,21 @@
       </div>
     </div>
 
-    <div class="media two">
-      <div class="slot">
-        <span class="ico">IMAGE</span>
-        <span class="hint">Screenshot of a reference guide, an agent/RAG flow diagram, or a training resource. Drop in <span class="mono">images/</span>.</span>
-      </div>
-      <div class="slot">
-        <span class="ico">VIDEO (optional)</span>
-        <span class="hint">Optional demo of the tool or workflow. Paste an embed iframe, or remove this slot.</span>
-      </div>
+    <div class="media grid-2">
+      <figure class="shot-fig">
+        <a class="shot-link" href="https://docs.google.com/presentation/d/1cgMEV4WBNWvOtYo0ix8ckcS5aXyAW74B/edit?usp=sharing&ouid=105141349933021285173&rtpof=true&sd=true" target="_blank" rel="noopener">
+          <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/esdc-ai-chosing-model.png</span></span>
+          <img class="shot" src="images/esdc-ai-chosing-model.png" alt="Guidance slide on choosing an AI model" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+          <span class="shot-cap">Download the deck <span class="ar">↗</span></span>
+        </a>
+      </figure>
+      <figure class="shot-fig">
+        <a class="shot-link" href="https://docs.google.com/presentation/d/1GUnzGEXYaDkGnYJrs56MjqIrRhVzpQCV/edit?usp=sharing&ouid=105141349933021285173&rtpof=true&sd=true" target="_blank" rel="noopener">
+          <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/esdc-ai-custom-instr.png</span></span>
+          <img class="shot" src="images/esdc-ai-custom-instr.png" alt="Guidance slide on writing custom AI instructions" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+          <span class="shot-cap">Download the deck <span class="ar">↗</span></span>
+        </a>
+      </figure>
     </div>
   </article>
 
@@ -484,15 +512,22 @@
       <div class="metric"><div class="v">35</div><div class="k">participants · 4 equity groups</div></div>
     </div>
 
-    <div class="media two">
-      <div class="slot">
-        <span class="ico">IMAGE</span>
-        <span class="hint">Miro analysis board, the services-tested grid, or a session photo. Drop in <span class="mono">images/</span>.</span>
-      </div>
-      <div class="slot">
-        <span class="ico">VIDEO (optional)</span>
-        <span class="hint">Optional. Remove if not used.</span>
-      </div>
+    <div class="media grid-3">
+      <figure class="shot-fig">
+        <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/calgary-311.png</span></span>
+        <img class="shot" src="images/calgary-311.png" alt="Calgary 311 service tested in the pilot" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+        <figcaption class="shot-cap">311 service</figcaption>
+      </figure>
+      <figure class="shot-fig">
+        <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/calgary-fair-entry.png</span></span>
+        <img class="shot" src="images/calgary-fair-entry.png" alt="Calgary Fair Entry service tested in the pilot" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+        <figcaption class="shot-cap">Fair Entry</figcaption>
+      </figure>
+      <figure class="shot-fig">
+        <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/calgary-rec.png</span></span>
+        <img class="shot" src="images/calgary-rec.png" alt="Calgary Recreation service tested in the pilot" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+        <figcaption class="shot-cap">Recreation</figcaption>
+      </figure>
     </div>
   </article>
 
@@ -534,15 +569,24 @@
       <div class="metric"><div class="v">58%</div><div class="k">success on the failing flow</div></div>
     </div>
 
-    <div class="media two">
-      <div class="slot">
-        <span class="ico">IMAGE</span>
-        <span class="hint">The quote flow, the severity matrix, or the CSAT-by-task chart. Drop in <span class="mono">images/</span>.</span>
-      </div>
-      <div class="slot">
-        <span class="ico">VIDEO (optional)</span>
-        <span class="hint">Optional session clip. Remove if not used.</span>
-      </div>
+    <div class="media grid-3">
+      <figure class="shot-fig">
+        <a class="shot-link" href="mailto:karerwau@gmail.com?subject=Beneva%20project&body=I%27d%20like%20to%20know%20more%20about%20your%20beneva%20project">
+          <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/beneva-hidden-nps.png</span></span>
+          <img class="shot" src="images/beneva-hidden-nps.png" alt="The hidden control that broke the Beneva quote flow" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+          <span class="shot-cap">Ask me about this project <span class="ar">✉</span></span>
+        </a>
+      </figure>
+      <figure class="shot-fig">
+        <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/beneva-quote.png</span></span>
+        <img class="shot" src="images/beneva-quote.png" alt="Beneva insurance quote flow" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+        <figcaption class="shot-cap">Quote flow</figcaption>
+      </figure>
+      <figure class="shot-fig">
+        <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/beneva-website.png</span></span>
+        <img class="shot" src="images/beneva-website.png" alt="Beneva live website" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+        <figcaption class="shot-cap">Live website</figcaption>
+      </figure>
     </div>
   </article>
 
