@@ -10,6 +10,11 @@
 <meta property="og:title" content="Uriel Karerwa — UX Research & AI Interaction Design">
 <meta property="og:description" content="I research and design how people interact with AI systems.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="images/favicon-192.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -181,6 +186,37 @@
   .intro p.lead .hl{color:var(--signal);font-style:italic}
   .intro .detail{font-family:"Inter",sans-serif;font-size:17px;max-width:62ch;margin-top:24px;color:var(--ink);line-height:1.65}
   .intro .detail.em{font-weight:600;font-size:19px;color:var(--ink);max-width:60ch}
+
+  /* ---------- photo band ---------- */
+  .photo-band{margin:52px 0 4px;display:grid;gap:16px;grid-template-columns:1fr}
+  @media(min-width:720px){.photo-band{grid-template-columns:1fr 1.45fr}}
+  .pb-fig{
+    position:relative;margin:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;
+    background:var(--surface);box-shadow:var(--shadow);
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease)
+  }
+  .pb-fig:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift);border-color:var(--signal-dim)}
+  .pb-fig img{width:100%;height:300px;display:block;object-fit:cover;transition:transform .7s var(--ease)}
+  @media(min-width:720px){.pb-fig img{height:430px}}
+  .pb-fig:hover img{transform:scale(1.04)}
+  .pb-cap{
+    position:absolute;left:0;right:0;bottom:0;padding:36px 16px 13px;
+    display:flex;align-items:center;gap:9px;
+    font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;color:#fff;
+    background:linear-gradient(transparent, color-mix(in srgb,var(--ink) 80%, transparent))
+  }
+  .pb-cap .pb-dot{width:6px;height:6px;border-radius:50%;background:var(--signal);flex:0 0 auto;box-shadow:0 0 8px var(--signal)}
+  /* placeholder until the photo lands in images/ */
+  .pb-fig.pending{border-style:dashed;border-color:var(--signal-dim);box-shadow:none}
+  .pb-fig.pending img,.pb-fig.pending .pb-cap{display:none}
+  .pb-ph{display:none}
+  .pb-fig.pending .pb-ph{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;
+    min-height:300px;text-align:center;padding:22px;background:var(--surface)
+  }
+  @media(min-width:720px){.pb-fig.pending .pb-ph{min-height:430px}}
+  .pb-ph .pl{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;color:var(--signal)}
+  .pb-ph .pn{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);word-break:break-all}
 
   /* ---------- section heading ---------- */
   .section-head{
@@ -386,6 +422,19 @@
   <p class="detail">I work across the full range (qual and quant), from behavioural, self-reported data to physiological measurement to inform design decisions. I'm interested in designing accessible and responsible AI systems that drive business goals and solve real human problems.</p>
   <p class="detail">Check out my work below, starting with my master's thesis research project at HEC Montréal's Tech3Lab, Canada's largest UX Research Lab, where we used EEG and pupillometry to study the differences in how people learn from AI tutors.</p>
 </section>
+
+<div class="photo-band wrap reveal">
+  <figure class="pb-fig">
+    <span class="pb-ph"><span class="pl">IMAGE</span><span class="pn">images/uk-presenting.png</span></span>
+    <img src="images/uk-presenting.png" alt="Uriel Karerwa presenting UX research findings to an audience" loading="lazy" style="object-position:center 28%" onerror="this.closest('.pb-fig').classList.add('pending')">
+    <figcaption class="pb-cap"><span class="pb-dot" aria-hidden="true"></span>Presenting research findings</figcaption>
+  </figure>
+  <figure class="pb-fig">
+    <span class="pb-ph"><span class="pl">IMAGE</span><span class="pn">images/uk-observation.png</span></span>
+    <img src="images/uk-observation.png" alt="Uriel Karerwa in the observation room during a live user study" loading="lazy" onerror="this.closest('.pb-fig').classList.add('pending')">
+    <figcaption class="pb-cap"><span class="pb-dot" aria-hidden="true"></span>In the observation room during a live study</figcaption>
+  </figure>
+</div>
 
 <div class="section-head wrap" id="work">
   <h2>Selected Work</h2>
