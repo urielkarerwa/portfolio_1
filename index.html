@@ -147,6 +147,14 @@
   .theme-toggle .sun{display:none}
   html[data-theme="dark"] .theme-toggle .sun{display:block}
   html[data-theme="dark"] .theme-toggle .moon{display:none}
+  .lang-toggle{
+    appearance:none;border:1px solid var(--line-strong);background:var(--surface);
+    color:var(--ink);height:34px;padding:0 13px;border-radius:100px;cursor:pointer;
+    font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;letter-spacing:.06em;
+    display:inline-flex;align-items:center;justify-content:center;
+    transition:border-color .3s var(--ease), color .3s var(--ease), background .3s var(--ease)
+  }
+  .lang-toggle:hover{border-color:var(--signal);color:var(--signal)}
 
   /* ---------- hero ---------- */
   .hero{padding:96px 0 0}
@@ -389,9 +397,10 @@
   <div class="wrap topbar">
     <a class="name" href="#top"><span class="pulse-dot" aria-hidden="true"></span>URIEL KARERWA</a>
     <nav>
-      <a href="#work" class="ulink">Work</a>
+      <a href="#work" class="ulink" data-t="nav_work">Work</a>
       <a href="https://www.linkedin.com/in/uriel-karerwa" target="_blank" rel="noopener" class="ulink">LinkedIn</a>
-      <a href="mailto:karerwau@gmail.com" class="ulink">Email</a>
+      <a href="mailto:karerwau@gmail.com" class="ulink" data-t="nav_email">Email</a>
+      <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Passer en français">FR</button>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle theme">
         <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
         <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
@@ -403,10 +412,10 @@
 <span id="top"></span>
 
 <section class="hero wrap">
-  <span class="badge"><span class="dot" aria-hidden="true"></span>Open to UX research, Research Operations &amp; AI design roles</span>
-  <h1>I research and design how people <span class="accent">interact</span> with <span class="accent">AI</span> systems.</h1>
-  <p class="sub">A data-driven, human-centered user researcher helping you personalize and integrate responsible AI — and design better systems.</p>
-  <p class="meta mono"><span>Montréal</span><span>M.Sc. User Experience, HEC Montréal</span><span>CAPM</span></p>
+  <span class="badge" data-t="hero_badge"><span class="dot" aria-hidden="true"></span>Open to UX research, Research Operations &amp; AI design roles</span>
+  <h1 data-t="hero_h1">I research and design how people <span class="accent">interact</span> with <span class="accent">AI</span> systems.</h1>
+  <p class="sub" data-t="hero_sub">A data-driven, human-centered user researcher helping you personalize and integrate responsible AI — and design better systems.</p>
+  <p class="meta mono" data-t="hero_meta"><span>Montréal</span><span>M.Sc. User Experience, HEC Montréal</span><span>CAPM</span></p>
 </section>
 
 <div class="trace-band wrap" aria-hidden="true">
@@ -418,32 +427,32 @@
 
 <main id="main">
 <section class="intro wrap">
-  <p class="lead"> <span class="hl">Good research saves you time</span> reducing the risk of overspend on rebuilds.</p>
-  <p class="detail em">I'm a human-centred UX researcher with three years of experience across government, nonprofit, and private sectors.</p>
-  <p class="detail em">I have a certificate in Project Management (CAPM), a master's degree in UX with a background in neuroscience and human-centred AI.</p>
+  <p class="lead" data-t="intro_lead"> <span class="hl">Good research saves you time</span> reducing the risk of overspend on rebuilds.</p>
+  <p class="detail em" data-t="intro_em1">I'm a human-centred UX researcher with three years of experience across government, nonprofit, and private sectors.</p>
+  <p class="detail em" data-t="intro_em2">I have a certificate in Project Management (CAPM), a master's degree in UX with a background in neuroscience and human-centred AI.</p>
 </section>
 
 <div class="photo-band wrap reveal">
   <figure class="pb-fig">
     <span class="pb-ph"><span class="pl">IMAGE</span><span class="pn">images/uk-presenting.png</span></span>
     <img src="images/uk-presenting.png" alt="Uriel Karerwa presenting UX research findings to an audience" loading="lazy" style="object-position:center 28%" onerror="this.closest('.pb-fig').classList.add('pending')">
-    <figcaption class="pb-cap"><span class="pb-dot" aria-hidden="true"></span>Presenting inclusive research report and running workshop</figcaption>
+    <figcaption class="pb-cap" data-t="pb_cap1"><span class="pb-dot" aria-hidden="true"></span>Presenting inclusive research report and running workshop</figcaption>
   </figure>
   <figure class="pb-fig">
     <span class="pb-ph"><span class="pl">IMAGE</span><span class="pn">images/uk-observation.png</span></span>
     <img src="images/uk-observation.png" alt="Uriel Karerwa and co-researcher Hajar in the observation room during a live user study" loading="lazy" onerror="this.closest('.pb-fig').classList.add('pending')">
-    <figcaption class="pb-cap"><span class="pb-dot" aria-hidden="true"></span>Moderating a live research study from the observation room</figcaption>
+    <figcaption class="pb-cap" data-t="pb_cap2"><span class="pb-dot" aria-hidden="true"></span>Moderating a live research study from the observation room</figcaption>
   </figure>
 </div>
 
 <section class="intro wrap">
-  <p class="detail">I leverage a full spectrum of qualitative and quantitative methods, bridging behavioural, self-reported, and physiological data to inform design decisions. I'm interested in designing accessible and responsible AI systems that drive business goals and solve real human problems.</p>
-  <p class="detail">See some of my work below, starting with my master's thesis research project at HEC Montréal's Tech3Lab, Canada's largest UX Research Lab, where we used state-of-the-art tools, like EEG and pupillometry, to study the differences in how people learn from AI tutors.</p>
+  <p class="detail" data-t="intro_d1">I leverage a full spectrum of qualitative and quantitative methods, bridging behavioural, self-reported, and physiological data to inform design decisions. I'm interested in designing accessible and responsible AI systems that drive business goals and solve real human problems.</p>
+  <p class="detail" data-t="intro_d2">See some of my work below, starting with my master's thesis research project at HEC Montréal's Tech3Lab, Canada's largest UX Research Lab, where we used state-of-the-art tools, like EEG and pupillometry, to study the differences in how people learn from AI tutors.</p>
 </section>
 
 <div class="section-head wrap" id="work">
-  <h2>Selected Work</h2>
-  <span class="count">04 case studies</span>
+  <h2 data-t="sh_selected">Selected Work</h2>
+  <span class="count" data-t="sh_selected_count">04 case studies</span>
 </div>
 
 <div class="wrap">
@@ -452,38 +461,38 @@
   <article class="case reveal">
     <div class="case-num">01</div>
     <div class="tags">
-      <span class="tag">Conversation Design</span>
-      <span class="tag">Human–AI Interaction</span>
-      <span class="tag">Applied Research</span>
+      <span class="tag" data-t="tag_convdesign">Conversation Design</span>
+      <span class="tag" data-t="tag_humanai">Human–AI Interaction</span>
+      <span class="tag" data-t="tag_applied">Applied Research</span>
     </div>
-    <h3>How important is an AI tutor's communication style in the learner's experience?</h3>
+    <h3 data-t="c1_h3">How important is an AI tutor's communication style in the learner's experience?</h3>
     <div class="case-meta">
-      <span><b>Role</b> Lead researcher</span>
-      <span><b>Lab</b> Tech3Lab, HEC Montréal</span>
-      <span><b>Period</b> 2024–2026</span>
-      <span><b>Method</b> EEG · Pupillometry · Behavioural · 40 participants</span>
+      <span data-t="c1_m1"><b>Role</b> Lead researcher</span>
+      <span data-t="c1_m2"><b>Lab</b> Tech3Lab, HEC Montréal</span>
+      <span data-t="c1_m3"><b>Period</b> 2024–2026</span>
+      <span data-t="c1_m4"><b>Method</b> EEG · Pupillometry · Behavioural · 40 participants</span>
     </div>
 
     <div class="blocks">
       <div class="block">
-        <div class="lbl">The problem</div>
-        <p>AI tutors are being adopted faster than anyone has measured their effect on the learner. I wanted to know whether adapting the tutor's persona to respond to the user's preferred learning style would change how users learn math. We wanted to know whether there was a change in the user's subjective, lived, and measured experience when comparing a personalized AI tutor with a non-personalized one. </p>
+        <div class="lbl" data-t="lbl_problem">The problem</div>
+        <p data-t="c1_p1">AI tutors are being adopted faster than anyone has measured their effect on the learner. I wanted to know whether adapting the tutor's persona to respond to the user's preferred learning style would change how users learn math. We wanted to know whether there was a change in the user's subjective, lived, and measured experience when comparing a personalized AI tutor with a non-personalized one. </p>
       </div>
       <div class="block">
-        <div class="lbl">What I did</div>
-        <p>Through prompt engineering, I built tutors that adapted their delivery to each learner: more concrete and example-driven for some, more abstract and pattern-focused for others, mapped to Felder-Silverman learner profiles and written entirely into the system prompt. That choice matters for industry: Manipulating the system prompt costs nothing. Forty participants worked through a fully user-led AI-tutored math session on Venn diagrams, logarithms, and parabolas followed by a post-tutoring quiz. We recorded interaction logs, subjective measures (using validated scales), pupillometry, and EEG.</p>
+        <div class="lbl" data-t="lbl_did">What I did</div>
+        <p data-t="c1_p2">Through prompt engineering, I built tutors that adapted their delivery to each learner: more concrete and example-driven for some, more abstract and pattern-focused for others, mapped to Felder-Silverman learner profiles and written entirely into the system prompt. That choice matters for industry: Manipulating the system prompt costs nothing. Forty participants worked through a fully user-led AI-tutored math session on Venn diagrams, logarithms, and parabolas followed by a post-tutoring quiz. We recorded interaction logs, subjective measures (using validated scales), pupillometry, and EEG.</p>
       </div>
       <div class="block">
-        <div class="lbl">What changed</div>
-        <p>The quiz scores did not see any change across treatment conditions; however, the physiological data did see some significant results. Pupil dilation during tutoring was significantly lower with the personalized tutor, suggesting that learners processed the same material with lower cognitive load, as corroborated by the EEG results. They also engaged more, skipping fewer quiz questions and writing out more notation while working with the AI. Although test scores (outcome measures) remained untouched, the underlying interaction experience may have been influenced by the personalization of tutoring. For anyone building EdTech: a more personalized experience can make a difference, and if you only measure outcomes, you miss most of what happens (the cognitive efficiency gains). Our work was presented and published at the Florida AI Research Society's (FLAIRS) annual Conference.</p>
+        <div class="lbl" data-t="lbl_changed">What changed</div>
+        <p data-t="c1_p3">The quiz scores did not see any change across treatment conditions; however, the physiological data did see some significant results. Pupil dilation during tutoring was significantly lower with the personalized tutor, suggesting that learners processed the same material with lower cognitive load, as corroborated by the EEG results. They also engaged more, skipping fewer quiz questions and writing out more notation while working with the AI. Although test scores (outcome measures) remained untouched, the underlying interaction experience may have been influenced by the personalization of tutoring. For anyone building EdTech: a more personalized experience can make a difference, and if you only measure outcomes, you miss most of what happens (the cognitive efficiency gains). Our work was presented and published at the Florida AI Research Society's (FLAIRS) annual Conference.</p>
       </div>
     </div>
 
     <div class="metrics">
-      <div class="metric"><div class="v">40</div><div class="k">participants · 3 sessions each</div></div>
-      <div class="metric"><div class="v">↓ Cognitive Load</div><div class="k">lower pupil dilation &amp; EEG indices</div></div>
-      <div class="metric"><div class="v">EEG</div><div class="k">frontal-theta / parietal-alpha</div></div>
-      <div class="metric"><div class="v">FLAIRS</div><div class="k">published &amp; presented</div></div>
+      <div class="metric"><div class="v">40</div><div class="k" data-t="c1_k1">participants · 3 sessions each</div></div>
+      <div class="metric"><div class="v" data-t="c1_v2">↓ Cognitive Load</div><div class="k" data-t="c1_k2">lower pupil dilation &amp; EEG indices</div></div>
+      <div class="metric"><div class="v">EEG</div><div class="k" data-t="c1_k3">frontal-theta / parietal-alpha</div></div>
+      <div class="metric"><div class="v">FLAIRS</div><div class="k" data-t="c1_k4">published &amp; presented</div></div>
     </div>
 
     <div class="media grid-2">
@@ -491,14 +500,14 @@
         <a class="shot-link" href="https://hecmontreal.on.worldcat.org/oclc/1578112535" target="_blank" rel="noopener">
           <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/thesis-eeg-results.png</span></span>
           <img class="shot" src="images/thesis-eeg-results.png" alt="EEG results from the AI tutor study" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
-          <span class="shot-cap">Read the full thesis <span class="ar">↗</span></span>
+          <span class="shot-cap" data-t="cap_thesis">Read the full thesis <span class="ar">↗</span></span>
         </a>
       </figure>
       <figure class="shot-fig">
         <a class="shot-link" href="https://journals.flvc.org/FLAIRS/article/view/141860" target="_blank" rel="noopener">
           <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/thesis-tester-view.png</span></span>
           <img class="shot" src="images/thesis-tester-view.png" alt="The AI tutor interface as seen by study participants" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
-          <span class="shot-cap">Conference publication <span class="ar">↗</span></span>
+          <span class="shot-cap" data-t="cap_conf">Conference publication <span class="ar">↗</span></span>
         </a>
       </figure>
     </div>
@@ -508,38 +517,38 @@
   <article class="case reveal">
     <div class="case-num">02</div>
     <div class="tags">
-      <span class="tag">AI Implementation</span>
-      <span class="tag">Conversation Design</span>
-      <span class="tag">Public Sector</span>
+      <span class="tag" data-t="tag_aiimpl">AI Implementation</span>
+      <span class="tag" data-t="tag_convdesign">Conversation Design</span>
+      <span class="tag" data-t="tag_public">Public Sector</span>
     </div>
-    <h3>Responsible AI use in Government: training and advocacy.</h3>
+    <h3 data-t="c2_h3">Responsible AI use in Government: training and advocacy.</h3>
     <div class="case-meta">
-      <span><b>Role</b> UX design &amp; research</span>
-      <span><b>Client</b> Employment and Social Development Canada</span>
-      <span><b>Period</b> 2024–present</span>
-      <span><b>Method</b> Internal interviews &amp; surveys with team members</span>
+      <span data-t="c2_m1"><b>Role</b> UX design &amp; research</span>
+      <span data-t="c2_m2"><b>Client</b> Employment and Social Development Canada</span>
+      <span data-t="c2_m3"><b>Period</b> 2024–present</span>
+      <span data-t="c2_m4"><b>Method</b> Internal interviews &amp; surveys with team members</span>
     </div>
 
     <div class="blocks">
       <div class="block">
-        <div class="lbl">The problem</div>
-        <p>ESDC was adopting AI tools faster than its people could use them well. The Workplace Mental Health (WMH) team wanted to make AI that could help public servants locate mental health services and programs much faster, without creating new risks or confusion in a sensitive domain. <em>They also wanted to find ways to improve their own outputs using AI within the WMH team but were unsure how.</em></p>
+        <div class="lbl" data-t="lbl_problem">The problem</div>
+        <p data-t="c2_p1">ESDC was adopting AI tools faster than its people could use them well. The Workplace Mental Health (WMH) team wanted to make AI that could help public servants locate mental health services and programs much faster, without creating new risks or confusion in a sensitive domain. <em>They also wanted to find ways to improve their own outputs using AI within the WMH team but were unsure how.</em></p>
       </div>
       <div class="block">
-        <div class="lbl">What I did</div>
-        <p>I fine-tuned and tested a retrieval-augmented generation (RAG) system intended for broad internal use to improve access to mental health resources. I designed personalized, agentic solutions to increase productivity and wrote AI training resources and reference guides to help colleagues use the tools. I consulted on AI implementation strategy aligned with the 13 psychological factors of a healthy workplace at ESDC action group meetings.</p>
+        <div class="lbl" data-t="lbl_did">What I did</div>
+        <p data-t="c2_p2">I fine-tuned and tested a retrieval-augmented generation (RAG) system intended for broad internal use to improve access to mental health resources. I designed personalized, agentic solutions to increase productivity and wrote AI training resources and reference guides to help colleagues use the tools. I consulted on AI implementation strategy aligned with the 13 psychological factors of a healthy workplace at ESDC action group meetings.</p>
       </div>
       <div class="block">
-        <div class="lbl">What changed</div>
-        <p>The team moved from ad-hoc experimentation to a documented practice. I built a toolkit of resources and reference guides to democratize AI knowledge and provide a starting point for using agents. Examples and use cases were framed around real tasks.</p>
+        <div class="lbl" data-t="lbl_changed">What changed</div>
+        <p data-t="c2_p3">The team moved from ad-hoc experimentation to a documented practice. I built a toolkit of resources and reference guides to democratize AI knowledge and provide a starting point for using agents. Examples and use cases were framed around real tasks.</p>
       </div>
     </div>
 
     <div class="metrics">
-      <div class="metric"><div class="v">8</div><div class="k">personalized learning modules</div></div>
-      <div class="metric"><div class="v">3</div><div class="k">agents created for the team</div></div>
-      <div class="metric"><div class="v">RAG</div><div class="k">mental-health system tested &amp; fine-tuned</div></div>
-      <div class="metric"><div class="v">13</div><div class="k">psychological factors advised on</div></div>
+      <div class="metric"><div class="v">8</div><div class="k" data-t="c2_k1">personalized learning modules</div></div>
+      <div class="metric"><div class="v">3</div><div class="k" data-t="c2_k2">agents created for the team</div></div>
+      <div class="metric"><div class="v">RAG</div><div class="k" data-t="c2_k3">mental-health system tested &amp; fine-tuned</div></div>
+      <div class="metric"><div class="v">13</div><div class="k" data-t="c2_k4">psychological factors advised on</div></div>
     </div>
 
     <div class="media grid-2">
@@ -547,14 +556,14 @@
         <a class="shot-link" href="https://docs.google.com/presentation/d/1cgMEV4WBNWvOtYo0ix8ckcS5aXyAW74B/edit?usp=sharing&ouid=105141349933021285173&rtpof=true&sd=true" target="_blank" rel="noopener">
           <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/esdc-ai-chosing-model.png</span></span>
           <img class="shot fit-contain" src="images/esdc-ai-chosing-model.png" alt="Guidance slide on choosing an AI model" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
-          <span class="shot-cap">Download the deck <span class="ar">↗</span></span>
+          <span class="shot-cap" data-t="cap_deck">Download the deck <span class="ar">↗</span></span>
         </a>
       </figure>
       <figure class="shot-fig">
         <a class="shot-link" href="https://docs.google.com/presentation/d/1GUnzGEXYaDkGnYJrs56MjqIrRhVzpQCV/edit?usp=sharing&ouid=105141349933021285173&rtpof=true&sd=true" target="_blank" rel="noopener">
           <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/esdc-ai-custom-instr.png</span></span>
           <img class="shot fit-contain" src="images/esdc-ai-custom-instr.png" alt="Guidance slide on writing custom AI instructions" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
-          <span class="shot-cap">Download the deck <span class="ar">↗</span></span>
+          <span class="shot-cap" data-t="cap_deck">Download the deck <span class="ar">↗</span></span>
         </a>
       </figure>
     </div>
@@ -564,38 +573,38 @@
   <article class="case reveal">
     <div class="case-num">03</div>
     <div class="tags">
-      <span class="tag">UX Research</span>
-      <span class="tag">Research Operations</span>
-      <span class="tag">Not-for-profit & Public Sector</span>
+      <span class="tag" data-t="tag_uxr">UX Research</span>
+      <span class="tag" data-t="tag_resops">Research Operations</span>
+      <span class="tag" data-t="tag_osbl">Not-for-profit & Public Sector</span>
     </div>
-    <h3>Digital equity and inclusive design starts with inclusive research practices.</h3>
+    <h3 data-t="c3_h3">Digital equity and inclusive design starts with inclusive research practices.</h3>
     <div class="case-meta">
-      <span><b>Role</b> Project lead, research operations</span>
-      <span><b>Partner</b> IncluCity × City of Calgary</span>
-      <span><b>Period</b> 2023–2024</span>
-      <span><b>Scale</b> 7 services · 4 equity groups · 35 participants</span>
+      <span data-t="c3_m1"><b>Role</b> Project lead, research operations</span>
+      <span data-t="c3_m2"><b>Partner</b> IncluCity × City of Calgary</span>
+      <span data-t="c3_m3"><b>Period</b> 2023–2024</span>
+      <span data-t="c3_m4"><b>Scale</b> 7 services · 4 equity groups · 35 participants</span>
     </div>
 
     <div class="blocks">
       <div class="block">
-        <div class="lbl">The problem</div>
-        <p>The City of Calgary digital team had tested its digital services for years, but previous testers were not the people most affected when those services failed. Newcomers, older adults, and people with disabilities using assistive technology were largely absent from the design loop. Our job at IncluCity was to support the city's efforts to recruit underrepresented groups for testing.</p>
+        <div class="lbl" data-t="lbl_problem">The problem</div>
+        <p data-t="c3_p1">The City of Calgary digital team had tested its digital services for years, but previous testers were not the people most affected when those services failed. Newcomers, older adults, and people with disabilities using assistive technology were largely absent from the design loop. Our job at IncluCity was to support the city's efforts to recruit underrepresented groups for testing.</p>
       </div>
       <div class="block">
-        <div class="lbl">What I did</div>
-        <p>As the program manager, I led recruitment, project management, and volunteer coordination across roughly 20 researchers between the two teams, with a target of four equity groups and eight participants each. Recruiting participants with disabilities broke the original plan: none of our 600+ existing testers matched the full criteria. I put three changes in place, a referral program with incentives that opened snowball recruitment, removal of a screening rule that filtered out eligible people, and high-touch onboarding for testers who weren't answering email.</p>
+        <div class="lbl" data-t="lbl_did">What I did</div>
+        <p data-t="c3_p2">As the program manager, I led recruitment, project management, and volunteer coordination across roughly 20 researchers between the two teams, with a target of four equity groups and eight participants each. Recruiting participants with disabilities broke the original plan: none of our 600+ existing testers matched the full criteria. I put three changes in place, a referral program with incentives that opened snowball recruitment, removal of a screening rule that filtered out eligible people, and high-touch onboarding for testers who weren't answering email.</p>
       </div>
       <div class="block">
-        <div class="lbl">What changed</div>
-        <p>The pilot mapped 18 distinct equity challenges across seven services. Three city service teams adopted the findings (Recreation, myID, Parks), a follow-up study on people with disabilities was approved, and mobile-plus-desktop testing for the same audience became standard.</p>
+        <div class="lbl" data-t="lbl_changed">What changed</div>
+        <p data-t="c3_p3">The pilot mapped 18 distinct equity challenges across seven services. Three city service teams adopted the findings (Recreation, myID, Parks), a follow-up study on people with disabilities was approved, and mobile-plus-desktop testing for the same audience became standard.</p>
       </div>
     </div>
 
     <div class="metrics">
-      <div class="metric"><div class="v">18</div><div class="k">equity challenges mapped</div></div>
-      <div class="metric"><div class="v">3</div><div class="k">service teams adopted findings</div></div>
-      <div class="metric"><div class="v">+1</div><div class="k">follow-up study approved</div></div>
-      <div class="metric"><div class="v">35</div><div class="k">participants · 4 equity groups</div></div>
+      <div class="metric"><div class="v">18</div><div class="k" data-t="c3_k1">equity challenges mapped</div></div>
+      <div class="metric"><div class="v">3</div><div class="k" data-t="c3_k2">service teams adopted findings</div></div>
+      <div class="metric"><div class="v">+1</div><div class="k" data-t="c3_k3">follow-up study approved</div></div>
+      <div class="metric"><div class="v">35</div><div class="k" data-t="c3_k4">participants · 4 equity groups</div></div>
     </div>
 
     <div class="media grid-2">
@@ -603,14 +612,14 @@
         <a class="shot-link" href="https://docs.google.com/presentation/d/1R6TLxzSqTOfp7H6spHizOsz0JSNgmmI488aMy5n-QTA/edit?usp=sharing" target="_blank" rel="noopener">
           <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/calgary-deck-cover.png</span></span>
           <img class="shot fit-contain" src="images/calgary-deck-cover.png" alt="Cover of the IncluCity × Calgary case study deck" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
-          <span class="shot-cap">Read the full case study <span class="ar">↗</span></span>
+          <span class="shot-cap" data-t="cap_casestudy">Read the full case study <span class="ar">↗</span></span>
         </a>
       </figure>
       <figure class="shot-fig">
         <a class="shot-link" href="https://www.calgary.ca/social-services/low-income/fair-entry-subsidy.html" target="_blank" rel="noopener">
           <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/calgary-fair-entry.png</span></span>
           <img class="shot" src="images/calgary-fair-entry.png" alt="City of Calgary Fair Entry service tested in the pilot" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
-          <span class="shot-cap">Fair Entry service <span class="ar">↗</span></span>
+          <span class="shot-cap" data-t="cap_fairentry">Fair Entry service <span class="ar">↗</span></span>
         </a>
       </figure>
     </div>
@@ -620,38 +629,38 @@
   <article class="case reveal">
     <div class="case-num">04</div>
     <div class="tags">
-      <span class="tag">UX Research</span>
-      <span class="tag">Usability Evaluation</span>
-      <span class="tag">Private Sector</span>
+      <span class="tag" data-t="tag_uxr">UX Research</span>
+      <span class="tag" data-t="tag_usability">Usability Evaluation</span>
+      <span class="tag" data-t="tag_private">Private Sector</span>
     </div>
-    <h3>Finding the one button that broke an insurance quote flow.</h3>
+    <h3 data-t="c4_h3">Finding the one button that broke an insurance quote flow.</h3>
     <div class="case-meta">
-      <span><b>Role</b> UX researcher (4-person team)</span>
-      <span><b>Client</b> Beneva, with HEC Montréal UX Lab</span>
-      <span><b>Period</b> 2025</span>
-      <span><b>Scale</b> 2 products · 4 scenarios · 12 participants</span>
+      <span data-t="c4_m1"><b>Role</b> UX researcher (4-person team)</span>
+      <span data-t="c4_m2"><b>Client</b> Beneva, with HEC Montréal UX Lab</span>
+      <span data-t="c4_m3"><b>Period</b> 2025</span>
+      <span data-t="c4_m4"><b>Scale</b> 2 products · 4 scenarios · 12 participants</span>
     </div>
 
     <div class="blocks">
       <div class="block">
-        <div class="lbl">The problem</div>
-        <p>Beneva, one of Canada's largest mutual insurers, wanted to know whether real users could complete home and car quotes as smoothly as competitors advertised, and explore why users may not complete the full quote process.</p>
+        <div class="lbl" data-t="lbl_problem">The problem</div>
+        <p data-t="c4_p1">Beneva, one of Canada's largest mutual insurers, wanted to know whether real users could complete home and car quotes as smoothly as competitors advertised, and explore why users may not complete the full quote process.</p>
       </div>
       <div class="block">
-        <div class="lbl">What I did</div>
-        <p>I was the study design and quantitative research specialist on this research team. We recruited 12 participants who had shopped for insurance in the past year. We evaluated both home and auto flows by separating them into two parts, making four task scenarios. We ran a mixed-methods observational study measuring scale items such as satisfaction and behavioural and system measures such as effectiveness and efficiency, which we benchmarked against competitors. Each section finished with a qualitative interview.</p>
+        <div class="lbl" data-t="lbl_did">What I did</div>
+        <p data-t="c4_p2">I was the study design and quantitative research specialist on this research team. We recruited 12 participants who had shopped for insurance in the past year. We evaluated both home and auto flows by separating them into two parts, making four task scenarios. We ran a mixed-methods observational study measuring scale items such as satisfaction and behavioural and system measures such as effectiveness and efficiency, which we benchmarked against competitors. Each section finished with a qualitative interview.</p>
       </div>
       <div class="block">
-        <div class="lbl">What changed</div>
-        <p>The home-quote edit flow broke the study: six of twelve participants failed it because the price card still read $0.00 and they never noticed the Recalculate button at the top of the page. We flagged it as the lead usability catastrophe and delivered eight prioritized fixes with severity ratings the product team could act on. I cannot openly discuss the results of this study; however, I can refer broadly to the methods and outcomes in an interview if contacted. </p>
+        <div class="lbl" data-t="lbl_changed">What changed</div>
+        <p data-t="c4_p3">The home-quote edit flow broke the study: six of twelve participants failed it because the price card still read $0.00 and they never noticed the Recalculate button at the top of the page. We flagged it as the lead usability catastrophe and delivered eight prioritized fixes with severity ratings the product team could act on. I cannot openly discuss the results of this study; however, I can refer broadly to the methods and outcomes in an interview if contacted. </p>
       </div>
     </div>
 
     <div class="metrics">
-      <div class="metric"><div class="v">6/12</div><div class="k">stalled on one hidden button</div></div>
-      <div class="metric"><div class="v">79</div><div class="k">SUS baseline for re-testing</div></div>
-      <div class="metric"><div class="v">8</div><div class="k">prioritized fixes delivered</div></div>
-      <div class="metric"><div class="v">58%</div><div class="k">success on the failing flow</div></div>
+      <div class="metric"><div class="v">6/12</div><div class="k" data-t="c4_k1">stalled on one hidden button</div></div>
+      <div class="metric"><div class="v">79</div><div class="k" data-t="c4_k2">SUS baseline for re-testing</div></div>
+      <div class="metric"><div class="v">8</div><div class="k" data-t="c4_k3">prioritized fixes delivered</div></div>
+      <div class="metric"><div class="v">58%</div><div class="k" data-t="c4_k4">success on the failing flow</div></div>
     </div>
 
     <div class="media grid-2">
@@ -662,17 +671,17 @@
             <img class="shot" src="images/beneva-hidden-nps.png" alt="Confidential Beneva findings, available on request" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
             <span class="lock-overlay" aria-hidden="true">
               <span class="lock-ico"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>
-              <span class="lock-t">Locked — contact me to view</span>
+              <span class="lock-t" data-t="lock_view">Locked — contact me to view</span>
             </span>
           </span>
-          <span class="shot-cap">Ask me about this project <span class="ar">✉</span></span>
+          <span class="shot-cap" data-t="cap_ask">Ask me about this project <span class="ar">✉</span></span>
         </a>
       </figure>
       <figure class="shot-fig">
         <a class="shot-link" href="https://www.beneva.ca/en/home-insurance" target="_blank" rel="noopener">
           <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/beneva-website.png</span></span>
           <img class="shot" src="images/beneva-website.png" alt="Beneva home insurance live website" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
-          <span class="shot-cap">Live website <span class="ar">↗</span></span>
+          <span class="shot-cap" data-t="cap_live">Live website <span class="ar">↗</span></span>
         </a>
       </figure>
     </div>
@@ -681,31 +690,31 @@
 </div>
 
 <div class="section-head wrap">
-  <h2>More Work</h2>
+  <h2 data-t="sh_more">More Work</h2>
   <span class="count">04</span>
 </div>
 
 <section class="wrap">
   <div class="more-grid">
     <div class="more-item reveal">
-      <div class="mtag">AI Implementation · Process Design</div>
-      <div class="mt"><span class="arr">→</span>SEXODEV research-chair automations</div>
-      <p>Designed AI-driven workflows turning meeting recordings into assigned tasks and filed documentation for a remote research team at UQAM, with a Notion workspace as the single source of truth.</p>
+      <div class="mtag" data-t="mw1_tag">AI Implementation · Process Design</div>
+      <div class="mt" data-t="mw1_t"><span class="arr">→</span>SEXODEV research-chair automations</div>
+      <p data-t="mw1_p">Designed AI-driven workflows turning meeting recordings into assigned tasks and filed documentation for a remote research team at UQAM, with a Notion workspace as the single source of truth.</p>
     </div>
     <a class="more-item reveal" href="https://app.notion.com/p/ESDC-Work-Portfolio-2f67856cf32c80799f05e9aa9ddd8df5" target="_blank" rel="noopener">
-      <div class="mtag">Service Design · IA</div>
-      <div class="mt"><span class="arr">→</span>ESDC Wellness Gym SharePoint redesign</div>
-      <p>Led interviews and two rounds of tree testing to rebuild the information architecture of a workplace mental-health hub serving 40,000+ public servants in both official languages.</p>
+      <div class="mtag" data-t="mw2_tag">Service Design · IA</div>
+      <div class="mt" data-t="mw2_t"><span class="arr">→</span>ESDC Wellness Gym SharePoint redesign</div>
+      <p data-t="mw2_p">Led interviews and two rounds of tree testing to rebuild the information architecture of a workplace mental-health hub serving 40,000+ public servants in both official languages.</p>
     </a>
     <div class="more-item reveal">
-      <div class="mtag">Research Operations</div>
-      <div class="mt"><span class="arr">→</span>IncluCity research-ops framework</div>
-      <p>Built the operations backbone for an inclusive-research society: participant onboarding, training, and data management supporting 50+ researchers and 140+ interviews.</p>
+      <div class="mtag" data-t="mw3_tag">Research Operations</div>
+      <div class="mt" data-t="mw3_t"><span class="arr">→</span>IncluCity research-ops framework</div>
+      <p data-t="mw3_p">Built the operations backbone for an inclusive-research society: participant onboarding, training, and data management supporting 50+ researchers and 140+ interviews.</p>
     </div>
     <div class="more-item reveal">
-      <div class="mtag">UX Research · AI Product</div>
-      <div class="mt"><span class="arr">→</span>Weever.ai shopping-assistant evaluation</div>
-      <p>Mixed-method usability evaluation of a consumer AI shopping assistant, surfacing trust and clarity barriers in a conversational commerce experience.</p>
+      <div class="mtag" data-t="mw4_tag">UX Research · AI Product</div>
+      <div class="mt" data-t="mw4_t"><span class="arr">→</span>Weever.ai shopping-assistant evaluation</div>
+      <p data-t="mw4_p">Mixed-method usability evaluation of a consumer AI shopping assistant, surfacing trust and clarity barriers in a conversational commerce experience.</p>
     </div>
   </div>
 </section>
@@ -713,13 +722,13 @@
 
 <footer>
   <div class="wrap">
-    <div class="big">Let's talk. <a href="mailto:karerwau@gmail.com">karerwau@gmail.com</a></div>
+    <div class="big" data-t="foot_big">Let's talk. <a href="mailto:karerwau@gmail.com">karerwau@gmail.com</a></div>
     <div class="frow">
       <a href="mailto:karerwau@gmail.com" class="ulink">karerwau@gmail.com</a>
       <a href="https://www.linkedin.com/in/uriel-karerwa" target="_blank" rel="noopener" class="ulink">LinkedIn</a>
       <span>Montréal, QC</span>
     </div>
-    <div class="colophon">Uriel Karerwa · UX Research &amp; AI Interaction Design · Built 2026</div>
+    <div class="colophon" data-t="foot_colophon">Uriel Karerwa · UX Research &amp; AI Interaction Design · Built 2026</div>
   </div>
 </footer>
 
@@ -738,6 +747,143 @@
         var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         root.setAttribute('data-theme', next);
         try{ localStorage.setItem('theme', next); }catch(e){}
+      });
+    }
+  })();
+
+  // --- language: EN default, FR translations swapped in place ---
+  (function(){
+    var root = document.documentElement;
+    var FR = {
+      "__title": `Uriel Karerwa — Recherche UX et conception d'interaction IA`,
+      "nav_work": `Travaux`,
+      "nav_email": `Courriel`,
+      "hero_badge": `<span class="dot" aria-hidden="true"></span>Ouvert aux postes en recherche UX, recherche-opérations et conception d'IA`,
+      "hero_h1": `Je recherche et conçois la façon dont les gens <span class="accent">interagissent</span> avec les systèmes d'<span class="accent">IA</span>.`,
+      "hero_sub": `Chercheur UX centré sur l'humain et guidé par les données, j'aide à personnaliser et à intégrer une IA responsable — et à concevoir de meilleurs systèmes.`,
+      "hero_meta": `<span>Montréal</span><span>M. Sc. Expérience utilisateur, HEC Montréal</span><span>CAPM</span>`,
+      "intro_lead": ` <span class="hl">Une bonne recherche vous fait gagner du temps</span> en réduisant le risque de dépenses excessives en refontes.`,
+      "intro_em1": `Je suis un chercheur UX centré sur l'humain, fort de trois ans d'expérience dans les secteurs public, sans but lucratif et privé.`,
+      "intro_em2": `Je détiens un certificat en gestion de projet (CAPM) et une maîtrise en UX, avec une formation en neurosciences et en IA centrée sur l'humain.`,
+      "intro_d1": `Je mobilise tout l'éventail des méthodes qualitatives et quantitatives, en reliant les données comportementales, auto-déclarées et physiologiques pour éclairer les décisions de conception. Je m'intéresse à la conception de systèmes d'IA accessibles et responsables qui font avancer les objectifs d'affaires et résolvent de vrais problèmes humains.`,
+      "intro_d2": `Découvrez une partie de mon travail ci-dessous, à commencer par mon projet de recherche de maîtrise au Tech3Lab de HEC Montréal, le plus grand laboratoire de recherche UX au Canada, où nous avons utilisé des outils de pointe, comme l'EEG et la pupillométrie, pour étudier les différences dans la façon dont les gens apprennent avec des tuteurs d'IA.`,
+      "pb_cap1": `<span class="pb-dot" aria-hidden="true"></span>Présentation d'un rapport de recherche inclusive et animation d'un atelier`,
+      "pb_cap2": `<span class="pb-dot" aria-hidden="true"></span>Modération d'une étude en direct depuis la salle d'observation`,
+      "sh_selected": `Travaux choisis`,
+      "sh_selected_count": `04 études de cas`,
+      "sh_more": `Autres travaux`,
+      "tag_convdesign": `Conception conversationnelle`,
+      "tag_humanai": `Interaction humain–IA`,
+      "tag_applied": `Recherche appliquée`,
+      "tag_aiimpl": `Implémentation d'IA`,
+      "tag_public": `Secteur public`,
+      "tag_uxr": `Recherche UX`,
+      "tag_resops": `Recherche-opérations`,
+      "tag_osbl": `OSBL et secteur public`,
+      "tag_usability": `Évaluation d'utilisabilité`,
+      "tag_private": `Secteur privé`,
+      "lbl_problem": `Le problème`,
+      "lbl_did": `Ce que j'ai fait`,
+      "lbl_changed": `Ce qui a changé`,
+      "c1_h3": `Quelle est l'importance du style de communication d'un tuteur d'IA dans l'expérience de l'apprenant?`,
+      "c1_m1": `<b>Rôle</b> Chercheur principal`,
+      "c1_m2": `<b>Labo</b> Tech3Lab, HEC Montréal`,
+      "c1_m3": `<b>Période</b> 2024–2026`,
+      "c1_m4": `<b>Méthode</b> EEG · Pupillométrie · Comportemental · 40 participants`,
+      "c1_p1": `Les tuteurs d'IA sont adoptés plus vite que quiconque n'a mesuré leur effet sur l'apprenant. Je voulais savoir si adapter la personnalité du tuteur au style d'apprentissage préféré de l'utilisateur changerait la façon dont les gens apprennent les mathématiques. Nous voulions savoir s'il y avait un changement dans l'expérience subjective, vécue et mesurée de l'utilisateur en comparant un tuteur d'IA personnalisé à un tuteur non personnalisé.`,
+      "c1_p2": `Grâce à l'ingénierie des invites, j'ai créé des tuteurs qui adaptaient leur prestation à chaque apprenant : plus concrets et illustrés d'exemples pour certains, plus abstraits et axés sur les motifs pour d'autres, selon les profils d'apprenant de Felder-Silverman et entièrement intégrés dans l'invite système. Ce choix compte pour l'industrie : manipuler l'invite système ne coûte rien. Quarante participants ont suivi une séance de mathématiques entièrement menée par l'utilisateur et tutorée par l'IA, portant sur les diagrammes de Venn, les logarithmes et les paraboles, suivie d'un quiz. Nous avons enregistré les journaux d'interaction, des mesures subjectives (au moyen d'échelles validées), la pupillométrie et l'EEG.`,
+      "c1_p3": `Les résultats au quiz n'ont montré aucun changement entre les conditions; les données physiologiques, en revanche, ont révélé des résultats significatifs. La dilatation pupillaire pendant le tutorat était nettement plus faible avec le tuteur personnalisé, ce qui suggère que les apprenants traitaient le même contenu avec une charge cognitive moindre, comme le corroborent les résultats EEG. Ils se sont aussi davantage engagés, sautant moins de questions et écrivant plus de notation en travaillant avec l'IA. Bien que les scores (mesures de résultat) soient restés inchangés, l'expérience d'interaction sous-jacente a pu être influencée par la personnalisation du tutorat. Pour quiconque conçoit des technologies éducatives : une expérience plus personnalisée peut faire une différence, et si l'on ne mesure que les résultats, on passe à côté de l'essentiel (les gains d'efficacité cognitive). Nos travaux ont été présentés et publiés à la conférence annuelle de la Florida AI Research Society (FLAIRS).`,
+      "c1_k1": `participants · 3 séances chacun`,
+      "c1_v2": `↓ Charge cognitive`,
+      "c1_k2": `dilatation pupillaire et indices EEG plus faibles`,
+      "c1_k3": `thêta frontal / alpha pariétal`,
+      "c1_k4": `publié et présenté`,
+      "c2_h3": `Usage responsable de l'IA au gouvernement : formation et sensibilisation.`,
+      "c2_m1": `<b>Rôle</b> Conception et recherche UX`,
+      "c2_m2": `<b>Client</b> Emploi et Développement social Canada`,
+      "c2_m3": `<b>Période</b> 2024–présent`,
+      "c2_m4": `<b>Méthode</b> Entrevues et sondages internes auprès des membres de l'équipe`,
+      "c2_p1": `EDSC adoptait les outils d'IA plus vite que ses gens ne pouvaient les utiliser efficacement. L'équipe de la Santé mentale en milieu de travail (SMMT) voulait une IA capable d'aider les fonctionnaires à trouver beaucoup plus rapidement les services et programmes de santé mentale, sans créer de nouveaux risques ni de confusion dans un domaine sensible. <em>Elle souhaitait aussi trouver des façons d'améliorer ses propres livrables à l'aide de l'IA au sein de l'équipe SMMT, mais ne savait pas comment.</em>`,
+      "c2_p2": `J'ai affiné et testé un système de génération augmentée par récupération (RAG) destiné à un large usage interne afin d'améliorer l'accès aux ressources en santé mentale. J'ai conçu des solutions personnalisées et agentielles pour accroître la productivité et rédigé des ressources de formation et des guides de référence pour aider les collègues à utiliser les outils. J'ai conseillé sur la stratégie d'implémentation de l'IA, en cohérence avec les 13 facteurs psychologiques d'un milieu de travail sain, lors des réunions du groupe d'action d'EDSC.`,
+      "c2_p3": `L'équipe est passée d'une expérimentation ponctuelle à une pratique documentée. J'ai bâti une trousse de ressources et de guides de référence pour démocratiser les connaissances sur l'IA et offrir un point de départ pour l'utilisation des agents. Les exemples et cas d'usage étaient ancrés dans de vraies tâches.`,
+      "c2_k1": `modules d'apprentissage personnalisés`,
+      "c2_k2": `agents créés pour l'équipe`,
+      "c2_k3": `système de santé mentale (RAG) testé et affiné`,
+      "c2_k4": `facteurs psychologiques conseillés`,
+      "c3_h3": `L'équité numérique et la conception inclusive commencent par des pratiques de recherche inclusives.`,
+      "c3_m1": `<b>Rôle</b> Chef de projet, recherche-opérations`,
+      "c3_m2": `<b>Partenaire</b> IncluCity × Ville de Calgary`,
+      "c3_m3": `<b>Période</b> 2023–2024`,
+      "c3_m4": `<b>Portée</b> 7 services · 4 groupes d'équité · 35 participants`,
+      "c3_p1": `L'équipe numérique de la Ville de Calgary testait ses services numériques depuis des années, mais les testeurs n'étaient pas les personnes les plus touchées lorsque ces services échouaient. Les nouveaux arrivants, les aînés et les personnes en situation de handicap utilisant des technologies d'assistance étaient largement absents de la boucle de conception. Notre rôle chez IncluCity était de soutenir les efforts de la ville pour recruter des groupes sous-représentés aux fins de tests.`,
+      "c3_p2": `À titre de gestionnaire de programme, j'ai dirigé le recrutement, la gestion de projet et la coordination des bénévoles auprès d'une vingtaine de chercheurs répartis entre les deux équipes, avec une cible de quatre groupes d'équité et huit participants chacun. Recruter des participants en situation de handicap a fait voler en éclats le plan initial : aucun de nos plus de 600 testeurs existants ne répondait à tous les critères. J'ai mis en place trois changements : un programme de recommandation avec incitatifs ouvrant un recrutement en boule de neige, le retrait d'une règle de présélection qui écartait des personnes admissibles, et un accompagnement personnalisé pour les testeurs qui ne répondaient pas aux courriels.`,
+      "c3_p3": `Le projet pilote a cartographié 18 défis d'équité distincts dans sept services. Trois équipes de services municipaux ont adopté les conclusions (Loisirs, myID, Parcs), une étude de suivi sur les personnes en situation de handicap a été approuvée, et les tests combinés mobile et ordinateur pour ce même public sont devenus la norme.`,
+      "c3_k1": `défis d'équité cartographiés`,
+      "c3_k2": `équipes de service ayant adopté les conclusions`,
+      "c3_k3": `étude de suivi approuvée`,
+      "c3_k4": `participants · 4 groupes d'équité`,
+      "c4_h3": `Trouver le seul bouton qui faisait dérailler un parcours de soumission d'assurance.`,
+      "c4_m1": `<b>Rôle</b> Chercheur UX (équipe de 4)`,
+      "c4_m2": `<b>Client</b> Beneva, avec le laboratoire UX de HEC Montréal`,
+      "c4_m3": `<b>Période</b> 2025`,
+      "c4_m4": `<b>Portée</b> 2 produits · 4 scénarios · 12 participants`,
+      "c4_p1": `Beneva, l'un des plus grands assureurs mutualistes au Canada, voulait savoir si de vrais utilisateurs pouvaient compléter des soumissions habitation et auto aussi facilement que le prétendaient ses concurrents, et explorer pourquoi les utilisateurs pourraient ne pas terminer tout le processus de soumission.`,
+      "c4_p2": `J'étais le spécialiste de la conception d'étude et de la recherche quantitative au sein de cette équipe. Nous avons recruté 12 participants ayant magasiné de l'assurance au cours de la dernière année. Nous avons évalué les parcours habitation et auto en les séparant en deux parties, formant quatre scénarios de tâches. Nous avons mené une étude observationnelle à méthodes mixtes mesurant des éléments d'échelle comme la satisfaction ainsi que des mesures comportementales et système comme l'efficacité et l'efficience, que nous avons comparées à celles des concurrents. Chaque section se terminait par une entrevue qualitative.`,
+      "c4_p3": `Le parcours de modification de la soumission habitation a fait dérailler l'étude : six participants sur douze ont échoué parce que la carte de prix affichait toujours 0,00 $ et qu'ils n'ont jamais remarqué le bouton Recalculer en haut de la page. Nous l'avons signalé comme la principale catastrophe d'utilisabilité et avons livré huit correctifs priorisés avec des cotes de gravité sur lesquels l'équipe produit pouvait agir. Je ne peux pas discuter ouvertement des résultats de cette étude; je peux toutefois aborder de façon générale les méthodes et les retombées lors d'une entrevue, sur demande.`,
+      "c4_k1": `bloqués sur un seul bouton caché`,
+      "c4_k2": `référence SUS pour les tests futurs`,
+      "c4_k3": `correctifs priorisés livrés`,
+      "c4_k4": `de réussite sur le parcours défaillant`,
+      "cap_thesis": `Lire la thèse complète <span class="ar">↗</span>`,
+      "cap_conf": `Publication de conférence <span class="ar">↗</span>`,
+      "cap_deck": `Télécharger la présentation <span class="ar">↗</span>`,
+      "cap_casestudy": `Lire l'étude de cas complète <span class="ar">↗</span>`,
+      "cap_fairentry": `Service Fair Entry <span class="ar">↗</span>`,
+      "cap_ask": `Posez-moi des questions sur ce projet <span class="ar">✉</span>`,
+      "cap_live": `Site Web en ligne <span class="ar">↗</span>`,
+      "lock_view": `Verrouillé — contactez-moi pour voir`,
+      "mw1_tag": `Implémentation d'IA · Conception de processus`,
+      "mw1_t": `<span class="arr">→</span>Automatisations de la chaire de recherche SEXODEV`,
+      "mw1_p": `Conception de flux pilotés par l'IA transformant les enregistrements de réunions en tâches assignées et en documentation classée pour une équipe de recherche à distance à l'UQAM, avec un espace Notion comme source unique de vérité.`,
+      "mw2_tag": `Conception de services · Architecture d'information`,
+      "mw2_t": `<span class="arr">→</span>Refonte SharePoint du Wellness Gym d'EDSC`,
+      "mw2_p": `Animation d'entrevues et de deux rondes de tests d'arborescence pour reconstruire l'architecture d'information d'un carrefour de santé mentale en milieu de travail desservant plus de 40 000 fonctionnaires dans les deux langues officielles.`,
+      "mw3_tag": `Recherche-opérations`,
+      "mw3_t": `<span class="arr">→</span>Cadre de recherche-opérations d'IncluCity`,
+      "mw3_p": `Mise en place de l'ossature opérationnelle d'une société de recherche inclusive : intégration des participants, formation et gestion des données, soutenant plus de 50 chercheurs et plus de 140 entrevues.`,
+      "mw4_tag": `Recherche UX · Produit d'IA`,
+      "mw4_t": `<span class="arr">→</span>Évaluation de l'assistant d'achat Weever.ai`,
+      "mw4_p": `Évaluation d'utilisabilité à méthodes mixtes d'un assistant d'achat grand public propulsé par l'IA, révélant des obstacles de confiance et de clarté dans une expérience de commerce conversationnel.`,
+      "foot_big": `Discutons. <a href="mailto:karerwau@gmail.com">karerwau@gmail.com</a>`,
+      "foot_colophon": `Uriel Karerwa · Recherche UX et conception d'interaction IA · Conçu en 2026`
+    };
+    var cacheEN = {};
+    function apply(lang){
+      var nodes = document.querySelectorAll('[data-t]');
+      for(var i=0;i<nodes.length;i++){
+        var el = nodes[i], k = el.getAttribute('data-t');
+        if(!(k in cacheEN)) cacheEN[k] = el.innerHTML;
+        if(lang === 'fr'){ if(FR[k] != null) el.innerHTML = FR[k]; }
+        else { el.innerHTML = cacheEN[k]; }
+      }
+      if(!('__title' in cacheEN)) cacheEN.__title = document.title;
+      document.title = (lang === 'fr' && FR.__title) ? FR.__title : cacheEN.__title;
+      root.setAttribute('lang', lang);
+      var btn = document.getElementById('lang-toggle');
+      if(btn){
+        btn.textContent = lang === 'fr' ? 'EN' : 'FR';
+        btn.setAttribute('aria-label', lang === 'fr' ? 'Switch to English' : 'Passer en français');
+      }
+      try{ localStorage.setItem('lang', lang); }catch(e){}
+    }
+    var stored = null;
+    try{ stored = localStorage.getItem('lang'); }catch(e){}
+    var initial = stored || (((navigator.language || navigator.userLanguage || '').toLowerCase().indexOf('fr') === 0) ? 'fr' : 'en');
+    apply(initial);
+    var btn = document.getElementById('lang-toggle');
+    if(btn){
+      btn.addEventListener('click', function(){
+        apply(root.getAttribute('lang') === 'fr' ? 'en' : 'fr');
       });
     }
   })();
