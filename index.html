@@ -296,6 +296,8 @@
   .shot-link{display:block;color:var(--ink);text-decoration:none}
   .shot-link:hover{text-decoration:none}
   .shot{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;background:var(--surface);transition:transform .6s var(--ease)}
+  /* show full slide (no crop) for deck screenshots */
+  .shot.fit-contain{object-fit:contain;background:var(--surface)}
   .shot-link:hover .shot{transform:scale(1.04)}
   .shot-cap{
     display:flex;align-items:center;justify-content:space-between;gap:10px;
@@ -544,14 +546,14 @@
       <figure class="shot-fig">
         <a class="shot-link" href="https://docs.google.com/presentation/d/1cgMEV4WBNWvOtYo0ix8ckcS5aXyAW74B/edit?usp=sharing&ouid=105141349933021285173&rtpof=true&sd=true" target="_blank" rel="noopener">
           <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/esdc-ai-chosing-model.png</span></span>
-          <img class="shot" src="images/esdc-ai-chosing-model.png" alt="Guidance slide on choosing an AI model" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+          <img class="shot fit-contain" src="images/esdc-ai-chosing-model.png" alt="Guidance slide on choosing an AI model" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
           <span class="shot-cap">Download the deck <span class="ar">↗</span></span>
         </a>
       </figure>
       <figure class="shot-fig">
         <a class="shot-link" href="https://docs.google.com/presentation/d/1GUnzGEXYaDkGnYJrs56MjqIrRhVzpQCV/edit?usp=sharing&ouid=105141349933021285173&rtpof=true&sd=true" target="_blank" rel="noopener">
           <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/esdc-ai-custom-instr.png</span></span>
-          <img class="shot" src="images/esdc-ai-custom-instr.png" alt="Guidance slide on writing custom AI instructions" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+          <img class="shot fit-contain" src="images/esdc-ai-custom-instr.png" alt="Guidance slide on writing custom AI instructions" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
           <span class="shot-cap">Download the deck <span class="ar">↗</span></span>
         </a>
       </figure>
@@ -596,13 +598,11 @@
       <div class="metric"><div class="v">35</div><div class="k">participants · 4 equity groups</div></div>
     </div>
 
-    <p class="case-note">To learn more about this project, <a href="mailto:karerwau@gmail.com?subject=IncluCity%20%C3%97%20Calgary%20project&body=I%27d%20like%20to%20know%20more%20about%20your%20IncluCity%20project">contact me directly</a>.</p>
-
     <div class="media grid-2">
       <figure class="shot-fig">
         <a class="shot-link" href="https://docs.google.com/presentation/d/1R6TLxzSqTOfp7H6spHizOsz0JSNgmmI488aMy5n-QTA/edit?usp=sharing" target="_blank" rel="noopener">
           <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/calgary-deck-cover.png</span></span>
-          <img class="shot" src="images/calgary-deck-cover.png" alt="Cover of the IncluCity × Calgary case study deck" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+          <img class="shot fit-contain" src="images/calgary-deck-cover.png" alt="Cover of the IncluCity × Calgary case study deck" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
           <span class="shot-cap">Read the full case study <span class="ar">↗</span></span>
         </a>
       </figure>
