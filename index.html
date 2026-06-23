@@ -183,7 +183,7 @@
   }
   .hero .meta{margin-top:24px;color:var(--muted);font-size:15px;display:flex;flex-wrap:wrap;gap:8px 0;align-items:center}
   .hero .meta span:not(:last-child)::after{content:"·";margin:0 12px;color:var(--line-strong)}
-  .trace-band{margin:54px 0 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .trace-band{width:100%;margin:54px 0 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
   .trace-band svg{display:block;width:100%;height:84px}
   .trace-path{fill:none;stroke:var(--signal);stroke-width:1.5}
   .trace-pulse{fill:var(--signal);filter:drop-shadow(0 0 6px var(--signal))}
@@ -418,7 +418,7 @@
   <p class="meta mono" data-t="hero_meta"><span>Montréal</span><span>M.Sc. User Experience, HEC Montréal</span><span>CAPM</span></p>
 </section>
 
-<div class="trace-band wrap" aria-hidden="true">
+<div class="trace-band" aria-hidden="true">
   <svg viewBox="0 0 1080 84" preserveAspectRatio="none">
     <path class="trace-path" id="trace"></path>
     <circle class="trace-pulse" id="trace-pulse" r="3" style="display:none"></circle>
