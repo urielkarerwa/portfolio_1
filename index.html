@@ -157,7 +157,7 @@
   .lang-toggle:hover{border-color:var(--signal);color:var(--signal)}
 
   /* ---------- hero ---------- */
-  .hero{padding:96px 0 0}
+  .hero{padding-top:96px}
   .hero .badge{
     display:inline-flex;align-items:center;gap:9px;margin-bottom:26px;
     font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;
@@ -189,14 +189,14 @@
   .trace-pulse{fill:var(--signal);filter:drop-shadow(0 0 6px var(--signal))}
 
   /* ---------- intro ---------- */
-  .intro{padding:64px 0 20px}
+  .intro{padding-top:64px;padding-bottom:20px}
   .intro p.lead{font-size:clamp(22px,2.6vw,30px);line-height:1.42;max-width:24ch;font-family:"Fraunces",serif;font-weight:400}
   .intro p.lead .hl{color:var(--signal);font-style:italic}
   .intro .detail{font-family:"Inter",sans-serif;font-size:17px;max-width:62ch;margin-top:24px;color:var(--ink);line-height:1.65}
   .intro .detail.em{font-weight:600;font-size:19px;color:var(--ink);max-width:60ch}
 
   /* ---------- photo band ---------- */
-  .photo-band{margin:52px 0 4px;display:grid;gap:16px;grid-template-columns:1fr}
+  .photo-band{margin:52px auto 4px;display:grid;gap:16px;grid-template-columns:1fr}
   @media(min-width:720px){.photo-band{grid-template-columns:1fr 1.45fr}}
   .pb-fig{
     position:relative;margin:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;
@@ -229,7 +229,7 @@
   /* ---------- section heading ---------- */
   .section-head{
     display:flex;align-items:baseline;gap:14px;
-    padding:70px 0 6px;
+    padding-top:70px;padding-bottom:6px;
     border-top:1px solid var(--line);margin-top:40px;
   }
   .section-head h2{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
