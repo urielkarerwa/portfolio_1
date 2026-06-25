@@ -386,6 +386,91 @@
     .pulse-dot,.hero .badge .dot{animation:none!important}
     html{scroll-behavior:auto}
   }
+
+  /* ============ Phase 1: Explore my work (filterable engine) ============ */
+  .pf-work{padding-bottom:20px}
+  .pf-work .pf-intro{max-width:60ch;color:var(--ink);font-size:16px;line-height:1.6;margin:0 0 28px}
+
+  /* filter bar */
+  .pf-filters{display:flex;flex-direction:column;gap:18px}
+  .pf-facet{display:flex;flex-direction:column;gap:10px}
+  .pf-facet-label{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .pf-chips{display:flex;flex-wrap:wrap;gap:8px}
+  .pf-chip{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.03em;
+    color:var(--signal);background:var(--signal-soft);border:1px solid var(--signal-dim);
+    border-radius:100px;padding:6px 13px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;
+    transition:background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease)
+  }
+  .pf-chip:hover{border-color:var(--signal)}
+  .pf-chip::before{content:"";width:6px;height:6px;border-radius:50%;border:1px solid var(--signal-dim);flex:0 0 auto;transition:all .2s var(--ease)}
+  .pf-chip[aria-pressed="true"]{background:var(--signal);color:#fff;border-color:var(--signal);font-weight:500}
+  .pf-chip[aria-pressed="true"]::before{content:"✓";width:auto;height:auto;border:0;font-size:11px;line-height:1;color:#fff}
+
+  /* result header */
+  .pf-resulthead{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin-top:28px;padding-top:18px;border-top:1px solid var(--line)}
+  .pf-count{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink);margin:0}
+  .pf-active{display:flex;flex-wrap:wrap;gap:8px;flex:1 1 auto}
+  .pf-activechip{
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink);background:var(--surface);
+    border:1px solid var(--line-strong);border-radius:100px;padding:4px 7px 4px 11px;cursor:pointer;
+    display:inline-flex;align-items:center;gap:7px;transition:border-color .2s var(--ease),color .2s var(--ease)
+  }
+  .pf-activechip:hover{border-color:var(--signal);color:var(--signal)}
+  .pf-activechip-x{font-size:15px;line-height:1;color:var(--muted)}
+  .pf-activechip:hover .pf-activechip-x{color:var(--signal)}
+  .pf-ctl{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.03em;color:var(--ink);
+    background:transparent;border:1px solid var(--line-strong);border-radius:100px;padding:6px 14px;cursor:pointer;
+    transition:border-color .2s var(--ease),color .2s var(--ease)
+  }
+  .pf-ctl:hover{border-color:var(--signal);color:var(--signal)}
+  .pf-copy.is-copied{border-color:var(--signal);color:var(--signal)}
+
+  /* results grid */
+  .pf-results{margin-top:26px;display:grid;gap:18px}
+  @media(min-width:760px){.pf-results{grid-template-columns:1fr 1fr}}
+
+  .pf-card{
+    border:1px solid var(--line);border-radius:8px;background:var(--surface);box-shadow:var(--shadow);
+    padding:24px 24px 22px;display:flex;flex-direction:column;
+    transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease)
+  }
+  .pf-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift);border-color:var(--signal-dim)}
+  .pf-card-title{font-family:"Fraunces",serif;font-weight:500;font-size:22px;line-height:1.12;letter-spacing:-.01em;margin:0}
+  .pf-card-meta{margin:10px 0 0;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .pf-card-sep{color:var(--line-strong)}
+  .pf-worktags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+  .pf-tag{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.04em;color:var(--signal);border:1px solid var(--signal-dim);background:var(--signal-soft);padding:3px 9px;border-radius:2px}
+  .pf-star{margin-top:20px;display:flex;flex-direction:column;gap:14px}
+  .pf-star-block{display:flex;flex-direction:column;gap:5px}
+  .pf-star-lbl{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px}
+  .pf-star-lbl::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--signal)}
+  .pf-star-text{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+  .pf-chiprow{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+  .pf-chiprow-label{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .pf-chiplist{display:flex;flex-wrap:wrap;gap:6px}
+  .pf-schip{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:100px;padding:3px 10px;background:var(--surface-2)}
+  .pf-details{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px}
+  .pf-details-summary{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--signal);cursor:pointer;list-style:none}
+  .pf-details-summary::-webkit-details-marker{display:none}
+  .pf-details-summary::before{content:"+ ";font-weight:600}
+  .pf-details[open] .pf-details-summary::before{content:"– "}
+  .pf-details .pf-chiplist{margin-top:10px}
+  .pf-links{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px}
+  .pf-btn{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.03em;color:#fff;background:var(--signal);
+    border:1px solid var(--signal);border-radius:100px;padding:8px 16px;text-decoration:none;
+    display:inline-flex;align-items:center;gap:7px;transition:opacity .2s var(--ease),transform .2s var(--ease)
+  }
+  .pf-btn:hover{opacity:.9;text-decoration:none;transform:translateY(-1px)}
+  .pf-btn::after{content:"↗"}
+
+  /* empty state */
+  .pf-empty{grid-column:1 / -1;border:1px dashed var(--signal-dim);border-radius:8px;background:var(--surface);padding:40px 28px;text-align:center}
+  .pf-empty-title{font-family:"Fraunces",serif;font-size:22px;font-weight:500;margin:0}
+  .pf-empty-text{margin:10px auto 0;max-width:46ch;color:var(--muted);font-size:15px}
+  .pf-empty-actions{margin-top:22px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
 </style>
 </head>
 <body>
@@ -448,6 +533,23 @@
 <section class="intro wrap">
   <p class="detail" data-t="intro_d1">I leverage a full spectrum of qualitative and quantitative methods, bridging behavioural, self-reported, and physiological data to inform design decisions. I'm interested in designing accessible and responsible AI systems that drive business goals and solve real human problems.</p>
   <p class="detail" data-t="intro_d2">See some of my work below, starting with my master's thesis research project at HEC Montréal's Tech3Lab, Canada's largest UX Research Lab, where we used state-of-the-art tools, like EEG and pupillometry, to study the differences in how people learn from AI tutors.</p>
+</section>
+
+<div class="section-head wrap" id="explore">
+  <h2 id="pf-title">Explore my work</h2>
+  <span class="count" id="pf-section-count"></span>
+</div>
+
+<section class="pf-work wrap" aria-labelledby="pf-title">
+  <p class="pf-intro">Pick the kind of work you want to see and the page assembles the matching case studies live. Combine filters across work type, industry, sector, and client, then copy the link to share the exact view.</p>
+  <div class="pf-filters" id="pf-filters"></div>
+  <div class="pf-resulthead">
+    <p class="pf-count" id="pf-count" aria-live="polite"></p>
+    <div class="pf-active" id="pf-active" aria-label="Active filters"></div>
+    <button type="button" class="pf-ctl" id="pf-clear" hidden>Clear all</button>
+    <button type="button" class="pf-ctl pf-copy" id="pf-copy">Copy link</button>
+  </div>
+  <div class="pf-results" id="pf-results" aria-live="polite"></div>
 </section>
 
 <div class="section-head wrap" id="work">
@@ -980,5 +1082,6 @@
     sections.forEach(function(s){ io.observe(s); });
   })();
 </script>
+<script src="assets/js/portfolio.js"></script>
 </body>
 </html>
