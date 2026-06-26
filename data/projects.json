@@ -1,0 +1,684 @@
+[
+  {
+    "id": "esdc-wellness-gym",
+    "title": "ESDC Wellness Gym: SharePoint Redesign",
+    "job": "ESDC (AI & Service Design, FSWEP)",
+    "dates": "Jun 2024 to present",
+    "featured": true,
+    "featuredRank": 1,
+    "industry": [
+      "Government & Public Sector",
+      "Health & Wellness"
+    ],
+    "sector": "Public",
+    "client": [
+      "Internal / Employee"
+    ],
+    "workType": [
+      "UX Research",
+      "UX Design",
+      "Service Design",
+      "Information Architecture",
+      "Inclusive Design",
+      "Usability Evaluation"
+    ],
+    "methods": [
+      "Moderated interviews",
+      "Think-aloud",
+      "Tree testing (2 rounds)",
+      "Surveys",
+      "Personas",
+      "Co-design workshops"
+    ],
+    "tools": [
+      "Treejack / Optimal Workshop",
+      "SharePoint",
+      "MS Teams"
+    ],
+    "researchSkills": [
+      "Study design",
+      "Recruitment via internal networks",
+      "Discussion-guide writing",
+      "Moderation",
+      "Thematic analysis",
+      "Report writing",
+      "Readouts",
+      "IA revision"
+    ],
+    "softSkills": [
+      "Stakeholder management",
+      "Communication & storytelling",
+      "Cross-functional collaboration",
+      "Strategic alignment"
+    ],
+    "star": {
+      "situation": "The Workplace Mental Health team's resource hub lived on ESDC's legacy intranet, where they couldn't update content without IT and employees struggled to find anything.",
+      "task": "Move it to SharePoint so the team maintains it directly and 40,000 employees can find resources without getting lost.",
+      "action": "I ran four moderated interviews to understand how employees reach for mental-health resources, built personas, then tested the proposed information architecture with two rounds of tree testing (29 participants). Three resources scored below 30%. I pulled the career page out of the wellness IA, surfaced the CIRC crisis resource into a homepage Quick Links rail, and relabeled the Diversity Network.",
+      "result": "The revised architecture shipped as a working SharePoint site the team owns and updates without IT tickets, with an FAQ for employees new to SharePoint."
+    },
+    "links": [],
+    "_internalReferences": "WMH product owner / ESDC supervisor [confirm name + permission]"
+  },
+  {
+    "id": "esdc-ai-implementation",
+    "title": "ESDC AI Implementation & Enablement",
+    "job": "ESDC (AI & Service Design, FSWEP)",
+    "dates": "2024 to present",
+    "featured": false,
+    "featuredRank": null,
+    "industry": [
+      "Government & Public Sector",
+      "Health & Wellness"
+    ],
+    "sector": "Public",
+    "client": [
+      "Internal / Employee"
+    ],
+    "workType": [
+      "AI Implementation",
+      "AI Automation",
+      "Service Design"
+    ],
+    "methods": [
+      "Agent + RAG system testing",
+      "Stakeholder consultations",
+      "Reference-guide / training-resource design"
+    ],
+    "tools": [
+      "RAG systems",
+      "AI agents",
+      "Org AI tools",
+      "SharePoint"
+    ],
+    "researchSkills": [
+      "Requirements gathering",
+      "Stakeholder consultation",
+      "QA of AI outputs",
+      "Training-material design"
+    ],
+    "softSkills": [
+      "Stakeholder management",
+      "Communication",
+      "Adaptability",
+      "Training & enablement"
+    ],
+    "star": {
+      "situation": "A federal mental-health team had access to AI tools but no clear, safe way to adopt them.",
+      "task": "Test the tools and help the team use them well.",
+      "action": "I tested agentic AI and RAG systems, designed personalized AI workflows for the team, and aligned the approach with the psychological factors behind healthy workplace adoption. I wrote training resources, reference guides, and process documentation so colleagues could use the tools without me in the room.",
+      "result": "The team gained vetted AI workflows and the documentation to use organizational AI tools on their own."
+    },
+    "links": [],
+    "_internalReferences": "WMH lead [confirm]"
+  },
+  {
+    "id": "calgary-digital-equity",
+    "title": "City of Calgary: Digital Equity Pilot",
+    "job": "IncluCity (Program Manager & Research Operations)",
+    "dates": "2023 to 2024",
+    "featured": true,
+    "featuredRank": 2,
+    "industry": [
+      "Government & Public Sector"
+    ],
+    "sector": "Public",
+    "client": [
+      "Government (B2G)"
+    ],
+    "workType": [
+      "Research Operations",
+      "Project & Program Management",
+      "UX Research",
+      "Inclusive Design",
+      "Usability Evaluation"
+    ],
+    "methods": [
+      "Moderated remote usability testing",
+      "Accessibility testing (screen reader)",
+      "Affinity mapping / thematic analysis",
+      "Recruitment-strategy design"
+    ],
+    "tools": [
+      "Miro",
+      "Testing tooling",
+      "Referral / incentive systems"
+    ],
+    "researchSkills": [
+      "Hard-to-reach recruitment",
+      "Referral / snowball recruitment",
+      "Screening",
+      "Scheduling",
+      "Onboarding",
+      "Volunteer coordination",
+      "Training-asset ownership",
+      "QA",
+      "Cross-org coordination"
+    ],
+    "softSkills": [
+      "Stakeholder management",
+      "Resilience & grit",
+      "Cross-functional collaboration",
+      "Communication"
+    ],
+    "star": {
+      "situation": "Calgary funded a pilot to test 7 essential digital services with residents most affected by the digital divide: newcomers, older adults, and people with disabilities who use assistive tech. People with disabilities were hardest to recruit, since our criteria required them to test independently on a desktop.",
+      "task": "Recruit and run usability testing across four groups of eight, on timeline and budget.",
+      "action": "I built a referral program with monetary incentives, sent personalized outreach for snowball recruitment, and added pre-interviews to walk candidates through what to expect. Those calls surfaced that several screen-reader users preferred their phones, so I documented it and pushed to relax the desktop-only criterion.",
+      "result": "We mapped 18 equity challenges across all 7 services, the City proposed a follow-up round adding mobile testing, and one tester became an advocate who referred others. The results are still discussed across the City's digital teams."
+    },
+    "links": [],
+    "_internalReferences": "City of Calgary web/digital lead [confirm]"
+  },
+  {
+    "id": "talented-yyc",
+    "title": "TalentED YYC: Usability Research",
+    "job": "IncluCity (Project Lead, ReOps, UXR)",
+    "dates": "~2023 (11 weeks, 2 phases, 13 participants)",
+    "featured": false,
+    "featuredRank": null,
+    "industry": [
+      "Education & EdTech",
+      "Government & Public Sector"
+    ],
+    "sector": "Public",
+    "client": [
+      "Government (B2G)",
+      "B2B"
+    ],
+    "workType": [
+      "UX Research",
+      "Usability Evaluation",
+      "Research Operations",
+      "Project & Program Management"
+    ],
+    "methods": [
+      "Moderated remote usability testing (2 phases)",
+      "Heuristic analysis",
+      "Accessibility (screen reader)",
+      "Adaptable scripts",
+      "Impact-effort matrix",
+      "Thematic analysis"
+    ],
+    "tools": [
+      "Notably.io",
+      "Testing tooling"
+    ],
+    "researchSkills": [
+      "Client intake / scoping",
+      "Script writing (adaptable)",
+      "Recruitment",
+      "Moderation",
+      "Report writing",
+      "Readouts",
+      "Process improvement (intake redesign)"
+    ],
+    "softSkills": [
+      "Client relations",
+      "Communication",
+      "Stakeholder management"
+    ],
+    "star": {
+      "situation": "Calgary Economic Development's WIL program built a website and employer portal to connect students with placements, with part of the portal run by a third-party vendor.",
+      "task": "Evaluate usability and inclusiveness across two phases and recommend prioritized fixes.",
+      "action": "I ran moderated remote usability tests with scripts adapted per user group, plus heuristic analysis and accessibility testing with a screen-reader user. After two projects where vendor constraints surfaced late, I rebuilt the client-intake process to ask up front about third-party tools and limitations.",
+      "result": "Delivered usability and heuristic reports across both phases on time, prioritized fixes with an impact-effort matrix tied to client constraints, and improved intake so future projects scoped vendor limits correctly."
+    },
+    "links": [],
+    "_internalReferences": "WIL / TalentED program contact [confirm]"
+  },
+  {
+    "id": "inclucity-reops",
+    "title": "IncluCity: ReOps Framework & Inclusive-Design Program",
+    "job": "IncluCity (Program Manager & Research Operations)",
+    "dates": "Apr 2022 to Aug 2024",
+    "featured": false,
+    "featuredRank": null,
+    "industry": [
+      "Nonprofit & Social Impact"
+    ],
+    "sector": "Nonprofit",
+    "client": [
+      "Internal / Employee",
+      "Community / Public"
+    ],
+    "workType": [
+      "Research Operations",
+      "Project & Program Management",
+      "Inclusive Design"
+    ],
+    "methods": [
+      "Systems design",
+      "Onboarding / training",
+      "Workshops",
+      "Panel discussions",
+      "Public events"
+    ],
+    "tools": [
+      "Asana",
+      "Monday",
+      "Coda",
+      "Data-management systems"
+    ],
+    "researchSkills": [
+      "Researcher onboarding & training (50+)",
+      "Participant / panel management",
+      "Contract administration",
+      "QA",
+      "Knowledge management",
+      "Proposal writing",
+      "140+ interviews delivered"
+    ],
+    "softSkills": [
+      "Public speaking / facilitation (100+ attendees)",
+      "Business development",
+      "Stakeholder management",
+      "Mentoring & training",
+      "Strategic alignment"
+    ],
+    "star": {
+      "situation": "IncluCity ran inclusive research for municipal, nonprofit, and social-impact clients, with researchers of varying experience and no shared operating system.",
+      "task": "Build the operations layer that lets a volunteer-heavy research org deliver consistent, high-quality work at scale.",
+      "action": "I built a research-operations framework for 50+ researchers covering onboarding, training, contract administration, data management, and QA. I supported proposals and client acquisition from first contact through delivery, and ran inclusive-design workshops and panels.",
+      "result": "The framework standardized how projects ran across the org, I delivered 140+ stakeholder interviews into client-ready reports, and inclusive-design events reached 100+ attendees."
+    },
+    "links": [],
+    "_internalReferences": "IncluCity founder / board [confirm]"
+  },
+  {
+    "id": "beneva-quote-eval",
+    "title": "Beneva: Online Quote Evaluation",
+    "job": "HEC UX Evaluation (pro bono, 4-person team)",
+    "dates": "Jan to Apr 2025",
+    "featured": true,
+    "featuredRank": 3,
+    "industry": [
+      "Insurance & Finance"
+    ],
+    "sector": "Private",
+    "client": [
+      "B2C"
+    ],
+    "workType": [
+      "UX Research",
+      "Usability Evaluation"
+    ],
+    "methods": [
+      "Moderated usability testing",
+      "Surveys",
+      "SUS",
+      "Severity rating",
+      "Impact-effort matrix",
+      "Personas",
+      "Journey mapping"
+    ],
+    "tools": [
+      "Testing tooling",
+      "Figma",
+      "Miro"
+    ],
+    "researchSkills": [
+      "Study design",
+      "Script writing",
+      "Recruitment",
+      "Moderation",
+      "Synthesis",
+      "Severity ranking",
+      "Report writing",
+      "Readouts"
+    ],
+    "softSkills": [
+      "Communication & storytelling",
+      "Client relations",
+      "Cross-functional collaboration"
+    ],
+    "star": {
+      "situation": "Beneva, one of Canada's largest mutual insurers, wanted to know where its online quote flow lost users.",
+      "task": "As part of a four-person team, evaluate the home and auto quote experiences and rank what to fix first.",
+      "action": "We ran moderated usability tests with surveys, scored the experience with SUS, and rated each finding by severity. The clearest failure showed up when participants edited a home quote: the price card still read $0.00 because the Recalculate Price button sat above where people had stopped looking. Six of twelve missed it and concluded the system was broken.",
+      "result": "We delivered a SUS baseline of 79, eight prioritized fixes with severity ratings and an impact-by-effort matrix, and recommended dynamic pricing as the lead change so price updates without a button."
+    },
+    "links": [],
+    "_internalReferences": "HEC course supervisor [confirm]"
+  },
+  {
+    "id": "tech3lab-genai-tutoring",
+    "title": "Tech3Lab: GenAI Tutoring Study (Thesis + FLAIRS)",
+    "job": "Tech3Lab, HEC Montréal (Post-Graduate Researcher)",
+    "dates": "Oct 2024 to Jan 2026",
+    "featured": true,
+    "featuredRank": 4,
+    "industry": [
+      "Academic Research",
+      "Education & EdTech",
+      "AI & Technology"
+    ],
+    "sector": "Academic",
+    "client": [
+      "Academic / Participants"
+    ],
+    "workType": [
+      "UX Research",
+      "Behavioral & Physiological Research",
+      "Data Analysis",
+      "AI Implementation"
+    ],
+    "methods": [
+      "Multimodal physiological measurement (eye-tracking, pupillometry, EEG, ECG)",
+      "Experimental design",
+      "Cognitive-load measurement",
+      "Literature review",
+      "Ethics"
+    ],
+    "tools": [
+      "iMotions / Tobii",
+      "EEG & ECG hardware",
+      "SAS",
+      "R",
+      "Statistical analysis"
+    ],
+    "researchSkills": [
+      "Study design",
+      "Ethics / consent",
+      "Participant recruitment",
+      "Data collection",
+      "Multimodal analysis",
+      "Synthesis",
+      "Academic writing",
+      "Conference presentation"
+    ],
+    "softSkills": [
+      "Communication (academic + applied)",
+      "Resilience & grit",
+      "Strategic thinking"
+    ],
+    "star": {
+      "situation": "AI tutors personalize learning. We had little direct evidence of how that personalization affects a learner's cognitive load in real time.",
+      "task": "Design and run a study measuring how Generative AI personalization changes behaviour and cognitive load, rigorous enough for both a thesis and a publication.",
+      "action": "I designed the full study from literature review and ethics through data collection, then captured multimodal physiological signals (eye-tracking, pupillometry, ECG, EEG) while participants worked through AI-mediated tasks. I analyzed the combined behavioural and physiological data to read cognitive load instead of relying on self-report.",
+      "result": "The work became my master's thesis (honours with great distinction, 3.85 GPA) and a conference-track FLAIRS publication, with design recommendations for AI tutor systems. I was lead author on the related paper on LLM-based personalized math tutoring."
+    },
+    "links": [
+      {
+        "label": "Master's thesis",
+        "url": "https://hecmontreal.on.worldcat.org/oclc/1578112535"
+      }
+    ],
+    "_internalReferences": "A. Karran (supervisor); P-M. Leger (director) [confirm + ask permission]"
+  },
+  {
+    "id": "sexodev-automation",
+    "title": "UQAM SEXODEV: Workflow Automation",
+    "job": "UQAM SEXODEV (Workflow Automation & Process Optimization Consultant)",
+    "dates": "Apr 2026 to present",
+    "featured": false,
+    "featuredRank": null,
+    "industry": [
+      "Academic Research"
+    ],
+    "sector": "Academic",
+    "client": [
+      "Internal / Employee"
+    ],
+    "workType": [
+      "AI Automation",
+      "AI Implementation",
+      "Service Design",
+      "Project & Program Management"
+    ],
+    "methods": [
+      "Stakeholder interviews",
+      "Bottleneck diagnosis",
+      "AI workflow design (recordings to tasks / summaries / docs)",
+      "Notion system design",
+      "Onboarding documentation"
+    ],
+    "tools": [
+      "Notion",
+      "AI transcription / automation",
+      "OneDrive / SharePoint (replaced)"
+    ],
+    "researchSkills": [
+      "Stakeholder interviewing",
+      "Process mapping",
+      "Requirements gathering",
+      "Training & onboarding docs"
+    ],
+    "softSkills": [
+      "Stakeholder management",
+      "Communication",
+      "Training & enablement",
+      "Client relations"
+    ],
+    "star": {
+      "situation": "A research chair's small remote team was buried in manual coordination. Notes were scattered across OneDrive and SharePoint, follow-ups depended on whoever took notes, and the Chair carried too much operational load.",
+      "task": "Diagnose the bottlenecks and build a system that cuts that load and improves accountability.",
+      "action": "I started with stakeholder interviews to find where work actually stalled, then designed AI-driven workflows that turn meeting recordings into assigned tasks, individual action summaries, and filed documentation. I set up a Notion workspace as the single source of truth with naming conventions, folder structure, and permissions, and wrote onboarding guides so the process survives staff turnover.",
+      "result": "The team replaced manual note-taking with an automated pipeline and consolidated scattered files into one organized workspace."
+    },
+    "links": [],
+    "_internalReferences": "SEXODEV Chair / PI [confirm]"
+  },
+  {
+    "id": "allen-thomas-ediscovery",
+    "title": "Allen & Thomas: E-Discovery AI",
+    "job": "Allen & Thomas, LLP (AI Search & Implementation Specialist)",
+    "dates": "Mar to Apr 2026",
+    "featured": false,
+    "featuredRank": null,
+    "industry": [
+      "Legal"
+    ],
+    "sector": "Private",
+    "client": [
+      "B2B"
+    ],
+    "workType": [
+      "AI Implementation",
+      "Data Analysis",
+      "Project & Program Management"
+    ],
+    "methods": [
+      "Search-strategy design",
+      "Data mining",
+      "Supervised learning for document prioritization",
+      "Remote-workflow design"
+    ],
+    "tools": [
+      "E-discovery tooling",
+      "Supervised-learning models"
+    ],
+    "researchSkills": [
+      "Search strategy",
+      "Data mining",
+      "Review QA",
+      "Remote coordination"
+    ],
+    "softSkills": [
+      "Cross-functional collaboration",
+      "Communication",
+      "Adaptability"
+    ],
+    "star": {
+      "situation": "A law firm running an investigation needed to search and review a large document database across a remote team, and the existing approach was slow.",
+      "task": "Improve how the database was searched and prioritize what got reviewed first.",
+      "action": "I implemented e-discovery systems and tooling, developed search strategies and data-mining processes, and applied supervised learning to rank documents for review. I coordinated the review across the team and built repeatable remote workflows.",
+      "result": "The team searched and reviewed the database more efficiently, with a prioritized review queue in place of a flat pile."
+    },
+    "links": [],
+    "_internalReferences": "Allen & Thomas contact [confirm]"
+  },
+  {
+    "id": "notion-anki-pipeline",
+    "title": "Notion to AI to Anki Pipeline",
+    "job": "Self-directed (Johns Hopkins Agentic AI coursework)",
+    "dates": "2026",
+    "featured": false,
+    "featuredRank": null,
+    "industry": [
+      "AI & Technology",
+      "Education & EdTech"
+    ],
+    "sector": "Personal",
+    "client": [
+      "Personal"
+    ],
+    "workType": [
+      "AI Automation",
+      "AI Implementation",
+      "Data Analysis"
+    ],
+    "methods": [
+      "Spec-first design",
+      "Two-stage pipeline",
+      "Human review checkpoint",
+      "Vision-model card generation"
+    ],
+    "tools": [
+      "Claude Code",
+      "Anthropic API (Claude Sonnet, vision)",
+      "Notion API",
+      "AnkiConnect",
+      "Python",
+      ".env / git-ignore"
+    ],
+    "researchSkills": [],
+    "softSkills": [
+      "Self-direction",
+      "Verification discipline",
+      "Security awareness"
+    ],
+    "star": {
+      "situation": "My Johns Hopkins coursework lived in Notion as text, tables, and lecture screenshots. Reading it back didn't make it stick, and hand-writing Anki cards was slow enough that I never kept up.",
+      "task": "Point a tool at a Notion page and get reviewed spaced-repetition cards out the other end, while staying in control of what I study.",
+      "action": "I wrote the architecture as a spec first, then directed Claude Code to build a two-stage pipeline. Stage one reads the full page and screenshots and sends them to a vision model that returns atomic question-and-answer cards, which land in a review file I prune. Stage two loads the approved cards into Anki through AnkiConnect.",
+      "result": "The first run produced 58 accurate cards from 1,876 content blocks and 137 screenshots for about two cents, and the model derived 25 hierarchical week tags on its own from my lecture headings. None needed deleting. The manual step that kept me off spaced repetition is gone, and the review checkpoint stayed in by design."
+    },
+    "links": [],
+    "_internalReferences": "n/a (personal)"
+  },
+  {
+    "id": "ux-montreal",
+    "title": "UX Montreal: Co-Director",
+    "job": "UX Montreal (Co-Director)",
+    "dates": "[confirm start] to present",
+    "featured": false,
+    "featuredRank": null,
+    "industry": [
+      "Design Community"
+    ],
+    "sector": "Nonprofit",
+    "client": [
+      "Community / Public"
+    ],
+    "workType": [
+      "Project & Program Management"
+    ],
+    "methods": [
+      "Event programming",
+      "Sliding-scale accessibility (promo codes)"
+    ],
+    "tools": [
+      "Luma"
+    ],
+    "researchSkills": [],
+    "softSkills": [
+      "Public speaking / facilitation",
+      "Stakeholder management",
+      "Community leadership",
+      "Business development"
+    ],
+    "star": {
+      "situation": "UX Montreal is a local design community that needs consistent programming and accessible events.",
+      "task": "Co-direct the organization with Farah and Scarlett, running events and building the community.",
+      "action": "Programmed events and used sliding-scale ticketing through Luma so cost wasn't a barrier to attending.",
+      "result": "[Add your numbers: events run, attendance, growth.]"
+    },
+    "links": [],
+    "_internalReferences": "Farah / Scarlett (co-directors) [confirm + permission]"
+  },
+  {
+    "id": "karerwa-consulting",
+    "title": "Karerwa Consulting: Project Management",
+    "job": "Karerwa Consulting (PM & Owner)",
+    "dates": "Apr 2022 to Aug 2024",
+    "featured": false,
+    "featuredRank": null,
+    "industry": [
+      "Nonprofit & Social Impact"
+    ],
+    "sector": "Private",
+    "client": [
+      "B2B"
+    ],
+    "workType": [
+      "Project & Program Management"
+    ],
+    "methods": [
+      "Contract drafting",
+      "Scope definition",
+      "Milestone tracking",
+      "Budgeting",
+      "Invoicing",
+      "Status reporting"
+    ],
+    "tools": [
+      "Asana",
+      "Monday",
+      "Coda",
+      "HubSpot"
+    ],
+    "researchSkills": [],
+    "softSkills": [
+      "Client relations",
+      "Business development",
+      "Communication"
+    ],
+    "star": {
+      "situation": "Ran my own consulting practice managing concurrent client engagements end to end.",
+      "task": "Keep multiple engagements on scope, on budget, and on schedule.",
+      "action": "Handled contract drafting, scope definition, milestone tracking, status reporting, budgeting, and invoicing.",
+      "result": "[Add representative client outcomes or engagement volume.]"
+    },
+    "links": [],
+    "_internalReferences": "Client reference [confirm]"
+  },
+  {
+    "id": "rainforest-alberta",
+    "title": "Rainforest Alberta: Partnership & Event Coordinator",
+    "job": "Rainforest Alberta (Partnership & Event Coordinator, Contract)",
+    "dates": "Aug 2023 to Dec 2023",
+    "featured": false,
+    "featuredRank": null,
+    "industry": [
+      "Nonprofit & Social Impact"
+    ],
+    "sector": "Nonprofit",
+    "client": [
+      "B2B",
+      "Community / Public"
+    ],
+    "workType": [
+      "Project & Program Management"
+    ],
+    "methods": [
+      "Partnership outreach",
+      "Advisory-meeting planning"
+    ],
+    "tools": [],
+    "researchSkills": [],
+    "softSkills": [
+      "Stakeholder management",
+      "Business development",
+      "Communication"
+    ],
+    "star": {
+      "situation": "Coordinated partnership outreach for a regional innovation network.",
+      "task": "Grow and maintain collaborator relationships across sectors.",
+      "action": "Connected with industry, academic, and government collaborators and planned engagement and advisory meetings.",
+      "result": "[Add what the partnerships produced.]"
+    },
+    "links": [],
+    "_internalReferences": "Rainforest Alberta contact [confirm]"
+  }
+]
