@@ -99,13 +99,32 @@
 
   // --- rendering ------------------------------------------------------------
 
+  function isPrimary(facet) { return facet.key === "work"; }
+
+  function secondaryCount() {
+    return FACETS.reduce(function (n, f) {
+      return n + (isPrimary(f) ? 0 : selection[f.key].size);
+    }, 0);
+  }
+
+  function updateMoreBadge() {
+    if (!els.moreBadge) return;
+    var n = secondaryCount();
+    els.moreBadge.textContent = String(n);
+    els.moreBadge.hidden = n === 0;
+  }
+
   function renderFilters() {
-    els.filters.textContent = "";
+    els.primary.textContent = "";
+    if (els.secondary) els.secondary.textContent = "";
     FACETS.forEach(function (facet) {
+      var target = isPrimary(facet) ? els.primary : els.secondary;
+      if (!target) return;
       var group = el("div", "pf-facet");
       group.setAttribute("role", "group");
       group.setAttribute("aria-label", facet.label);
-      group.appendChild(el("span", "pf-facet-label", facet.label));
+      // Primary facet is introduced by the visible prompt, so no eyebrow label.
+      if (!isPrimary(facet)) group.appendChild(el("span", "pf-facet-label", facet.label));
       var chips = el("div", "pf-chips");
       uniqueValues(facet).forEach(function (value) {
         var pressed = selection[facet.key].has(value);
@@ -120,8 +139,9 @@
         chips.appendChild(btn);
       });
       group.appendChild(chips);
-      els.filters.appendChild(group);
+      target.appendChild(group);
     });
+    updateMoreBadge();
   }
 
   function renderResultHeader(shown) {
@@ -333,17 +353,29 @@
   // --- init -----------------------------------------------------------------
 
   function init() {
-    els.filters = document.getElementById("pf-filters");
+    els.primary = document.getElementById("pf-primary");
+    els.secondary = document.getElementById("pf-secondary");
+    els.moreToggle = document.getElementById("pf-more-toggle");
+    els.moreBadge = document.getElementById("pf-more-badge");
     els.count = document.getElementById("pf-count");
     els.active = document.getElementById("pf-active");
     els.clear = document.getElementById("pf-clear");
     els.copy = document.getElementById("pf-copy");
     els.results = document.getElementById("pf-results");
     els.sectionCount = document.getElementById("pf-section-count");
-    if (!els.filters || !els.results) return;
+    if (!els.primary || !els.results) return;
 
     els.clear.addEventListener("click", clearAll);
     els.copy.addEventListener("click", copyLink);
+
+    // "More filters" disclosure: toggle the secondary panel (mouse + keyboard).
+    if (els.moreToggle && els.secondary) {
+      els.moreToggle.addEventListener("click", function () {
+        var open = els.moreToggle.getAttribute("aria-expanded") === "true";
+        els.moreToggle.setAttribute("aria-expanded", open ? "false" : "true");
+        els.secondary.hidden = open;
+      });
+    }
 
     fetch("data/projects.json")
       .then(function (r) {
