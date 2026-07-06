@@ -457,7 +457,23 @@
   .seemore-row{margin-top:26px}
 
   .pf-work .pf-prompt{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(20px,2.4vw,26px);line-height:1.3;letter-spacing:-.01em;margin:0 0 16px}
-  .pf-primary{display:flex;flex-direction:column;gap:10px}
+  .pf-primary{display:flex;flex-direction:column;gap:0}
+  .pf-cat{border-bottom:1px solid var(--line)}
+  .pf-cat:first-child{border-top:1px solid var(--line)}
+  .pf-cat-toggle{
+    width:100%;display:flex;align-items:center;gap:12px;background:transparent;border:0;cursor:pointer;
+    padding:15px 2px;text-align:left;color:var(--ink);
+    font-family:"Fraunces",serif;font-weight:500;font-size:19px;letter-spacing:-.01em;
+    transition:color .2s var(--ease)
+  }
+  .pf-cat-toggle:hover{color:var(--signal)}
+  .pf-cat-label{flex:0 0 auto}
+  .pf-cat-toggle .pf-cat-badge{margin-left:2px}
+  .pf-cat-toggle .pf-chevron{margin-left:auto;color:var(--muted)}
+  .pf-cat-toggle:hover .pf-chevron{color:var(--signal)}
+  .pf-cat-toggle[aria-expanded="true"] .pf-chevron svg{transform:rotate(180deg)}
+  .pf-cat-panel{padding:0 2px 18px}
+  .pf-cat-panel[hidden]{display:none}
   .pf-more{margin-top:18px}
   .pf-more-toggle{
     font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;color:var(--ink);

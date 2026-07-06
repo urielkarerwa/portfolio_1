@@ -15,9 +15,22 @@
     { key: "client", field: "client", label: "Client", single: false }
   ];
 
+  // Editorial grouping of the Work type (workType) values into collapsible
+  // categories. Sub-values still filter the same single workType facet;
+  // categories are disclosure only. Values absent from the data are skipped.
+  var WORK_GROUPS = [
+    { label: "AI", values: ["AI Implementation", "AI Automation"] },
+    { label: "UX", values: ["UX Research", "UX Design", "Service Design"] },
+    { label: "Project Management", values: ["Research Operations", "Project & Program Management"] },
+    { label: "Process", values: ["Data Analysis", "Behavioral & Physiological Research", "Usability Evaluation", "Information Architecture", "Inclusive Design"] }
+  ];
+
   var projects = [];
   var selection = {}; // key -> Set of selected values
   FACETS.forEach(function (f) { selection[f.key] = new Set(); });
+
+  var openCats = {};      // category label -> open (persists across re-renders)
+  var focusTarget = null; // {facet,value} chip to refocus after a re-render
 
   var els = {}; // cached DOM refs
 
@@ -114,34 +127,103 @@
     els.moreBadge.hidden = n === 0;
   }
 
-  function renderFilters() {
+  function chevron() {
+    var span = el("span", "pf-chevron");
+    span.setAttribute("aria-hidden", "true");
+    span.innerHTML = '<svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>';
+    return span;
+  }
+
+  // A single toggle chip. Used by both the primary categories and secondary facets.
+  function makeChip(facetKey, value) {
+    var btn = el("button", "pf-chip", value);
+    btn.type = "button";
+    btn.setAttribute("aria-pressed", selection[facetKey].has(value) ? "true" : "false");
+    btn.setAttribute("data-facet", facetKey);
+    btn.setAttribute("data-value", value);
+    btn.addEventListener("click", function () {
+      var set = selection[facetKey];
+      if (set.has(value)) set.delete(value); else set.add(value);
+      focusTarget = { facet: facetKey, value: value };
+      render();
+    });
+    return btn;
+  }
+
+  // Primary facet (Work type), grouped into collapsible categories.
+  function renderPrimary() {
     els.primary.textContent = "";
-    if (els.secondary) els.secondary.textContent = "";
+    var workFacet = FACETS[0]; // work
+    var present = {};
+    uniqueValues(workFacet).forEach(function (v) { present[v] = true; });
+
+    WORK_GROUPS.forEach(function (group) {
+      var vals = group.values.filter(function (v) { return present[v]; });
+      if (!vals.length) return;
+
+      var open = !!openCats[group.label];
+      var selInCat = vals.filter(function (v) { return selection.work.has(v); }).length;
+      var panelId = "pf-cat-" + group.label.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+
+      var cat = el("div", "pf-cat");
+      var toggle = el("button", "pf-cat-toggle");
+      toggle.type = "button";
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-controls", panelId);
+      toggle.appendChild(el("span", "pf-cat-label", group.label));
+      var badge = el("span", "pf-badge pf-cat-badge", String(selInCat));
+      badge.hidden = selInCat === 0;
+      toggle.appendChild(badge);
+      toggle.appendChild(chevron());
+
+      var panel = el("div", "pf-cat-panel");
+      panel.id = panelId;
+      panel.hidden = !open;
+      var chips = el("div", "pf-chips");
+      vals.forEach(function (value) { chips.appendChild(makeChip("work", value)); });
+      panel.appendChild(chips);
+
+      toggle.addEventListener("click", function () {
+        var nowOpen = toggle.getAttribute("aria-expanded") === "true";
+        openCats[group.label] = !nowOpen;
+        toggle.setAttribute("aria-expanded", nowOpen ? "false" : "true");
+        panel.hidden = nowOpen;
+      });
+
+      cat.appendChild(toggle);
+      cat.appendChild(panel);
+      els.primary.appendChild(cat);
+    });
+  }
+
+  // Secondary facets (Industry, Sector, Client) inside the "More filters" panel.
+  function renderSecondary() {
+    if (!els.secondary) return;
+    els.secondary.textContent = "";
     FACETS.forEach(function (facet) {
-      var target = isPrimary(facet) ? els.primary : els.secondary;
-      if (!target) return;
+      if (isPrimary(facet)) return;
       var group = el("div", "pf-facet");
       group.setAttribute("role", "group");
       group.setAttribute("aria-label", facet.label);
-      // Primary facet is introduced by the visible prompt, so no eyebrow label.
-      if (!isPrimary(facet)) group.appendChild(el("span", "pf-facet-label", facet.label));
+      group.appendChild(el("span", "pf-facet-label", facet.label));
       var chips = el("div", "pf-chips");
-      uniqueValues(facet).forEach(function (value) {
-        var pressed = selection[facet.key].has(value);
-        var btn = el("button", "pf-chip", value);
-        btn.type = "button";
-        btn.setAttribute("aria-pressed", pressed ? "true" : "false");
-        btn.addEventListener("click", function () {
-          var set = selection[facet.key];
-          if (set.has(value)) set.delete(value); else set.add(value);
-          render();
-        });
-        chips.appendChild(btn);
-      });
+      uniqueValues(facet).forEach(function (value) { chips.appendChild(makeChip(facet.key, value)); });
       group.appendChild(chips);
-      target.appendChild(group);
+      els.secondary.appendChild(group);
     });
+  }
+
+  function renderFilters() {
+    renderPrimary();
+    renderSecondary();
     updateMoreBadge();
+    // Keep keyboard focus on a chip after its re-render.
+    if (focusTarget) {
+      var sel = '[data-facet="' + focusTarget.facet + '"][data-value="' + focusTarget.value + '"]';
+      var node = document.querySelector(sel);
+      if (node) node.focus();
+      focusTarget = null;
+    }
   }
 
   function renderResultHeader(shown) {

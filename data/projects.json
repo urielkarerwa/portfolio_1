@@ -680,5 +680,435 @@
     },
     "links": [],
     "_internalReferences": "Rainforest Alberta contact [confirm]"
+  },
+  {
+    "id": "ccf-usability",
+    "title": "Complete Complaints Foundation (CCF): Usability Evaluation",
+    "job": "IncluCity (Program Manager & Research Operations)",
+    "dates": "Apr–Jul 2022",
+    "featured": false,
+    "featuredRank": null,
+    "industry": [
+      "Nonprofit & Social Impact"
+    ],
+    "sector": "Nonprofit",
+    "client": [
+      "B2B",
+      "Community / Public"
+    ],
+    "workType": [
+      "Research Operations",
+      "UX Research",
+      "Usability Evaluation",
+      "Inclusive Design",
+      "Project & Program Management"
+    ],
+    "methods": [
+      "Moderated usability testing",
+      "Accessibility evaluation",
+      "Surveys",
+      "Adaptive (dynamic) script",
+      "Lean reporting"
+    ],
+    "tools": [
+      "Miro",
+      "Webflow (platform tested)",
+      "testing tooling"
+    ],
+    "researchSkills": [
+      "Recruitment via client list",
+      "Scheduling / rebooking",
+      "Moderation",
+      "Synthesis",
+      "Report writing",
+      "Readouts"
+    ],
+    "softSkills": [
+      "Client relations",
+      "Stakeholder management",
+      "Communication & storytelling",
+      "Resilience & grit"
+    ],
+    "star": {
+      "situation": "Complete Complaints Foundation was validating a new website across five user segments (career seekers, members, founders, investors, partners) and wanted to know how each group read the initial design before beta. We had no tester pool of our own and depended on the client's contact list, which meant rebooking sessions several times as the client's timeline slipped.",
+      "task": "Run moderated usability testing that surfaced barriers per segment (language, accessibility, navigation) and hand back prioritized, usable findings on a compressed schedule.",
+      "action": "I ran project operations and moderated eight virtual sessions using a dynamic script that swapped in segment-specific questions, so a founder and a career seeker were each tested against the tasks that mattered to them. I paired the sessions with an accessibility pass and a quantitative survey, then reported lean in Miro to keep the client oriented without a long document.",
+      "result": "Testing showed the site carried too much text and scrolling, that the search bar needed to be more prominent, and that terms like \"Insights\" and the partner-versus-sponsor distinction confused people. The client left with concrete design fixes: cut copy, surface search, and differentiate buttons from tags."
+    },
+    "links": [],
+    "_internalReferences": "IncluCity client (contact: Shane) [confirm + permission]"
+  },
+  {
+    "id": "brdge-usability",
+    "title": "BRDGE: Usability Evaluation",
+    "job": "IncluCity (Program Manager & Research Operations)",
+    "dates": "Apr–Sep 2023",
+    "featured": false,
+    "featuredRank": null,
+    "industry": [
+      "AI & Technology"
+    ],
+    "sector": "Private",
+    "client": [
+      "B2B",
+      "B2C"
+    ],
+    "workType": [
+      "Research Operations",
+      "UX Research",
+      "Usability Evaluation",
+      "Inclusive Design",
+      "Project & Program Management"
+    ],
+    "methods": [
+      "Moderated usability testing",
+      "Heuristic evaluation",
+      "Accessibility evaluation",
+      "Surveys",
+      "User journey mapping",
+      "Adaptive script",
+      "Lean reporting"
+    ],
+    "tools": [
+      "Miro",
+      "testing tooling"
+    ],
+    "researchSkills": [
+      "Recruitment",
+      "Screening",
+      "Scheduling",
+      "Moderation",
+      "Synthesis",
+      "Report writing",
+      "Readouts",
+      "Team leadership / delegation"
+    ],
+    "softSkills": [
+      "Client relations",
+      "Stakeholder management",
+      "Communication & storytelling",
+      "Resilience & grit",
+      "Cross-functional collaboration"
+    ],
+    "star": {
+      "situation": "BRDGE, a food-ordering startup, wanted usability testing that would also teach their team to run research themselves. The engagement drifted from the statement of work I had proposed. The client kept changing the script and the site mid-project and stayed heavily involved in moderating sessions, which added load onto a small, low-budget team already short on leads.",
+      "task": "Deliver credible findings on the ordering experience while managing a client who wanted hands-on control of the research.",
+      "action": "I stepped into the lead role and brought on more volunteers, delegating the work so a small team could still ship. We ran seven moderated sessions with a heuristic and accessibility pass, then reported findings as a simplified user journey the client could act on without wading through a long deck.",
+      "result": "The findings held up. Participants who hit bad design also reported lower trust in the service, and confusion over portion sizes, prices, and product photos left people unsure about their orders, which pointed at the information hierarchy as the core problem. The lesson I carried forward is that client-moderated sessions bias results regardless of the client's UX training, and it changed how I scoped client involvement in later projects."
+    },
+    "links": [],
+    "_internalReferences": "IncluCity client (contacts: Kojo, Danielle, Stephen; team lead: Mo) [confirm + permission]"
+  },
+  {
+    "id": "uofc-active-living",
+    "title": "University of Calgary Active Living: Usability Evaluation",
+    "job": "IncluCity (Program Manager & Research Operations)",
+    "dates": "2022–2023",
+    "featured": false,
+    "featuredRank": null,
+    "industry": [
+      "Education & EdTech"
+    ],
+    "sector": "Public",
+    "client": [
+      "Government (B2G)",
+      "Community / Public"
+    ],
+    "workType": [
+      "Research Operations",
+      "UX Research",
+      "Usability Evaluation",
+      "Inclusive Design",
+      "Project & Program Management"
+    ],
+    "methods": [
+      "Moderated remote usability testing",
+      "Accessibility testing (screen reader)",
+      "Multi-script coverage design",
+      "Thematic analysis"
+    ],
+    "tools": [
+      "Miro",
+      "testing tooling"
+    ],
+    "researchSkills": [
+      "Study / script design",
+      "Recruitment",
+      "Scheduling",
+      "Moderation",
+      "Synthesis",
+      "Report writing",
+      "Team lead management"
+    ],
+    "softSkills": [
+      "Stakeholder management",
+      "Client relations",
+      "Resilience & grit",
+      "Communication"
+    ],
+    "star": {
+      "situation": "The University of Calgary's Active Living site and registration portal carried three heavy processes: equipment rentals, program signups, and class registration. The client wanted to know how a diverse set of users moved through them and where navigation, language, or accessibility got in the way.",
+      "task": "Test all three flows across diverse user groups and staff a large project through volunteer turnover.",
+      "action": "I split coverage across two scripts that each started at a different entry point and reached more of the site together than one session could, then ran twelve remote facilitated sessions with six testers per group, including a screen reader user. On the operations side, the project's size strained team lead retention, so I managed staffing and handoffs to keep sessions moving.",
+      "result": "Testers struggled to find membership information, their cart, and course availability, and hit confusion in the booking and rental steps. The screen reader user met unlabeled links and sections that were hard to move through. The finding that traveled furthest was that pricing and program details only appeared after account login, which gave people a reason to abandon signup before they had enough to decide."
+    },
+    "links": [],
+    "_internalReferences": "IncluCity client (University of Calgary Active Living) [confirm + permission]"
+  },
+  {
+    "id": "platform-calgary",
+    "title": "Platform Calgary: Usability Evaluation",
+    "job": "IncluCity (Program Manager & Research Operations)",
+    "dates": "2022–2023",
+    "featured": false,
+    "featuredRank": null,
+    "industry": [
+      "Nonprofit & Social Impact"
+    ],
+    "sector": "Nonprofit",
+    "client": [
+      "B2B",
+      "Community / Public"
+    ],
+    "workType": [
+      "Research Operations",
+      "UX Research",
+      "Usability Evaluation",
+      "Inclusive Design",
+      "Project & Program Management"
+    ],
+    "methods": [
+      "Moderated usability testing (2 phases)",
+      "Repeat-participant design",
+      "Thematic analysis"
+    ],
+    "tools": [
+      "Miro",
+      "testing tooling"
+    ],
+    "researchSkills": [
+      "Study design",
+      "Recruitment",
+      "Screening",
+      "Scheduling",
+      "Moderation",
+      "Returning-participant management",
+      "Report writing"
+    ],
+    "softSkills": [
+      "Client relations",
+      "Stakeholder management",
+      "Communication",
+      "Resilience & grit"
+    ],
+    "star": {
+      "situation": "Platform Calgary ran usability testing across two phases, and by phase two we were bringing back participants from phase one to see how the experience had changed. The client wanted to pack more into each session than an hour allowed.",
+      "task": "Hold the line on session quality while keeping a delayed project from eating into the resources other IncluCity projects needed.",
+      "action": "I pushed back on lengthening the sessions and explained the reasoning: past about an hour, participant attention drops and answer quality falls with it, so stretching the script only trades data quality for a couple more tasks. We kept sessions tight, ran twelve participants in phase one and eight in phase two with two returning, and I managed the schedule so the client's delays did not pull staff off other work.",
+      "result": "The client got cleaner data from focused sessions and a phase-over-phase read on the same participants, and IncluCity's other projects kept their people and timelines."
+    },
+    "links": [],
+    "_internalReferences": "IncluCity client (Platform Calgary) [confirm + permission]"
+  },
+  {
+    "id": "ywca-usability",
+    "title": "YWCA: Expert Usability Evaluation",
+    "job": "IncluCity (Program Manager & Research Operations)",
+    "dates": "Oct–Dec 2022",
+    "featured": false,
+    "featuredRank": null,
+    "industry": [
+      "Nonprofit & Social Impact"
+    ],
+    "sector": "Nonprofit",
+    "client": [
+      "B2B"
+    ],
+    "workType": [
+      "Research Operations",
+      "Usability Evaluation",
+      "Inclusive Design",
+      "Project & Program Management"
+    ],
+    "methods": [
+      "PURE (Practical Usability Rating by Experts)",
+      "Heuristic evaluation"
+    ],
+    "tools": [
+      "Miro",
+      "testing tooling"
+    ],
+    "researchSkills": [
+      "Study scoping",
+      "Team staffing & management",
+      "Report writing",
+      "Readouts",
+      "Client timeline negotiation"
+    ],
+    "softSkills": [
+      "Stakeholder management",
+      "Client relations",
+      "Mentoring & people management",
+      "Communication",
+      "Resilience & grit"
+    ],
+    "star": {
+      "situation": "On a YWCA evaluation, I staffed a team lead I rated highly, and early on she started causing delays. The deliverable had shifted from what we scoped, outside pressures were mounting, and she reached a point where she did not feel she could commit to the role.",
+      "task": "Keep the project moving and treat the team lead fairly while doing it.",
+      "action": "I moved her off the lead role, brought in more team members to cover the gap, and went back to the client to ask for more time rather than ship late or thin. Afterward I sat down with her to hear how it had gone from her side, and I owned that I had not brought her perspective into the plan as early as I should have.",
+      "result": "We delivered a PURE and heuristic evaluation on the revised timeline. The bigger return was operational. I started bringing leads into timeline and scope conversations from the start and set expectations with clients earlier. I also got more honest with myself about how to estimate timelines. Asking for more time is fine when you flag it early."
+    },
+    "links": [],
+    "_internalReferences": "IncluCity client (YWCA) [confirm + permission]"
+  },
+  {
+    "id": "chic-geek-usability",
+    "title": "Chic Geek: Usability Evaluation",
+    "job": "IncluCity (Program Manager & Research Operations)",
+    "dates": "Jul–Nov 2022",
+    "featured": false,
+    "featuredRank": null,
+    "industry": [
+      "Nonprofit & Social Impact"
+    ],
+    "sector": "Nonprofit",
+    "client": [
+      "B2B"
+    ],
+    "workType": [
+      "Research Operations",
+      "Usability Evaluation",
+      "Project & Program Management"
+    ],
+    "methods": [
+      "Moderated usability testing"
+    ],
+    "tools": [
+      "Miro",
+      "testing tooling"
+    ],
+    "researchSkills": [
+      "Recruitment",
+      "Scheduling",
+      "Moderation support",
+      "Readouts",
+      "Learning org processes"
+    ],
+    "softSkills": [
+      "Communication",
+      "Client relations",
+      "Cross-functional collaboration"
+    ],
+    "star": {
+      "situation": "Chic Geek, a Calgary nonprofit in the women-in-tech space, was one of my earliest projects at IncluCity. It was where I learned how the organization ran day to day, from its volunteer community to how projects moved from scoping to a client readout.",
+      "task": "Contribute to a usability evaluation while getting up to speed on IncluCity's people and process.",
+      "action": "I worked project operations on an eight-participant moderated usability study, from recruitment and scheduling through to the final presentation, and used it to understand how a volunteer-heavy research team coordinates real client work.",
+      "result": "The study delivered on schedule, and the grounding I got here in how IncluCity operated set up the operations work I took on across later projects."
+    },
+    "links": [],
+    "_internalReferences": "IncluCity client (Chic Geek) [confirm + permission]"
+  },
+  {
+    "id": "shift-recruitment",
+    "title": "Shift: Participant Recruitment (Longitudinal Study)",
+    "job": "IncluCity (Program Manager & Research Operations)",
+    "dates": "Nov 2022–May 2023",
+    "featured": false,
+    "featuredRank": null,
+    "industry": [
+      "Health & Wellness",
+      "Nonprofit & Social Impact"
+    ],
+    "sector": "Nonprofit",
+    "client": [
+      "B2B"
+    ],
+    "workType": [
+      "Research Operations"
+    ],
+    "methods": [
+      "Hard-to-reach recruitment",
+      "Pre-screening",
+      "Participant onboarding for longitudinal study"
+    ],
+    "tools": [
+      "Recruitment / screening tooling"
+    ],
+    "researchSkills": [
+      "Hard-to-reach recruitment",
+      "Screening",
+      "Participant onboarding",
+      "Longitudinal participant management",
+      "Expectation setting"
+    ],
+    "softSkills": [
+      "Communication",
+      "Client relations",
+      "Resilience & grit",
+      "Working independently"
+    ],
+    "star": {
+      "situation": "Shift was recruiting for a long-term study, the kind that asks participants to stay engaged and check in every few months. The population was specific and vulnerable, so a poor match would drop out partway and cost the study time it could not spare.",
+      "task": "Recruit, screen, and onboard participants who would stay the course, working as a team of one.",
+      "action": "I owned recruitment from end to end. I pre-screened against tight criteria, then walked each candidate through what a multi-month commitment with recurring check-ins actually asked of them, so people signed on knowing what they were agreeing to. Retention over that timeline came down to fit, so I treated screening as the part of the work most worth getting right.",
+      "result": "I delivered eleven screened, prepared participants matched to the study's population and set up to stay engaged through its check-in cycle."
+    },
+    "links": [],
+    "_internalReferences": "IncluCity client (Shift) [confirm + permission]"
+  },
+  {
+    "id": "rainforest-inclucity-reops",
+    "title": "Rainforest Alberta: Usability Evaluation (IncluCity ReOps)",
+    "job": "IncluCity (Program Manager & Research Operations)",
+    "dates": "Sep 2022–Jan 2023",
+    "featured": false,
+    "featuredRank": null,
+    "industry": [
+      "Nonprofit & Social Impact"
+    ],
+    "sector": "Nonprofit",
+    "client": [
+      "B2B",
+      "Community / Public"
+    ],
+    "workType": [
+      "Research Operations",
+      "UX Research",
+      "Usability Evaluation",
+      "Project & Program Management"
+    ],
+    "methods": [
+      "Heuristic evaluation",
+      "Moderated usability testing",
+      "Large-scale recruitment",
+      "Data-management system design"
+    ],
+    "tools": [
+      "Coda (first use)",
+      "Miro",
+      "testing tooling"
+    ],
+    "researchSkills": [
+      "Large-scale recruitment (~20)",
+      "Screening",
+      "Scheduling",
+      "Data management",
+      "Report writing",
+      "Readouts"
+    ],
+    "softSkills": [
+      "Stakeholder management",
+      "Client relations",
+      "Resilience & grit",
+      "Communication"
+    ],
+    "star": {
+      "situation": "Rainforest was the largest study IncluCity had run to that point, around twenty participants, which was more than double our usual recruitment effort. That scale made both the logistics and the volume of data harder to manage cleanly.",
+      "task": "Recruit and run a study at a size the team had not handled before, and keep the data organized enough to report on.",
+      "action": "I led recruitment for the twenty participants and set up Coda for the first time to manage participants and testing data as the study grew. Getting the data structure right up front was what kept a study this size from turning into a pile we could not sort later.",
+      "result": "We ran and reported the study, and the recruitment and data-management setup I built here carried into how I ran recruitment and data on later projects. This work is also how I first connected with Rainforest, which later brought me on directly as a project management contractor (see the Rainforest Alberta coordinator card)."
+    },
+    "links": [],
+    "_internalReferences": "IncluCity client (Rainforest Alberta) [confirm + permission]"
   }
 ]
