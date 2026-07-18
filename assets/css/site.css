@@ -180,7 +180,9 @@
 
   /* ---------- photo band ---------- */
   .photo-band{margin:44px auto 4px;display:grid;gap:16px;grid-template-columns:1fr}
-  @media(min-width:720px){.photo-band{grid-template-columns:1fr 1fr}}
+  /* narrower, left-aligned pair so the images sit with the text column instead of
+     spanning the full width; each image is centre-cropped square */
+  @media(min-width:720px){.photo-band{grid-template-columns:repeat(2,minmax(0,330px));justify-content:start}}
   .pb-fig{margin:0;display:flex;flex-direction:column}
   /* the framed image: keeps the existing border, radius and hover treatment */
   .pb-frame{
@@ -189,7 +191,7 @@
     transition:transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease)
   }
   .pb-fig:hover .pb-frame{transform:translateY(-3px);box-shadow:var(--shadow-lift);border-color:var(--signal-dim)}
-  .pb-frame img{width:100%;aspect-ratio:16 / 9;display:block;object-fit:cover;transition:transform .7s var(--ease)}
+  .pb-frame img{width:100%;aspect-ratio:1 / 1;display:block;object-fit:cover;object-position:center;transition:transform .7s var(--ease)}
   .pb-fig:hover .pb-frame img{transform:scale(1.04)}
   /* caption now sits below the image as block mono text, no overlay or scrim */
   .pb-cap{
@@ -203,7 +205,7 @@
   .pb-ph{display:none}
   .pb-fig.pending .pb-ph{
     display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;
-    aspect-ratio:16 / 9;text-align:center;padding:22px;background:var(--surface)
+    aspect-ratio:1 / 1;text-align:center;padding:22px;background:var(--surface)
   }
   .pb-ph .pl{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;color:var(--signal)}
   .pb-ph .pn{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);word-break:break-all}
