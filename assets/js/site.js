@@ -121,7 +121,8 @@
       "mw4_t": `<span class="arr">→</span>Évaluation de l'assistant d'achat Weever.ai`,
       "mw4_p": `Évaluation d'utilisabilité à méthodes mixtes d'un assistant d'achat grand public propulsé par l'IA, révélant des obstacles de confiance et de clarté dans une expérience de commerce conversationnel.`,
       "foot_big": `Discutons. <a href="mailto:karerwau@gmail.com">karerwau@gmail.com</a>`,
-      "foot_colophon": `Uriel Karerwa · Recherche UX et conception d'interaction IA · Conçu en 2026`
+      "foot_colophon": `Uriel Karerwa · Recherche UX et conception d'interaction IA · Conçu en 2026`,
+      "foot_copy": `© 2026 Uriel Karerwa. Tous droits réservés.`
     };
     var cacheEN = {};
     function apply(lang){
@@ -244,4 +245,54 @@
       entries.forEach(function(en){ workLink.classList.toggle('active', en.isIntersecting); });
     },{rootMargin:'-40% 0px -55% 0px'});
     sections.forEach(function(s){ io.observe(s); });
+  })();
+
+  // --- collapsible case studies: each starts short (first block + KPIs + links
+  //     visible), with a Read more toggle to reveal the rest of the prose ---
+  (function(){
+    var LABELS = { en:{more:"Read more", less:"Read less"}, fr:{more:"Lire plus", less:"Lire moins"} };
+    function curLang(){ return document.documentElement.getAttribute('lang') === 'fr' ? 'fr' : 'en'; }
+    var relabel = [];
+    var cases = document.querySelectorAll('.case');
+    for(var i=0;i<cases.length;i++){
+      (function(c){
+        var blocks = c.querySelector('.blocks');
+        if(!blocks) return;
+        if(blocks.querySelectorAll('.block').length < 2) return; // nothing to hide
+        c.classList.add('is-collapsible');
+
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'case-more';
+        btn.setAttribute('aria-expanded', 'false');
+        var lbl = document.createElement('span');
+        lbl.className = 'case-more-label';
+        var chev = document.createElement('span');
+        chev.className = 'case-more-chev';
+        chev.setAttribute('aria-hidden', 'true');
+        chev.innerHTML = '<svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>';
+        btn.appendChild(lbl);
+        btn.appendChild(chev);
+        blocks.parentNode.insertBefore(btn, blocks.nextSibling);
+
+        function setLabel(){
+          lbl.textContent = LABELS[curLang()][c.classList.contains('is-open') ? 'less' : 'more'];
+        }
+        btn.addEventListener('click', function(){
+          var open = c.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          setLabel();
+          // if collapsing while scrolled past the top of the case, bring it back into view
+          if(!open && c.getBoundingClientRect().top < 0){
+            c.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+        relabel.push(setLabel);
+        setLabel();
+      })(cases[i]);
+    }
+    var lt = document.getElementById('lang-toggle');
+    if(lt) lt.addEventListener('click', function(){
+      setTimeout(function(){ relabel.forEach(function(f){ f(); }); }, 0);
+    });
   })();

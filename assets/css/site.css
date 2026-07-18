@@ -256,6 +256,21 @@
   .block .lbl::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--signal);flex:0 0 auto}
   .block p{font-size:15.5px;line-height:1.6}
 
+  /* collapsible case studies: collapsed shows only the first block full-width;
+     the KPI metrics and media links below stay visible in both states */
+  .case.is-collapsible:not(.is-open) .blocks{grid-template-columns:1fr}
+  .case.is-collapsible:not(.is-open) .blocks .block:nth-child(n+2){display:none}
+  .case-more{
+    margin-top:22px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;
+    font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.03em;color:var(--signal);
+    background:transparent;border:1px solid var(--line-strong);border-radius:100px;padding:7px 15px;
+    transition:border-color .2s var(--ease),color .2s var(--ease),background .2s var(--ease)
+  }
+  .case-more:hover{border-color:var(--signal);background:var(--signal-soft)}
+  .case-more-chev{display:inline-flex}
+  .case-more-chev svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;display:block;transition:transform .25s var(--ease)}
+  .case-more[aria-expanded="true"] .case-more-chev svg{transform:rotate(180deg)}
+
   .metrics{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
   .metric{
     background:var(--surface);border:1px solid var(--line);border-radius:5px;
@@ -354,6 +369,7 @@
   footer .frow{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px 28px;font-family:"IBM Plex Mono",monospace;font-size:14px}
   footer .frow a{color:var(--ink)}
   .colophon{margin-top:46px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted);letter-spacing:.03em}
+  .copyright{margin-top:8px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted);letter-spacing:.03em}
 
   /* reveal on scroll */
   .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
