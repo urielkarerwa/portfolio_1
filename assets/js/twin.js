@@ -16,7 +16,7 @@
       launch: "Ask my digital twin",
       title: "Uri's digital twin",
       subtitle: "Ask about my work, background, or projects.",
-      greeting: "Hi, I'm Uri's digital twin. Ask me about my projects, my background, or the research I do. I answer from what Uri has written about his work.",
+      greeting: "Hi, I'm Uri's digital twin. Ask me about my projects, my background, or the research I do. I answer from what Uri has written about his work. Conversations may be saved to help improve this assistant.",
       placeholder: "Ask about my work...",
       send: "Send",
       close: "Close",
@@ -28,7 +28,7 @@
       launch: "Discuter avec mon jumeau",
       title: "Jumeau numérique d'Uri",
       subtitle: "Posez des questions sur mon travail, mon parcours ou mes projets.",
-      greeting: "Bonjour, je suis le jumeau numérique d'Uri. Posez-moi des questions sur mes projets, mon parcours ou mes recherches. Je réponds à partir de ce qu'Uri a écrit sur son travail.",
+      greeting: "Bonjour, je suis le jumeau numérique d'Uri. Posez-moi des questions sur mes projets, mon parcours ou mes recherches. Je réponds à partir de ce qu'Uri a écrit sur son travail. Les conversations peuvent être enregistrées afin d'améliorer cet assistant.",
       placeholder: "Posez une question sur mon travail...",
       send: "Envoyer",
       close: "Fermer",
@@ -50,6 +50,23 @@
   var greeted = false;
   var busy = false;
   var els = {};
+
+  // A per-visitor session id so logged rows can be grouped into conversations.
+  // Persisted in localStorage so it stays stable across pages within the site.
+  var sessionId = (function () {
+    try {
+      var k = "twin_sid", v = localStorage.getItem(k);
+      if (!v) {
+        v = (window.crypto && crypto.randomUUID)
+          ? crypto.randomUUID()
+          : "s-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
+        localStorage.setItem(k, v);
+      }
+      return v;
+    } catch (e) {
+      return "s-" + Date.now().toString(36);
+    }
+  })();
 
   function build() {
     var root = document.createElement("div");
@@ -80,7 +97,7 @@
         '<div class="twin-log" id="twin-log" aria-live="polite"></div>' +
         '<div class="twin-chips" id="twin-chips"></div>' +
         '<form class="twin-inputrow" id="twin-form">' +
-          '<input class="twin-input" id="twin-input" type="text" autocomplete="off" maxlength="2000" />' +
+          '<textarea class="twin-input" id="twin-input" rows="1" autocomplete="off" maxlength="2000"></textarea>' +
           '<button class="twin-send" id="twin-send" type="submit"></button>' +
         '</form>' +
       '</div>';
@@ -106,6 +123,15 @@
     els.form.addEventListener("submit", function (e) {
       e.preventDefault();
       send(els.input.value);
+    });
+    // Grow the textarea with typed content (up to a cap) so long input wraps
+    // instead of scrolling sideways. Enter sends; Shift+Enter adds a newline.
+    els.input.addEventListener("input", autoGrow);
+    els.input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        send(els.input.value);
+      }
     });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && els.root.getAttribute("data-open") === "true") close();
@@ -214,6 +240,11 @@
     els.panel.hidden = true;
   }
 
+  function autoGrow() {
+    els.input.style.height = "auto";
+    els.input.style.height = Math.min(els.input.scrollHeight, 132) + "px";
+  }
+
   function addMsg(role, text) {
     var el = document.createElement("div");
     el.className = "twin-msg twin-msg-" + (role === "user" ? "user" : "bot");
@@ -228,6 +259,7 @@
     if (!text || busy) return;
     busy = true;
     els.input.value = "";
+    autoGrow();
     addMsg("user", text);
     history.push({ role: "user", content: text });
     renderChips();
@@ -238,7 +270,7 @@
     fetch(ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ messages: history.slice(-MAX_HISTORY) }),
+      body: JSON.stringify({ messages: history.slice(-MAX_HISTORY), sessionId: sessionId, lang: lang() }),
     })
       .then(function (res) { return res.json().catch(function () { return {}; }); })
       .then(function (data) {

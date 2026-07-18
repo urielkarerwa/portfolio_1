@@ -30,5 +30,27 @@ browser.
 
 ## Updating what the twin knows
 
-Edit the `KNOWLEDGE_BASE` string in `twin.js` and redeploy. Everything the twin
-can say comes from that text, by design, so it cannot invent facts.
+The twin's knowledge comes from two shared sources, assembled into the system
+prompt at build time so nothing is duplicated:
+
+- `data/twin-knowledge.js` — bio, voice, experience, skills, contact, FAQ.
+- `data/projects.json` — the same project data the Work page renders. Edit a
+  project once and both the site and the twin update. The private
+  `_internalReferences` field is never sent to the model.
+
+Redeploy after editing either file.
+
+## Optional: log conversations to Notion
+
+If you set both of these environment variables, each exchange is written as a
+row in a Notion database. Leave them unset and logging is simply skipped (the
+chat works either way):
+
+- `NOTION_TOKEN` — an internal Notion integration secret.
+- `NOTION_DB_ID` — the target database's 32-character id.
+
+The database must have these properties (exact names): `Name` (title),
+`Question` (text), `Reply` (text), `Session` (text), `Language` (text),
+`Time` (date). Share the database with the integration, or the API returns 404.
+Logging is wrapped in try/catch with a 4s timeout, so it can never break or slow
+the chat noticeably, and the API key stays server-side like `ANTHROPIC_API_KEY`.
