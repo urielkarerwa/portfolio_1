@@ -497,21 +497,54 @@
   /* ============================================================
      Digital twin chat widget
      ============================================================ */
-  .twin{position:fixed;right:clamp(16px,4vw,28px);bottom:clamp(16px,4vw,28px);z-index:70;font-family:"Inter",system-ui,sans-serif}
+  .twin{position:fixed;right:clamp(16px,4vw,28px);bottom:clamp(16px,4vw,28px);z-index:70;font-family:"Inter",system-ui,sans-serif;--twin-rest-op:1}
 
+  /* Resting state: a compact circular icon button that pops off the page. */
   .twin-launch{
-    display:inline-flex;align-items:center;gap:9px;cursor:pointer;
-    font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.02em;
-    color:#fff;background:var(--signal);
-    border:none;border-radius:100px;padding:12px 18px;
-    box-shadow:var(--shadow-lift);
-    transition:transform .2s var(--ease),background .2s var(--ease),opacity .2s var(--ease)
+    position:relative;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;
+    width:58px;height:58px;padding:0;gap:0;
+    color:#fff;background:var(--signal);border:none;border-radius:50%;
+    box-shadow:0 6px 16px -4px rgba(47,91,234,.5), 0 12px 34px -12px rgba(26,28,31,.45);
+    opacity:var(--twin-rest-op);overflow:hidden;
+    transition:width .38s var(--ease),border-radius .38s var(--ease),padding .38s var(--ease),
+               opacity .3s var(--ease),transform .2s var(--ease),background .2s var(--ease)
   }
-  .twin-launch:hover{transform:translateY(-2px)}
+  html[data-theme="dark"] .twin-launch{box-shadow:0 6px 16px -4px rgba(124,147,255,.4), 0 12px 34px -12px rgba(0,0,0,.7)}
+  .twin-launch:hover{opacity:1;transform:translateY(-2px)}
   .twin-launch:active{transform:translateY(0)}
-  .twin-launch-dot{width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 0 0 0 rgba(255,255,255,.7);animation:twinpulse 2.4s var(--ease) infinite}
-  @keyframes twinpulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.6)}70%{box-shadow:0 0 0 7px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
-  .twin[data-open="true"] .twin-launch{opacity:0;pointer-events:none}
+  .twin-launch:focus-visible{opacity:1}
+  .twin-launch-icon{display:inline-flex;flex:0 0 auto}
+  .twin-launch-icon svg{width:26px;height:26px;display:block}
+  .twin-launch-label{
+    max-width:0;opacity:0;white-space:nowrap;overflow:hidden;
+    font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.02em;
+    transition:max-width .38s var(--ease),opacity .28s var(--ease),margin .38s var(--ease)
+  }
+  /* the notification ping dot, only shown while nudging */
+  .twin-launch-ping{
+    position:absolute;top:11px;right:11px;width:9px;height:9px;border-radius:50%;
+    background:#fff;opacity:0;transform:scale(.4);transition:opacity .3s var(--ease),transform .3s var(--ease)
+  }
+
+  /* Nudge state: expands to a labelled pill on load / page change to draw the eye. */
+  .twin[data-nudge="true"] .twin-launch{
+    width:auto;border-radius:100px;padding:0 20px 0 17px;gap:11px;opacity:1;
+    animation:twinnudge 2.6s var(--ease) 1
+  }
+  .twin[data-nudge="true"] .twin-launch-label{max-width:220px;opacity:1}
+  .twin[data-nudge="true"] .twin-launch-ping{opacity:0}
+  .twin:not([data-nudge="true"]) .twin-launch-ping{animation:twinping 2.4s var(--ease) infinite}
+  .twin:not([data-nudge="true"]) .twin-launch-ping{opacity:1;transform:scale(1)}
+  @keyframes twinnudge{
+    0%{transform:translateY(10px);opacity:0}
+    18%{transform:translateY(0);opacity:1}
+    72%{transform:translateY(0)}
+    82%{transform:translateY(-4px)}
+    92%{transform:translateY(0)}
+  }
+  @keyframes twinping{0%{box-shadow:0 0 0 0 rgba(255,255,255,.7)}70%{box-shadow:0 0 0 7px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+
+  .twin[data-open="true"] .twin-launch{opacity:0;pointer-events:none;transform:scale(.9)}
 
   .twin-panel{
     position:absolute;right:0;bottom:0;
@@ -521,6 +554,7 @@
     box-shadow:var(--shadow-lift);
     animation:twinrise .28s var(--ease)
   }
+  .twin-panel[hidden]{display:none}
   @keyframes twinrise{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
 
   .twin-head{display:flex;align-items:flex-start;gap:10px;padding:16px 16px 14px;border-bottom:1px solid var(--line);background:var(--surface)}
@@ -562,10 +596,18 @@
   .twin-send:hover{opacity:.9}
 
   @media (max-width:520px){
-    .twin-panel{width:calc(100vw - 24px);height:calc(100vh - 88px)}
+    .twin{right:14px;bottom:14px}
+    /* Mobile: same nudge principle at a smaller scale so it never crowds the thumb zone. */
+    .twin-launch{width:52px;height:52px}
+    .twin-launch-icon svg{width:24px;height:24px}
+    .twin[data-nudge="true"] .twin-launch{padding:0 17px 0 15px;gap:9px}
+    .twin[data-nudge="true"] .twin-launch-label{max-width:60vw;font-size:12.5px}
+    .twin-panel{width:calc(100vw - 24px);height:min(70vh,calc(100vh - 96px))}
   }
   @media (prefers-reduced-motion: reduce){
-    .twin-launch-dot{animation:none}
+    .twin-launch,.twin-launch-label{transition:opacity .2s linear}
+    .twin[data-nudge="true"] .twin-launch{animation:none}
+    .twin-launch-ping,.twin:not([data-nudge="true"]) .twin-launch-ping{animation:none}
     .twin-panel{animation:none}
     .twin-launch:hover{transform:none}
   }

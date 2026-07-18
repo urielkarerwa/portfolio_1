@@ -54,8 +54,11 @@
     root.setAttribute("data-open", "false");
     root.innerHTML =
       '<button class="twin-launch" type="button" aria-expanded="false" aria-controls="twin-panel">' +
-        '<span class="twin-launch-dot" aria-hidden="true"></span>' +
+        '<span class="twin-launch-icon" aria-hidden="true">' +
+          '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.4 1.32 4.55 3.4 6-.17 1.02-.72 2.31-1.62 3.32-.22.24-.06.63.27.6 1.9-.15 3.75-.78 5.02-1.66.93.28 1.92.44 2.93.44 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>' +
+        '</span>' +
         '<span class="twin-launch-label"></span>' +
+        '<span class="twin-launch-ping" aria-hidden="true"></span>' +
       '</button>' +
       '<div class="twin-panel" id="twin-panel" role="dialog" aria-modal="false" hidden>' +
         '<div class="twin-head">' +
@@ -103,6 +106,44 @@
     // keep chrome in sync when the visitor flips the site language
     var langBtn = document.getElementById("lang-toggle");
     if (langBtn) langBtn.addEventListener("click", function () { setTimeout(applyLang, 0); });
+
+    // On every page load (first visit or an in-site navigation) the launcher
+    // starts as a labelled pill to draw the eye, then collapses to a compact
+    // icon after a few seconds or as soon as the visitor starts scrolling.
+    startNudge();
+    bindScroll();
+  }
+
+  var NUDGE_MS = 5200;
+  var nudgeTimer = null;
+
+  function startNudge() {
+    els.root.setAttribute("data-nudge", "true");
+    clearTimeout(nudgeTimer);
+    nudgeTimer = setTimeout(endNudge, NUDGE_MS);
+  }
+  function endNudge() {
+    clearTimeout(nudgeTimer);
+    if (els.root.getAttribute("data-nudge") === "true") els.root.setAttribute("data-nudge", "false");
+  }
+
+  // Fade the resting launcher as the page scrolls: prominent at the top, quieter
+  // further down so it never competes with the content. Hover always restores it.
+  function bindScroll() {
+    var ticking = false;
+    function apply() {
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      if (y > 40) endNudge();
+      var op = 1 - Math.min(y / 640, 1) * 0.6; // 1.0 at top down to 0.4
+      els.root.style.setProperty("--twin-rest-op", op.toFixed(2));
+      ticking = false;
+    }
+    window.addEventListener("scroll", function () {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(apply);
+    }, { passive: true });
+    apply();
   }
 
   function applyLang() {
@@ -140,6 +181,7 @@
   }
 
   function open() {
+    endNudge();
     els.root.setAttribute("data-open", "true");
     els.launch.setAttribute("aria-expanded", "true");
     els.panel.hidden = false;
