@@ -497,52 +497,51 @@
   /* ============================================================
      Digital twin chat widget
      ============================================================ */
-  .twin{position:fixed;right:clamp(16px,4vw,28px);bottom:clamp(16px,4vw,28px);z-index:70;font-family:"Inter",system-ui,sans-serif;--twin-rest-op:1}
+  .twin{position:fixed;right:clamp(16px,4vw,28px);bottom:clamp(16px,4vw,28px);z-index:70;font-family:"Inter",system-ui,sans-serif;--twin-morph:0;--twin-rest-op:1}
 
-  /* Resting state: a compact circular icon button that pops off the page. */
+  /* The launcher morphs from a labelled pill (--twin-morph:0) to a compact
+     circle (--twin-morph:1). JS drives --twin-morph from scroll position, and
+     the shape follows through calc(): padding, gap and the label width all
+     scale with (1 - morph), while min-width keeps the circle at the end. */
   .twin-launch{
     position:relative;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;
-    width:58px;height:58px;padding:0;gap:0;
-    color:#fff;background:var(--signal);border:none;border-radius:50%;
+    min-width:58px;height:58px;border-radius:29px;
+    padding:0 calc((1 - var(--twin-morph)) * 20px) 0 calc((1 - var(--twin-morph)) * 6px);
+    gap:calc((1 - var(--twin-morph)) * 11px);
+    color:#fff;background:var(--signal);border:none;
     box-shadow:0 6px 16px -4px rgba(47,91,234,.5), 0 12px 34px -12px rgba(26,28,31,.45);
-    opacity:var(--twin-rest-op);overflow:hidden;
-    transition:width .38s var(--ease),border-radius .38s var(--ease),padding .38s var(--ease),
-               opacity .3s var(--ease),transform .2s var(--ease),background .2s var(--ease)
+    opacity:var(--twin-rest-op);
+    transition:padding .45s var(--ease),gap .45s var(--ease),opacity .3s var(--ease),transform .2s var(--ease),background .2s var(--ease);
+    animation:twinenter 2.4s var(--ease) 1
   }
   html[data-theme="dark"] .twin-launch{box-shadow:0 6px 16px -4px rgba(124,147,255,.4), 0 12px 34px -12px rgba(0,0,0,.7)}
   .twin-launch:hover{opacity:1;transform:translateY(-2px)}
   .twin-launch:active{transform:translateY(0)}
   .twin-launch:focus-visible{opacity:1}
-  .twin-launch-icon{display:inline-flex;flex:0 0 auto}
-  .twin-launch-icon svg{width:26px;height:26px;display:block}
-  .twin-launch-label{
-    max-width:0;opacity:0;white-space:nowrap;overflow:hidden;
-    font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.02em;
-    transition:max-width .38s var(--ease),opacity .28s var(--ease),margin .38s var(--ease)
-  }
-  /* the notification ping dot, only shown while nudging */
-  .twin-launch-ping{
-    position:absolute;top:11px;right:11px;width:9px;height:9px;border-radius:50%;
-    background:#fff;opacity:0;transform:scale(.4);transition:opacity .3s var(--ease),transform .3s var(--ease)
-  }
 
-  /* Nudge state: expands to a labelled pill on load / page change to draw the eye. */
-  .twin[data-nudge="true"] .twin-launch{
-    width:auto;border-radius:100px;padding:0 20px 0 17px;gap:11px;opacity:1;
-    animation:twinnudge 2.6s var(--ease) 1
+  .twin-launch-media{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px}
+  .twin-launch-glyph{width:26px;height:26px;display:block}
+  .twin-launch-photo{display:none;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+  /* when a real headshot loads, the media becomes a circular photo with a ring */
+  .twin[data-photo="true"] .twin-launch-media{width:44px;height:44px;border-radius:50%;overflow:hidden;background:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.9)}
+  .twin[data-photo="true"] .twin-launch-photo{display:block}
+  .twin[data-photo="true"] .twin-launch-glyph{display:none}
+
+  .twin-launch-label{
+    max-width:calc((1 - var(--twin-morph)) * 220px);
+    opacity:calc(1 - var(--twin-morph));
+    white-space:nowrap;overflow:hidden;
+    font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.02em;
+    transition:max-width .45s var(--ease),opacity .3s var(--ease)
   }
-  .twin[data-nudge="true"] .twin-launch-label{max-width:220px;opacity:1}
-  .twin[data-nudge="true"] .twin-launch-ping{opacity:0}
-  .twin:not([data-nudge="true"]) .twin-launch-ping{animation:twinping 2.4s var(--ease) infinite}
-  .twin:not([data-nudge="true"]) .twin-launch-ping{opacity:1;transform:scale(1)}
-  @keyframes twinnudge{
-    0%{transform:translateY(10px);opacity:0}
-    18%{transform:translateY(0);opacity:1}
-    72%{transform:translateY(0)}
-    82%{transform:translateY(-4px)}
-    92%{transform:translateY(0)}
+  /* a one-time entrance: rise in, then a small attention bob */
+  @keyframes twinenter{
+    0%{transform:translateY(12px);opacity:0}
+    16%{transform:translateY(0);opacity:1}
+    74%{transform:translateY(0)}
+    84%{transform:translateY(-4px)}
+    94%{transform:translateY(0)}
   }
-  @keyframes twinping{0%{box-shadow:0 0 0 0 rgba(255,255,255,.7)}70%{box-shadow:0 0 0 7px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
 
   .twin[data-open="true"] .twin-launch{opacity:0;pointer-events:none;transform:scale(.9)}
 
@@ -557,7 +556,16 @@
   .twin-panel[hidden]{display:none}
   @keyframes twinrise{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
 
-  .twin-head{display:flex;align-items:flex-start;gap:10px;padding:16px 16px 14px;border-bottom:1px solid var(--line);background:var(--surface)}
+  .twin-head{display:flex;align-items:center;gap:11px;padding:16px 16px 14px;border-bottom:1px solid var(--line);background:var(--surface)}
+  .twin-head-avatar{
+    flex:0 0 auto;width:40px;height:40px;border-radius:50%;overflow:hidden;
+    display:inline-flex;align-items:center;justify-content:center;
+    background:var(--signal);color:#fff;box-shadow:0 0 0 2px var(--surface-2), 0 0 0 3px var(--signal-dim)
+  }
+  .twin-head-photo{display:none;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+  .twin-head-initials{font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:500;letter-spacing:.02em}
+  .twin[data-photo="true"] .twin-head-photo{display:block}
+  .twin[data-photo="true"] .twin-head-initials{display:none}
   .twin-head-text{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
   .twin-head-title{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:16px;color:var(--ink);line-height:1.2}
   .twin-head-sub{font-size:12.5px;color:var(--muted);line-height:1.4}
@@ -597,17 +605,18 @@
 
   @media (max-width:520px){
     .twin{right:14px;bottom:14px}
-    /* Mobile: same nudge principle at a smaller scale so it never crowds the thumb zone. */
-    .twin-launch{width:52px;height:52px}
-    .twin-launch-icon svg{width:24px;height:24px}
-    .twin[data-nudge="true"] .twin-launch{padding:0 17px 0 15px;gap:9px}
-    .twin[data-nudge="true"] .twin-launch-label{max-width:60vw;font-size:12.5px}
+    /* Mobile: same pill-to-circle morph at a smaller scale so it never crowds the thumb zone. */
+    .twin-launch{min-width:52px;height:52px;border-radius:26px;
+      padding:0 calc((1 - var(--twin-morph)) * 16px) 0 calc((1 - var(--twin-morph)) * 5px);
+      gap:calc((1 - var(--twin-morph)) * 9px)}
+    .twin-launch-media,.twin-launch-glyph{width:24px;height:24px}
+    .twin[data-photo="true"] .twin-launch-media{width:40px;height:40px}
+    .twin-launch-label{max-width:calc((1 - var(--twin-morph)) * 56vw);font-size:12.5px}
     .twin-panel{width:calc(100vw - 24px);height:min(70vh,calc(100vh - 96px))}
   }
   @media (prefers-reduced-motion: reduce){
-    .twin-launch,.twin-launch-label{transition:opacity .2s linear}
-    .twin[data-nudge="true"] .twin-launch{animation:none}
-    .twin-launch-ping,.twin:not([data-nudge="true"]) .twin-launch-ping{animation:none}
+    .twin-launch{animation:none;transition:opacity .2s linear,padding .2s linear,gap .2s linear}
+    .twin-launch-label{transition:opacity .2s linear,max-width .2s linear}
     .twin-panel{animation:none}
     .twin-launch:hover{transform:none}
   }

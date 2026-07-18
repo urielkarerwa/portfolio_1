@@ -7,6 +7,9 @@
 
   var ENDPOINT = "/.netlify/functions/twin";
   var MAX_HISTORY = 10;
+  // Optional headshot. If this file exists it upgrades the launcher and header
+  // to a photo avatar; if it's missing the widget falls back to the chat glyph.
+  var AVATAR_SRC = "images/twin-avatar.jpg";
 
   var T = {
     en: {
@@ -54,14 +57,18 @@
     root.setAttribute("data-open", "false");
     root.innerHTML =
       '<button class="twin-launch" type="button" aria-expanded="false" aria-controls="twin-panel">' +
-        '<span class="twin-launch-icon" aria-hidden="true">' +
-          '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.4 1.32 4.55 3.4 6-.17 1.02-.72 2.31-1.62 3.32-.22.24-.06.63.27.6 1.9-.15 3.75-.78 5.02-1.66.93.28 1.92.44 2.93.44 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>' +
+        '<span class="twin-launch-media" aria-hidden="true">' +
+          '<img class="twin-launch-photo" alt="" src="' + AVATAR_SRC + '">' +
+          '<svg class="twin-launch-glyph" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.4 1.32 4.55 3.4 6-.17 1.02-.72 2.31-1.62 3.32-.22.24-.06.63.27.6 1.9-.15 3.75-.78 5.02-1.66.93.28 1.92.44 2.93.44 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>' +
         '</span>' +
         '<span class="twin-launch-label"></span>' +
-        '<span class="twin-launch-ping" aria-hidden="true"></span>' +
       '</button>' +
       '<div class="twin-panel" id="twin-panel" role="dialog" aria-modal="false" hidden>' +
         '<div class="twin-head">' +
+          '<span class="twin-head-avatar" aria-hidden="true">' +
+            '<img class="twin-head-photo" alt="" src="' + AVATAR_SRC + '">' +
+            '<span class="twin-head-initials">UK</span>' +
+          '</span>' +
           '<div class="twin-head-text">' +
             '<span class="twin-head-title"></span>' +
             '<span class="twin-head-sub"></span>' +
@@ -107,35 +114,31 @@
     var langBtn = document.getElementById("lang-toggle");
     if (langBtn) langBtn.addEventListener("click", function () { setTimeout(applyLang, 0); });
 
-    // On every page load (first visit or an in-site navigation) the launcher
-    // starts as a labelled pill to draw the eye, then collapses to a compact
-    // icon after a few seconds or as soon as the visitor starts scrolling.
-    startNudge();
+    setupPhoto();
     bindScroll();
   }
 
-  var NUDGE_MS = 5200;
-  var nudgeTimer = null;
+  // The launcher starts as a labelled pill on every page load (first visit or an
+  // in-site navigation) and morphs progressively into a compact circle as the
+  // visitor scrolls down. Once it has fully become a circle it stays that way for
+  // the rest of the visit, so it never flips back and forth.
+  var MORPH_RANGE = 300; // px of scroll to go from full pill to full circle
+  var morphLocked = false;
 
-  function startNudge() {
-    els.root.setAttribute("data-nudge", "true");
-    clearTimeout(nudgeTimer);
-    nudgeTimer = setTimeout(endNudge, NUDGE_MS);
-  }
-  function endNudge() {
-    clearTimeout(nudgeTimer);
-    if (els.root.getAttribute("data-nudge") === "true") els.root.setAttribute("data-nudge", "false");
-  }
-
-  // Fade the resting launcher as the page scrolls: prominent at the top, quieter
-  // further down so it never competes with the content. Hover always restores it.
   function bindScroll() {
     var ticking = false;
     function apply() {
       var y = window.pageYOffset || document.documentElement.scrollTop || 0;
-      if (y > 40) endNudge();
-      var op = 1 - Math.min(y / 640, 1) * 0.6; // 1.0 at top down to 0.4
-      els.root.style.setProperty("--twin-rest-op", op.toFixed(2));
+      var m;
+      if (morphLocked) {
+        m = 1;
+      } else {
+        m = Math.min(Math.max(y / MORPH_RANGE, 0), 1);
+        if (m >= 1) morphLocked = true;
+      }
+      // 0 = full pill, 1 = full circle. Drives shape (CSS) and a gentle fade.
+      els.root.style.setProperty("--twin-morph", m.toFixed(3));
+      els.root.style.setProperty("--twin-rest-op", (1 - m * 0.38).toFixed(3));
       ticking = false;
     }
     window.addEventListener("scroll", function () {
@@ -144,6 +147,20 @@
       window.requestAnimationFrame(apply);
     }, { passive: true });
     apply();
+  }
+
+  // Light up the photo avatar only if the headshot file actually loads.
+  function setupPhoto() {
+    var imgs = els.root.querySelectorAll(".twin-launch-photo, .twin-head-photo");
+    for (var i = 0; i < imgs.length; i++) {
+      (function (img) {
+        if (img.complete && img.naturalWidth > 0) els.root.setAttribute("data-photo", "true");
+        img.addEventListener("load", function () {
+          if (img.naturalWidth > 0) els.root.setAttribute("data-photo", "true");
+        });
+        img.addEventListener("error", function () { img.style.display = "none"; });
+      })(imgs[i]);
+    }
   }
 
   function applyLang() {
@@ -181,7 +198,6 @@
   }
 
   function open() {
-    endNudge();
     els.root.setAttribute("data-open", "true");
     els.launch.setAttribute("aria-expanded", "true");
     els.panel.hidden = false;
