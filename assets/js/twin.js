@@ -16,7 +16,7 @@
       launch: "Ask my digital twin",
       title: "Uri's digital twin",
       subtitle: "Ask about my work, background, or projects.",
-      greeting: "Hi, I'm Uri's digital twin. Ask me about my projects, my background, or the research I do. I answer from what Uri has written about his work. Conversations may be saved to help improve this assistant.",
+      greeting: "Hi, I'm Uri's digital twin. Ask me about my projects, my background, or my research. Conversations may be saved to help improve this assistant.",
       placeholder: "Ask about my work...",
       send: "Send",
       close: "Close",
@@ -28,7 +28,7 @@
       launch: "Discuter avec mon jumeau",
       title: "Jumeau numérique d'Uri",
       subtitle: "Posez des questions sur mon travail, mon parcours ou mes projets.",
-      greeting: "Bonjour, je suis le jumeau numérique d'Uri. Posez-moi des questions sur mes projets, mon parcours ou mes recherches. Je réponds à partir de ce qu'Uri a écrit sur son travail. Les conversations peuvent être enregistrées afin d'améliorer cet assistant.",
+      greeting: "Bonjour, je suis le jumeau numérique d'Uri. Posez-moi des questions sur mes projets, mon parcours ou mes recherches. Les conversations peuvent être enregistrées afin d'améliorer cet assistant.",
       placeholder: "Posez une question sur mon travail...",
       send: "Envoyer",
       close: "Fermer",
@@ -144,25 +144,17 @@
     bindScroll();
   }
 
-  // The launcher starts as a labelled pill on every page load (first visit or an
-  // in-site navigation) and morphs progressively into a compact circle as the
-  // visitor scrolls down. Once it has fully become a circle it stays that way for
-  // the rest of the visit, so it never flips back and forth.
-  var MORPH_RANGE = 300; // px of scroll to go from full pill to full circle
-  var morphLocked = false;
+  // The launcher tracks scroll position: a labelled pill at the top of the page,
+  // morphing into a compact circle as the visitor scrolls down, and back into the
+  // pill when they return to the top.
+  var MORPH_RANGE = 300; // px of scroll to morph fully between pill and circle
 
   function bindScroll() {
     var ticking = false;
     function apply() {
       var y = window.pageYOffset || document.documentElement.scrollTop || 0;
-      var m;
-      if (morphLocked) {
-        m = 1;
-      } else {
-        m = Math.min(Math.max(y / MORPH_RANGE, 0), 1);
-        if (m >= 1) morphLocked = true;
-      }
       // 0 = full pill, 1 = full circle. Drives shape (CSS) and a gentle fade.
+      var m = Math.min(Math.max(y / MORPH_RANGE, 0), 1);
       els.root.style.setProperty("--twin-morph", m.toFixed(3));
       els.root.style.setProperty("--twin-rest-op", (1 - m * 0.38).toFixed(3));
       ticking = false;

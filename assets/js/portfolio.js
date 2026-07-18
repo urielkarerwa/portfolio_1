@@ -29,6 +29,11 @@
   var selection = {}; // key -> Set of selected values
   FACETS.forEach(function (f) { selection[f.key] = new Set(); });
 
+  // Quick-view mode when no facet filters are active: "current" (ongoing work,
+  // the default) or "all" (every project). Facet filters override both.
+  var viewMode = "current";
+  function isCurrent(p) { return /present/i.test(p.dates || ""); }
+
   var openCats = {};      // category label -> open (persists across re-renders)
   var focusTarget = null; // {facet,value} chip to refocus after a re-render
 
@@ -73,20 +78,21 @@
     });
   }
 
+  // Featured first (by rank), then the rest by recency descending.
+  function rankSort(a, b) {
+    if (a.featured && b.featured) return a.featuredRank - b.featuredRank;
+    if (a.featured) return -1;
+    if (b.featured) return 1;
+    return recency(b.dates) - recency(a.dates);
+  }
+
   function computeShown() {
-    if (!anyActive()) {
-      // Default view: featured only, by featuredRank ascending.
-      return projects
-        .filter(function (p) { return p.featured; })
-        .sort(function (a, b) { return a.featuredRank - b.featuredRank; });
+    if (anyActive()) {
+      return projects.filter(matchesSelection).sort(rankSort);
     }
-    // Filtered view: featured first (by rank), then the rest by recency desc.
-    return projects.filter(matchesSelection).sort(function (a, b) {
-      if (a.featured && b.featured) return a.featuredRank - b.featuredRank;
-      if (a.featured) return -1;
-      if (b.featured) return 1;
-      return recency(b.dates) - recency(a.dates);
-    });
+    // No facet filters: honour the quick-view mode.
+    var base = viewMode === "all" ? projects.slice() : projects.filter(isCurrent);
+    return base.sort(rankSort);
   }
 
   // --- small DOM builders ---------------------------------------------------
@@ -364,6 +370,11 @@
         parts.push(f.key + "=" + vals.map(encodeURIComponent).join(","));
       }
     });
+    // Persist the quick-view mode only when it differs from the default and no
+    // facet filters are active (filters are the more specific state).
+    if (!anyActive() && viewMode === "all") {
+      parts.push("view=all");
+    }
     var qs = parts.join("&");
     var url = location.pathname + (qs ? "?" + qs : "") + location.hash;
     history.replaceState(null, "", url);
@@ -371,6 +382,7 @@
 
   function readURL() {
     var params = new URLSearchParams(location.search);
+    if (params.get("view") === "all") viewMode = "all";
     FACETS.forEach(function (facet) {
       var raw = params.get(facet.key);
       if (!raw) return;
@@ -387,6 +399,23 @@
   function clearAll() {
     FACETS.forEach(function (f) { selection[f.key].clear(); });
     render();
+  }
+
+  // Quick-view buttons clear any facet filters, then set the view mode.
+  function setView(mode) {
+    FACETS.forEach(function (f) { selection[f.key].clear(); });
+    viewMode = mode;
+    render();
+  }
+
+  function updateViewButtons() {
+    var custom = anyActive();
+    if (els.viewCurrent) {
+      els.viewCurrent.setAttribute("aria-pressed", (!custom && viewMode === "current") ? "true" : "false");
+    }
+    if (els.viewAll) {
+      els.viewAll.setAttribute("aria-pressed", (!custom && viewMode === "all") ? "true" : "false");
+    }
   }
 
   function copyLink() {
@@ -428,6 +457,7 @@
     var shown = computeShown();
     renderFilters();
     renderResultHeader(shown);
+    updateViewButtons();
     renderResults(shown);
     syncURL();
   }
@@ -443,12 +473,18 @@
     els.active = document.getElementById("pf-active");
     els.clear = document.getElementById("pf-clear");
     els.copy = document.getElementById("pf-copy");
+    els.viewCurrent = document.getElementById("pf-view-current");
+    els.viewAll = document.getElementById("pf-view-all");
+    els.viewReset = document.getElementById("pf-view-reset");
     els.results = document.getElementById("pf-results");
     els.sectionCount = document.getElementById("pf-section-count");
     if (!els.primary || !els.results) return;
 
     els.clear.addEventListener("click", clearAll);
     els.copy.addEventListener("click", copyLink);
+    if (els.viewCurrent) els.viewCurrent.addEventListener("click", function () { setView("current"); });
+    if (els.viewAll) els.viewAll.addEventListener("click", function () { setView("all"); });
+    if (els.viewReset) els.viewReset.addEventListener("click", function () { setView("current"); });
 
     // "More filters" disclosure: toggle the secondary panel (mouse + keyboard).
     if (els.moreToggle && els.secondary) {
