@@ -949,10 +949,10 @@
       "Cross-functional collaboration"
     ],
     "star": {
-      "situation": "BRDGE, a food-ordering startup, wanted usability testing that would also teach their team to run research themselves. The engagement drifted from the statement of work I had proposed. The client kept changing the script and the site mid-project and stayed heavily involved in moderating sessions, which added load onto a small, low-budget team already short on leads.",
-      "task": "Deliver credible findings on the ordering experience while managing a client who wanted hands-on control of the research.",
-      "action": "I stepped into the lead role and brought on more volunteers, delegating the work so a small team could still ship. We ran seven moderated sessions with a heuristic and accessibility pass, then reported findings as a simplified user journey the client could act on without wading through a long deck.",
-      "result": "The findings held up. Participants who hit bad design also reported lower trust in the service, and confusion over portion sizes, prices, and product photos left people unsure about their orders, which pointed at the information hierarchy as the core problem. The lesson I carried forward is that client-moderated sessions bias results regardless of the client's UX training, and it changed how I scoped client involvement in later projects."
+      "situation": "BRDGE, a food-ordering startup, wanted usability testing and planned to have their team participate in moderation as part of building their own research capability. The scope expanded during the project and the timeline tightened.",
+      "task": "Deliver credible findings on the ordering experience while adapting to scope and timeline changes and building client research capacity without inserting observation bias.",
+      "action": "I restructured the study to focus on the highest-priority flows and brought on more volunteers to keep momentum. We ran seven moderated sessions with a heuristic and accessibility pass, then distilled findings into a user journey map the team could act on without dense documentation. This hands-on involvement gave the client direct exposure to how research works in practice. The client ran a few sessions as the main facilitator, without divulging their relationship with the object being tested.",
+      "result": "The data showed that confusion over portion sizes, prices, and product photos left people unsure about their orders, pointing to information hierarchy as the core problem. The client shipped fixes based on clear, actionable findings. From this project, I also learned that early alignment on research methods and scope prevents surprises, and I built that check into my intake process for all later projects."
     },
     "links": [],
     "_internalReferences": "IncluCity client (contacts: Kojo, Danielle, Stephen; team lead: Mo) [confirm + permission]",
@@ -961,10 +961,10 @@
       "job": "Gestionnaire de programme et recherche-opérations, IncluCity",
       "dates": "avr. – sept. 2023",
       "star": {
-        "situation": "BRDGE, une jeune entreprise de commande de nourriture, voulait des tests d'utilisabilité qui apprendraient aussi à son équipe à mener de la recherche elle-même. Le mandat s'est éloigné de l'énoncé de travail que j'avais proposé. Le client changeait constamment le script et le site en cours de route et restait très impliqué dans la modération des séances, ce qui ajoutait de la charge à une petite équipe à faible budget déjà à court de responsables.",
-        "task": "Livrer des constats crédibles sur l'expérience de commande tout en gérant un client qui voulait garder un contrôle direct sur la recherche.",
-        "action": "J'ai pris le rôle de responsable et recruté plus de bénévoles, en déléguant le travail pour qu'une petite équipe puisse tout de même livrer. Nous avons mené sept séances modérées avec une évaluation heuristique et d'accessibilité, puis présenté les constats sous forme de parcours utilisateur simplifié, sur lequel le client pouvait agir sans parcourir un long document.",
-        "result": "Les constats ont tenu la route. Les participants qui rencontraient une mauvaise conception rapportaient aussi une confiance moindre envers le service, et la confusion sur les portions, les prix et les photos de produits laissait les gens incertains de leurs commandes, ce qui pointait vers la hiérarchie de l'information comme problème central. La leçon que j'ai retenue : les séances modérées par le client biaisent les résultats, peu importe sa formation en UX, et cela a changé ma façon de cadrer l'implication du client dans les projets suivants."
+        "situation": "BRDGE, une jeune entreprise de commande de nourriture, voulait des tests d'utilisabilité et prévoyait que son équipe participe à la modération, dans le cadre du développement de sa propre capacité de recherche. La portée s'est élargie pendant le projet et l'échéancier s'est resserré.",
+        "task": "Livrer des constats crédibles sur l'expérience de commande tout en s'adaptant aux changements de portée et d'échéancier et en développant la capacité de recherche du client, sans introduire de biais d'observation.",
+        "action": "J'ai restructuré l'étude pour me concentrer sur les parcours prioritaires et recruté plus de bénévoles pour garder l'élan. Nous avons mené sept séances modérées avec une évaluation heuristique et d'accessibilité, puis distillé les constats en une carte de parcours utilisateur sur laquelle l'équipe pouvait agir sans documentation dense. Cette implication concrète a donné au client une exposition directe au fonctionnement réel de la recherche. Le client a animé quelques séances comme modérateur principal, sans divulguer son lien avec l'objet testé.",
+        "result": "Les données ont montré que la confusion sur les portions, les prix et les photos de produits laissait les gens incertains de leurs commandes, pointant vers la hiérarchie de l'information comme problème central. Le client a livré des correctifs à partir de constats clairs et exploitables. De ce projet, j'ai aussi appris qu'un alignement précoce sur les méthodes et la portée évite les surprises, et j'ai intégré cette vérification à mon processus d'intégration pour tous les projets suivants."
       }
     }
   },
@@ -1083,10 +1083,10 @@
       "Resilience & grit"
     ],
     "star": {
-      "situation": "Platform Calgary ran usability testing across two phases, and by phase two we were bringing back participants from phase one to see how the experience had changed. The client wanted to pack more into each session than an hour allowed.",
-      "task": "Hold the line on session quality while keeping a delayed project from eating into the resources other IncluCity projects needed.",
-      "action": "I pushed back on lengthening the sessions and explained the reasoning: past about an hour, participant attention drops and answer quality falls with it, so stretching the script only trades data quality for a couple more tasks. We kept sessions tight, ran twelve participants in phase one and eight in phase two with two returning, and I managed the schedule so the client's delays did not pull staff off other work.",
-      "result": "The client got cleaner data from focused sessions and a phase-over-phase read on the same participants, and IncluCity's other projects kept their people and timelines."
+      "situation": "We ran usability testing across two phases, with a dev phase in between. We brought back participants from phase one to see how the experience had changed. The client had ambitious goals for what each session could cover and for testing timelines.",
+      "task": "Design sessions that would capture insights while maintaining data quality and protecting team capacity across concurrent IncluCity projects.",
+      "action": "I worked with the client to prioritize which flows mattered most for their decision-making, then structured focused one-hour testing sessions around those priorities. We ran 12 participants in phase one and 8 in phase two, with 2 returning, allowing us to track changes over time. I also coordinated scheduling across concurrent projects to maintain stable resource allocation.",
+      "result": "The client got clean, comparable data across both phases from the same participants, and team capacity stayed protected across other engagements."
     },
     "links": [],
     "_internalReferences": "IncluCity client (Platform Calgary) [confirm + permission]",
@@ -1095,10 +1095,10 @@
       "job": "Gestionnaire de programme et recherche-opérations, IncluCity",
       "dates": "2022 – 2023",
       "star": {
-        "situation": "Platform Calgary a mené des tests d'utilisabilité sur deux phases, et à la deuxième nous ramenions des participants de la première pour voir comment l'expérience avait changé. Le client voulait mettre plus de contenu dans chaque séance que l'heure ne le permettait.",
-        "task": "Maintenir la qualité des séances tout en évitant qu'un projet retardé n'empiète sur les ressources dont d'autres projets d'IncluCity avaient besoin.",
-        "action": "J'ai résisté à l'allongement des séances et expliqué le raisonnement : au-delà d'une heure environ, l'attention des participants chute et la qualité des réponses avec elle, alors étirer le script ne fait qu'échanger la qualité des données contre quelques tâches de plus. Nous avons gardé les séances serrées, mené douze participants en phase un et huit en phase deux dont deux de retour, et j'ai géré le calendrier pour que les retards du client ne détournent pas le personnel d'autres travaux.",
-        "result": "Le client a obtenu des données plus propres grâce à des séances ciblées et une lecture d'une phase à l'autre auprès des mêmes participants, et les autres projets d'IncluCity ont conservé leur personnel et leurs échéanciers."
+        "situation": "Nous avons mené des tests d'utilisabilité sur deux phases, avec une phase de développement entre les deux. Nous avons ramené des participants de la première phase pour voir comment l'expérience avait évolué. Le client avait des objectifs ambitieux quant à ce que chaque séance pouvait couvrir et aux échéanciers de test.",
+        "task": "Concevoir des séances qui captaient des constats tout en préservant la qualité des données et en protégeant la capacité de l'équipe répartie sur des projets IncluCity simultanés.",
+        "action": "J'ai travaillé avec le client pour prioriser les parcours les plus importants pour sa prise de décision, puis j'ai structuré des séances de test ciblées d'une heure autour de ces priorités. Nous avons mené 12 participants en phase un et 8 en phase deux, dont 2 de retour, ce qui nous a permis de suivre les changements dans le temps. J'ai aussi coordonné la planification entre les projets simultanés pour maintenir une allocation stable des ressources.",
+        "result": "Le client a obtenu des données propres et comparables sur les deux phases auprès des mêmes participants, et la capacité de l'équipe est restée protégée sur les autres mandats."
       }
     }
   },
@@ -1145,10 +1145,10 @@
       "Resilience & grit"
     ],
     "star": {
-      "situation": "On a YWCA evaluation, I staffed a team lead I rated highly. The deliverable had shifted from what we scoped; outside pressures were mounting, and she reached a point where she no longer felt she could commit to the role, which was completely understandable.",
-      "task": "Keep the project moving and find another team lead for the project.",
-      "action": "I moved her off the lead role, brought in more team members to cover the gap, and went back to the client to ask for more time rather than ship late or thin. Afterward I sat down with her to hear how it had gone from her side, and I owned that I had not brought her perspective into the plan as early as I should have.",
-      "result": "We delivered a PURE and heuristic evaluation on the revised timeline. The bigger return was operational. I started bringing leads into timeline and scope conversations from the start and set expectations with clients earlier. I also got more honest with myself about how to estimate timelines. Asking for more time is fine when you flag it early."
+      "situation": "The YWCA evaluation had a scope shift mid-project, and the deliverable grew beyond our initial estimate. The volunteer lead notified me at a critical period that she was unable to complete the project (for good reason).",
+      "task": "Reorganize the team structure and reset the timeline with the client so we could deliver quality work.",
+      "action": "I brought in additional team members to distribute the workload, then went back to the client to negotiate a revised timeline that aligned with the expanded scope. I also built a more collaborative planning process with team leads, bringing them into timeline and scope conversations from the outset so estimates and commitments reflected reality.",
+      "result": "We delivered a full PURE and heuristic evaluation on the revised timeline. The bigger win was operational: involving leads early in scoping eliminated the surprise misalignment that had occurred here, and I became more realistic about estimating timelines up front. That change carried into every project after."
     },
     "links": [],
     "_internalReferences": "IncluCity client (YWCA) [confirm + permission]",
@@ -1157,10 +1157,10 @@
       "job": "Gestionnaire de programme et recherche-opérations, IncluCity",
       "dates": "oct. – déc. 2022",
       "star": {
-        "situation": "Sur une évaluation pour le YWCA, j'avais confié le rôle de responsable d'équipe à une personne que j'estimais beaucoup. Le livrable avait changé par rapport à ce qui avait été cadré, les pressions externes s'accumulaient, et elle a atteint un point où elle ne sentait plus pouvoir s'engager dans ce rôle, ce qui était tout à fait compréhensible.",
-        "task": "Garder le projet en mouvement et trouver un autre responsable d'équipe.",
-        "action": "Je l'ai retirée du rôle de responsable, intégré d'autres membres pour combler l'écart et je suis retourné voir le client pour demander plus de temps plutôt que de livrer en retard ou de façon incomplète. Ensuite, je me suis assis avec elle pour entendre comment elle avait vécu la situation, et j'ai reconnu que je n'avais pas intégré son point de vue au plan aussi tôt que j'aurais dû.",
-        "result": "Nous avons livré une évaluation PURE et heuristique selon l'échéancier révisé. Le plus grand gain a été opérationnel. J'ai commencé à intégrer les responsables aux discussions d'échéancier et de portée dès le début, et à établir les attentes avec les clients plus tôt. Je suis aussi devenu plus honnête avec moi-même sur l'estimation des échéanciers. Demander plus de temps est correct quand on le signale tôt."
+        "situation": "L'évaluation pour le YWCA a connu un changement de portée en cours de projet, et le livrable a dépassé notre estimation initiale. La responsable bénévole m'a prévenu à un moment critique qu'elle ne pouvait pas terminer le projet (pour une bonne raison).",
+        "task": "Réorganiser la structure de l'équipe et redéfinir l'échéancier avec le client afin de livrer un travail de qualité.",
+        "action": "J'ai intégré des membres supplémentaires pour répartir la charge, puis je suis retourné voir le client pour négocier un échéancier révisé, aligné sur la portée élargie. J'ai aussi mis en place un processus de planification plus collaboratif avec les responsables d'équipe, en les intégrant aux discussions d'échéancier et de portée dès le départ pour que les estimations et les engagements reflètent la réalité.",
+        "result": "Nous avons livré une évaluation PURE et heuristique complète selon l'échéancier révisé. Le plus grand gain a été opérationnel : impliquer les responsables tôt dans le cadrage a éliminé le désalignement imprévu survenu ici, et je suis devenu plus réaliste dans l'estimation des échéanciers en amont. Ce changement s'est répercuté sur tous les projets suivants."
       }
     }
   },
