@@ -46,14 +46,14 @@
 <main id="main">
 
 <div class="section-head wrap" id="explore">
-  <h2 id="pf-title">Explore my work</h2>
+  <h2 id="pf-title" data-t="pf_title">Explore my work</h2>
   <span class="count" id="pf-section-count"></span>
 </div>
 
 <section class="pf-work wrap" aria-labelledby="pf-title">
-  <p class="pf-intro">Pick what you want to see and the page assembles the matching case studies live. Share any view with “Copy link”. Each case study is written in the <strong>STAR</strong> format — <strong>S</strong>ituation, <strong>T</strong>ask, <strong>A</strong>ction, <strong>R</strong>esult — a structured way to recount a project that moves from the context and the goal, through what I did, to the outcome it produced.</p>
+  <p class="pf-intro" data-t="pf_intro">Pick what you want to see and the page assembles the matching case studies live. Share any view with “Copy link”. Each case study is written in the <strong>STAR</strong> format — <strong>S</strong>ituation, <strong>T</strong>ask, <strong>A</strong>ction, <strong>R</strong>esult — a structured way to recount a project that moves from the context and the goal, through what I did, to the outcome it produced.</p>
 
-  <p class="pf-note">This portfolio is an active work in progress as of July 2026. Several case studies are still being written and refined, and further edits and additions will be published here as they are ready.</p>
+  <p class="pf-note" data-t="pf_note">This portfolio is an active work in progress as of July 2026. Several case studies are still being written and refined, and further edits and additions will be published here as they are ready.</p>
 
   <p class="pf-prompt">What kind of work do you want to see?</p>
   <div class="pf-primary" id="pf-primary"></div>
@@ -69,6 +69,11 @@
 
   <div class="pf-resulthead">
     <p class="pf-count" id="pf-count" aria-live="polite"></p>
+    <div class="pf-views" id="pf-views" role="group" aria-label="Quick views">
+      <button type="button" class="pf-view" id="pf-view-current">Current projects</button>
+      <button type="button" class="pf-view" id="pf-view-all">Show all</button>
+      <button type="button" class="pf-view pf-view-reset" id="pf-view-reset">Reset</button>
+    </div>
     <div class="pf-active" id="pf-active" aria-label="Active filters"></div>
     <button type="button" class="pf-ctl" id="pf-clear" hidden>Clear all</button>
     <button type="button" class="pf-ctl pf-copy" id="pf-copy">Copy link</button>
@@ -86,13 +91,17 @@
       <a href="work.html" class="ulink" data-t="nav_work">Work</a>
       <a href="mailto:karerwau@gmail.com" class="ulink">karerwau@gmail.com</a>
       <a href="https://www.linkedin.com/in/uriel-karerwa" target="_blank" rel="noopener" class="ulink">LinkedIn</a>
+      <a href="https://uxmontreal.com" target="_blank" rel="noopener" class="ulink">UX Montréal</a>
       <span>Montréal, QC</span>
     </div>
     <div class="colophon" data-t="foot_colophon">Uriel Karerwa · UX Research &amp; AI Interaction Design · Built 2026</div>
+    <div class="copyright" data-t="foot_copy">© 2026 Uriel Karerwa. All rights reserved.</div>
   </div>
 </footer>
 
 <script src="assets/js/site.js"></script>
+<script src="assets/js/work-i18n.js"></script>
 <script src="assets/js/portfolio.js"></script>
+<script src="assets/js/twin.js"></script>
 </body>
 </html>

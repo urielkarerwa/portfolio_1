@@ -2,8 +2,8 @@
   {
     "id": "esdc-wellness-gym",
     "title": "ESDC Wellness Gym: SharePoint Redesign",
-    "job": "ESDC (AI & Service Design, FSWEP)",
-    "dates": "Jun 2024 to present",
+    "job": "UX Design & Research, ESDC (AI & Service Design, FSWEP)",
+    "dates": "Jun 2024 – present",
     "featured": true,
     "featuredRank": 1,
     "industry": [
@@ -19,21 +19,24 @@
       "UX Design",
       "Service Design",
       "Information Architecture",
-      "Inclusive Design",
-      "Usability Evaluation"
+      "Usability Evaluation",
+      "Inclusive Design"
     ],
     "methods": [
       "Moderated interviews",
       "Think-aloud",
-      "Tree testing (2 rounds)",
+      "Tree testing",
       "Surveys",
       "Personas",
       "Co-design workshops"
     ],
     "tools": [
-      "Treejack / Optimal Workshop",
+      "Treejack / UX Metrics",
       "SharePoint",
-      "MS Teams"
+      "MS Teams",
+      "MS Forms",
+      "Miro",
+      "Canva"
     ],
     "researchSkills": [
       "Study design",
@@ -42,8 +45,7 @@
       "Moderation",
       "Thematic analysis",
       "Report writing",
-      "Readouts",
-      "IA revision"
+      "Information architecture revision"
     ],
     "softSkills": [
       "Stakeholder management",
@@ -52,24 +54,34 @@
       "Strategic alignment"
     ],
     "star": {
-      "situation": "The Workplace Mental Health team's resource hub lived on ESDC's legacy intranet, where they couldn't update content without IT and employees struggled to find anything.",
-      "task": "Move it to SharePoint so the team maintains it directly and 40,000 employees can find resources without getting lost.",
-      "action": "I ran four moderated interviews to understand how employees reach for mental-health resources, built personas, then tested the proposed information architecture with two rounds of tree testing (29 participants). Three resources scored below 30%. I pulled the career page out of the wellness IA, surfaced the CIRC crisis resource into a homepage Quick Links rail, and relabeled the Diversity Network.",
+      "situation": "The Workplace Mental Health team's intranet site couldn't be updated without IT, and it was hard to organize the growing catalogue of resources the team wanted to make available.",
+      "task": "Move the website from the ESDC legacy intranet to SharePoint so the team maintains it directly and 40,000 employees can find resources more easily.",
+      "action": "I ran early-stage exploratory moderated interviews to understand how employees reach for mental-health resources and built personas. I also tested the proposed Information Architecture with two rounds of treejack testing (29 participants). I facilitated two group design workshops with the team to ensure I incorporated the early-stage research into a prototype. While away from the project, a colleague completed the remaining work and facilitated later-stage usability testing on the new pages. I rejoined the initiative in the last month pre-deployment to work on the last few iterations of the webpages.",
       "result": "The revised architecture shipped as a working SharePoint site the team owns and updates without IT tickets, with an FAQ for employees new to SharePoint."
     },
     "links": [],
-    "_internalReferences": "WMH product owner / ESDC supervisor [confirm name + permission]"
+    "_internalReferences": "WMH product owner / ESDC supervisor [confirm name + permission]",
+    "fr": {
+      "title": "Wellness Gym d'EDSC : refonte SharePoint",
+      "job": "Conception et recherche UX, EDSC (IA et conception de services, PFETE)",
+      "dates": "juin 2024 – présent",
+      "star": {
+        "situation": "Le site intranet de l'équipe de la Santé mentale en milieu de travail ne pouvait pas être mis à jour sans les TI, et il était difficile d'organiser le catalogue grandissant de ressources que l'équipe souhaitait rendre disponibles.",
+        "task": "Migrer le site de l'ancien intranet d'EDSC vers SharePoint pour que l'équipe le gère elle-même et que 40 000 employés trouvent les ressources plus facilement.",
+        "action": "J'ai mené des entrevues modérées exploratoires en amont pour comprendre comment les employés cherchent des ressources en santé mentale, et j'ai créé des personas. J'ai aussi testé l'architecture d'information proposée avec deux rondes de test Treejack (29 participants). J'ai animé deux ateliers de conception avec l'équipe afin d'intégrer cette recherche initiale dans un prototype. Pendant mon absence, un collègue a complété le reste du travail et animé les tests d'utilisabilité en aval sur les nouvelles pages. Je suis revenu le dernier mois avant le déploiement pour travailler sur les dernières itérations des pages.",
+        "result": "L'architecture révisée a été livrée sous forme d'un site SharePoint fonctionnel que l'équipe possède et met à jour sans billet aux TI, avec une FAQ pour les employés peu familiers avec SharePoint."
+      }
+    }
   },
   {
     "id": "esdc-ai-implementation",
     "title": "ESDC AI Implementation & Enablement",
-    "job": "ESDC (AI & Service Design, FSWEP)",
-    "dates": "2024 to present",
+    "job": "UX Design & Research, ESDC (AI & Service Design, FSWEP)",
+    "dates": "2024 – present",
     "featured": false,
-    "featuredRank": null,
     "industry": [
       "Government & Public Sector",
-      "Health & Wellness"
+      "AI & Technology"
     ],
     "sector": "Public",
     "client": [
@@ -78,7 +90,7 @@
     "workType": [
       "AI Implementation",
       "AI Automation",
-      "Service Design"
+      "Prompt Engineering & RAG"
     ],
     "methods": [
       "Agent + RAG system testing",
@@ -88,8 +100,8 @@
     "tools": [
       "RAG systems",
       "AI agents",
-      "Org AI tools",
-      "SharePoint"
+      "org AI tools",
+      "SharePoint/ Excel"
     ],
     "researchSkills": [
       "Requirements gathering",
@@ -104,34 +116,46 @@
       "Training & enablement"
     ],
     "star": {
-      "situation": "A federal mental-health team had access to AI tools but no clear, safe way to adopt them.",
+      "situation": "A federal workplace wellness team had access to AI tools but no clear way to adopt them.",
       "task": "Test the tools and help the team use them well.",
       "action": "I tested agentic AI and RAG systems, designed personalized AI workflows for the team, and aligned the approach with the psychological factors behind healthy workplace adoption. I wrote training resources, reference guides, and process documentation so colleagues could use the tools without me in the room.",
       "result": "The team gained vetted AI workflows and the documentation to use organizational AI tools on their own."
     },
     "links": [],
-    "_internalReferences": "WMH lead [confirm]"
+    "_internalReferences": "WMH lead [confirm]",
+    "fr": {
+      "title": "Implémentation et adoption de l'IA à EDSC",
+      "job": "Conception et recherche UX, EDSC (IA et conception de services, PFETE)",
+      "dates": "2024 – présent",
+      "star": {
+        "situation": "Une équipe fédérale de mieux-être au travail avait accès à des outils d'IA, mais aucune façon claire de les adopter.",
+        "task": "Tester les outils et aider l'équipe à bien les utiliser.",
+        "action": "J'ai testé des systèmes d'IA agentielle et de RAG, conçu des flux d'IA personnalisés pour l'équipe et aligné l'approche sur les facteurs psychologiques d'une adoption saine en milieu de travail. J'ai rédigé des ressources de formation, des guides de référence et de la documentation de processus pour que les collègues puissent utiliser les outils sans moi.",
+        "result": "L'équipe a obtenu des flux d'IA validés et la documentation nécessaire pour utiliser les outils d'IA de l'organisation de façon autonome."
+      }
+    }
   },
   {
     "id": "calgary-digital-equity",
     "title": "City of Calgary: Digital Equity Pilot",
-    "job": "IncluCity (Program Manager & Research Operations)",
-    "dates": "2023 to 2024",
+    "job": "Program Manager & ReOps, IncluCity",
+    "dates": "2023 – 2024",
     "featured": true,
     "featuredRank": 2,
     "industry": [
-      "Government & Public Sector"
+      "Government & Public Sector",
+      "Nonprofit & Social Impact"
     ],
     "sector": "Public",
     "client": [
-      "Government (B2G)"
+      "Government (B2G)",
+      "Community / Public"
     ],
     "workType": [
       "Research Operations",
       "Project & Program Management",
       "UX Research",
-      "Inclusive Design",
-      "Usability Evaluation"
+      "Inclusive Design"
     ],
     "methods": [
       "Moderated remote usability testing",
@@ -141,8 +165,8 @@
     ],
     "tools": [
       "Miro",
-      "Testing tooling",
-      "Referral / incentive systems"
+      "testing tooling",
+      "referral / incentive systems"
     ],
     "researchSkills": [
       "Hard-to-reach recruitment",
@@ -162,29 +186,39 @@
       "Communication"
     ],
     "star": {
-      "situation": "Calgary funded a pilot to test 7 essential digital services with residents most affected by the digital divide: newcomers, older adults, and people with disabilities who use assistive tech. People with disabilities were hardest to recruit, since our criteria required them to test independently on a desktop.",
-      "task": "Recruit and run usability testing across four groups of eight, on timeline and budget.",
-      "action": "I built a referral program with monetary incentives, sent personalized outreach for snowball recruitment, and added pre-interviews to walk candidates through what to expect. Those calls surfaced that several screen-reader users preferred their phones, so I documented it and pushed to relax the desktop-only criterion.",
-      "result": "We mapped 18 equity challenges across all 7 services, the City proposed a follow-up round adding mobile testing, and one tester became an advocate who referred others. The results are still discussed across the City's digital teams."
+      "situation": "Calgary funded a pilot to test seven essential digital services with the residents most affected by the digital divide: newcomers, older adults, and people with disabilities who use assistive tech. People who use assistive technology were the hardest to reach because our screening had specific criteria: testers had to be able to test independently and could not be professional testers. While overseeing three other projects, this one landed on my plate behind schedule with about four weeks to finish.",
+      "task": "Recruit, organize and run usability testing across five participant groups, thirty-seven people in total, and coordinate a team of twenty to a tight deadline.",
+      "action": "I built a referral program with monetary incentives and sent personalized outreach for snowball recruitment. For assistive tech users, small operational details mattered. I offered to walk people through our intake form by phone. I also found that our Google Form did not play well with text-to-speech on iPhone and Mac, so I documented the issue and worked around it. Pre-interviews surfaced that several screen reader users preferred their phones, so I pushed to relax the desktop-only rule with the City testing team.",
+      "result": "We mapped eighteen equity challenges across all seven services, the City proposed a follow-up round that added mobile testing, and one participant became an advocate who went on to refer others. The findings are still discussed across the City's digital teams."
     },
     "links": [],
-    "_internalReferences": "City of Calgary web/digital lead [confirm]"
+    "_internalReferences": "City of Calgary web/digital lead [confirm]",
+    "fr": {
+      "title": "Ville de Calgary : projet pilote d'équité numérique",
+      "job": "Gestionnaire de programme et recherche-opérations, IncluCity",
+      "dates": "2023 – 2024",
+      "star": {
+        "situation": "Calgary a financé un projet pilote pour tester sept services numériques essentiels auprès des résidents les plus touchés par la fracture numérique : nouveaux arrivants, aînés et personnes en situation de handicap qui utilisent des technologies d'assistance. Les personnes utilisant ces technologies étaient les plus difficiles à recruter, car notre présélection imposait des critères précis : pouvoir tester de façon autonome et ne pas être un testeur professionnel. Alors que je supervisais trois autres projets, celui-ci a atterri sur mon bureau en retard, avec environ quatre semaines pour le terminer.",
+        "task": "Recruter, organiser et mener des tests d'utilisabilité auprès de cinq groupes de participants, trente-sept personnes au total, et coordonner une équipe de vingt dans un délai serré.",
+        "action": "J'ai mis en place un programme de recommandation avec incitatifs monétaires et envoyé des messages personnalisés pour un recrutement en boule de neige. Pour les utilisateurs de technologies d'assistance, les petits détails opérationnels comptaient. J'ai offert d'accompagner les gens dans notre formulaire d'inscription par téléphone. J'ai aussi constaté que notre formulaire Google fonctionnait mal avec la synthèse vocale sur iPhone et Mac, alors j'ai documenté le problème et l'ai contourné. Les pré-entrevues ont révélé que plusieurs utilisateurs de lecteurs d'écran préféraient leur téléphone, alors j'ai poussé pour assouplir la règle du bureau seulement auprès de l'équipe de test de la Ville.",
+        "result": "Nous avons cartographié dix-huit défis d'équité dans les sept services, la Ville a proposé une ronde de suivi ajoutant les tests mobiles, et une participante est devenue une ambassadrice qui a ensuite recommandé d'autres personnes. Les conclusions sont encore discutées dans les équipes numériques de la Ville."
+      }
+    }
   },
   {
     "id": "talented-yyc",
     "title": "TalentED YYC: Usability Research",
-    "job": "IncluCity (Project Lead, ReOps, UXR)",
-    "dates": "~2023 (11 weeks, 2 phases, 13 participants)",
+    "job": "Project Lead, ReOps & UXR, IncluCity",
+    "dates": "Sep – Nov 2023",
     "featured": false,
-    "featuredRank": null,
     "industry": [
-      "Education & EdTech",
-      "Government & Public Sector"
+      "Workforce & Economic Development",
+      "Education & EdTech"
     ],
     "sector": "Public",
     "client": [
       "Government (B2G)",
-      "B2B"
+      "Business (B2B)"
     ],
     "workType": [
       "UX Research",
@@ -193,7 +227,7 @@
       "Project & Program Management"
     ],
     "methods": [
-      "Moderated remote usability testing (2 phases)",
+      "Moderated remote usability testing",
       "Heuristic analysis",
       "Accessibility (screen reader)",
       "Adaptable scripts",
@@ -202,7 +236,7 @@
     ],
     "tools": [
       "Notably.io",
-      "Testing tooling"
+      "testing tooling"
     ],
     "researchSkills": [
       "Client intake / scoping",
@@ -219,33 +253,44 @@
       "Stakeholder management"
     ],
     "star": {
-      "situation": "Calgary Economic Development's WIL program built a website and employer portal to connect students with placements, with part of the portal run by a third-party vendor.",
-      "task": "Evaluate usability and inclusiveness across two phases and recommend prioritized fixes.",
-      "action": "I ran moderated remote usability tests with scripts adapted per user group, plus heuristic analysis and accessibility testing with a screen-reader user. After two projects where vendor constraints surfaced late, I rebuilt the client-intake process to ask up front about third-party tools and limitations.",
-      "result": "Delivered usability and heuristic reports across both phases on time, prioritized fixes with an impact-effort matrix tied to client constraints, and improved intake so future projects scoped vendor limits correctly."
+      "situation": "Calgary Economic Development's work-integrated learning program built a website and employer portal to connect students with placements, with part of the portal run by a third-party vendor.",
+      "task": "Evaluate usability and inclusiveness and hand back fixes the client would actually act on.",
+      "action": "As program manager and UXR I coordinated and assisted in moderated remote sessions with scripts adapted per user group. We also did a heuristic pass and accessibility testing with a screen reader user, thirteen participants across the two phases. When one phase came up short of the tester criteria I wanted, I was upfront with the client and tried to recruit more, though those additions cancelled. Reading that the client had no time for a dense document, I led with an executive summary and a presentation, and we prioritized fixes with an impact-effort matrix tied to their constraints. After vendor limitations surfaced late on more than one project, meaning our recommendations were not within the client's control, I rebuilt our client intake to ask about third-party tools up front.",
+      "result": "We delivered usability and heuristic findings across both phases on time, in a format the client could move on quickly, and the intake change meant later projects scoped vendor limits correctly from the start."
     },
     "links": [],
-    "_internalReferences": "WIL / TalentED program contact [confirm]"
+    "_internalReferences": "WIL / TalentED program contact [confirm]",
+    "fr": {
+      "title": "TalentED YYC : recherche d'utilisabilité",
+      "job": "Chef de projet, recherche-opérations et UXR, IncluCity",
+      "dates": "sept. – nov. 2023",
+      "star": {
+        "situation": "Le programme d'apprentissage intégré au travail de Calgary Economic Development avait bâti un site et un portail employeur pour relier les étudiants à des stages, une partie du portail étant gérée par un fournisseur tiers.",
+        "task": "Évaluer l'utilisabilité et l'inclusivité, et remettre au client des correctifs qu'il pourrait vraiment appliquer.",
+        "action": "À titre de gestionnaire de programme et UXR, j'ai coordonné et assisté des séances modérées à distance avec des scripts adaptés à chaque groupe d'utilisateurs. Nous avons aussi fait une évaluation heuristique et des tests d'accessibilité avec un utilisateur de lecteur d'écran, treize participants sur les deux phases. Quand une phase n'a pas atteint les critères de testeurs que je visais, j'ai été transparent avec le client et j'ai tenté d'en recruter davantage, mais ces ajouts ont été annulés. Voyant que le client n'avait pas le temps pour un document dense, j'ai commencé par un sommaire exécutif et une présentation, et nous avons priorisé les correctifs avec une matrice impact-effort adaptée à ses contraintes. Après que des limites du fournisseur soient apparues tardivement sur plus d'un projet, ce qui plaçait nos recommandations hors du contrôle du client, j'ai refait notre processus d'intégration client pour poser des questions sur les outils tiers dès le départ.",
+        "result": "Nous avons livré les conclusions d'utilisabilité et heuristiques des deux phases à temps, dans un format sur lequel le client pouvait agir rapidement, et le changement d'intégration a fait en sorte que les projets suivants tenaient compte des limites des fournisseurs dès le début."
+      }
+    }
   },
   {
     "id": "inclucity-reops",
     "title": "IncluCity: ReOps Framework & Inclusive-Design Program",
-    "job": "IncluCity (Program Manager & Research Operations)",
-    "dates": "Apr 2022 to Aug 2024",
+    "job": "Program Manager & ReOps, IncluCity",
+    "dates": "Apr 2022 – Aug 2024",
     "featured": false,
-    "featuredRank": null,
     "industry": [
       "Nonprofit & Social Impact"
     ],
     "sector": "Nonprofit",
     "client": [
-      "Internal / Employee",
+      "Business (B2B)",
       "Community / Public"
     ],
     "workType": [
       "Research Operations",
       "Project & Program Management",
-      "Inclusive Design"
+      "Inclusive Design",
+      "Business Development"
     ],
     "methods": [
       "Systems design",
@@ -255,10 +300,10 @@
       "Public events"
     ],
     "tools": [
-      "Asana",
-      "Monday",
       "Coda",
-      "Data-management systems"
+      "data-management systems",
+      "HubSpot",
+      "Google Suite"
     ],
     "researchSkills": [
       "Researcher onboarding & training (50+)",
@@ -277,19 +322,30 @@
       "Strategic alignment"
     ],
     "star": {
-      "situation": "IncluCity ran inclusive research for municipal, nonprofit, and social-impact clients, with researchers of varying experience and no shared operating system.",
-      "task": "Build the operations layer that lets a volunteer-heavy research org deliver consistent, high-quality work at scale.",
-      "action": "I built a research-operations framework for 50+ researchers covering onboarding, training, contract administration, data management, and QA. I supported proposals and client acquisition from first contact through delivery, and ran inclusive-design workshops and panels.",
-      "result": "The framework standardized how projects ran across the org, I delivered 140+ stakeholder interviews into client-ready reports, and inclusive-design events reached 100+ attendees."
+      "situation": "IncluCity ran inclusive research for municipal, nonprofit, and social-impact clients, with researchers of varying experience and no shared operating system at the start.",
+      "task": "Build the operations layer that lets a volunteer-heavy research org deliver consistent, high-quality work at scale, and grow the organization's capabilities in its inclusive research services.",
+      "action": "I built a research-operations framework for 50+ researchers covering onboarding, training, data management, and QA. I supported proposals and client acquisition from first contact through delivery, and ran inclusive-design workshops and panels.",
+      "result": "The framework standardized how projects ran across the org. I organized 140+ interviews, contributed to a number of client-ready reports, and our inclusive-design events reached 100+ attendees."
     },
     "links": [],
-    "_internalReferences": "IncluCity founder / board [confirm]"
+    "_internalReferences": "IncluCity founder / board [confirm]",
+    "fr": {
+      "title": "IncluCity : cadre de recherche-opérations et programme de conception inclusive",
+      "job": "Gestionnaire de programme et recherche-opérations, IncluCity",
+      "dates": "avr. 2022 – août 2024",
+      "star": {
+        "situation": "IncluCity menait de la recherche inclusive pour des clients municipaux, sans but lucratif et à impact social, avec des chercheurs d'expérience variable et aucun système de fonctionnement commun au départ.",
+        "task": "Bâtir la couche opérationnelle qui permet à une organisation de recherche portée par des bénévoles de livrer un travail constant et de grande qualité à grande échelle, et faire croître ses capacités de recherche inclusive.",
+        "action": "J'ai bâti un cadre de recherche-opérations pour plus de 50 chercheurs, couvrant l'intégration, la formation, la gestion des données et l'assurance qualité. J'ai soutenu les propositions et l'acquisition de clients, du premier contact jusqu'à la livraison, et animé des ateliers et panels de conception inclusive.",
+        "result": "Le cadre a standardisé le déroulement des projets dans l'organisation. J'ai organisé plus de 140 entrevues, contribué à plusieurs rapports prêts pour les clients, et nos événements de conception inclusive ont rejoint plus de 100 participants."
+      }
+    }
   },
   {
     "id": "beneva-quote-eval",
     "title": "Beneva: Online Quote Evaluation",
-    "job": "HEC UX Evaluation (pro bono, 4-person team)",
-    "dates": "Jan to Apr 2025",
+    "job": "UX Researcher, HEC UX Evaluation (pro bono)",
+    "dates": "Jan – Apr 2025",
     "featured": true,
     "featuredRank": 3,
     "industry": [
@@ -297,7 +353,7 @@
     ],
     "sector": "Private",
     "client": [
-      "B2C"
+      "Consumer (B2C)"
     ],
     "workType": [
       "UX Research",
@@ -335,17 +391,28 @@
     "star": {
       "situation": "Beneva, one of Canada's largest mutual insurers, wanted to know where its online quote flow lost users.",
       "task": "As part of a four-person team, evaluate the home and auto quote experiences and rank what to fix first.",
-      "action": "We ran moderated usability tests with surveys, scored the experience with SUS, and rated each finding by severity. The clearest failure showed up when participants edited a home quote: the price card still read $0.00 because the Recalculate Price button sat above where people had stopped looking. Six of twelve missed it and concluded the system was broken.",
-      "result": "We delivered a SUS baseline of 79, eight prioritized fixes with severity ratings and an impact-by-effort matrix, and recommended dynamic pricing as the lead change so price updates without a button."
+      "action": "We ran moderated usability tests with surveys, scored the experience using validated scales and rated each finding by severity. The clearest failure showed up when participants edited a home quote. Six of twelve were unable to finish the quoting process. My main contributions were the study design and the quantitative analysis.",
+      "result": "We delivered a report that combined primary user research with secondary market research to benchmark against competitors. We recommended eight major fixes and several minor ones, each with severity ratings and an impact-by-effort matrix."
     },
     "links": [],
-    "_internalReferences": "HEC course supervisor [confirm]"
+    "_internalReferences": "HEC course supervisor [confirm]",
+    "fr": {
+      "title": "Beneva : évaluation de la soumission en ligne",
+      "job": "Chercheur UX, évaluation UX à HEC (bénévolat)",
+      "dates": "janv. – avr. 2025",
+      "star": {
+        "situation": "Beneva, l'un des plus grands assureurs mutualistes au Canada, voulait savoir où son parcours de soumission en ligne perdait des utilisateurs.",
+        "task": "Au sein d'une équipe de quatre, évaluer les expériences de soumission habitation et auto et prioriser ce qu'il fallait corriger.",
+        "action": "Nous avons mené des tests d'utilisabilité modérés avec des sondages, évalué l'expérience à l'aide d'échelles validées et coté chaque constat par gravité. L'échec le plus net est apparu lorsque les participants modifiaient une soumission habitation. Six sur douze n'ont pas pu terminer le processus. Ma contribution principale à l'équipe a été la conception de l'étude et l'analyse quantitative.",
+        "result": "Nous avons livré un rapport combinant la recherche primaire auprès des utilisateurs et une recherche de marché secondaire pour établir des comparaisons avec les concurrents. Nous avons recommandé huit correctifs majeurs et plusieurs mineurs, chacun assorti d'une cote de gravité et d'une matrice impact-effort."
+      }
+    }
   },
   {
     "id": "tech3lab-genai-tutoring",
     "title": "Tech3Lab: GenAI Tutoring Study (Thesis + FLAIRS)",
-    "job": "Tech3Lab, HEC Montréal (Post-Graduate Researcher)",
-    "dates": "Oct 2024 to Jan 2026",
+    "job": "Post-Graduate Researcher, Tech3Lab, HEC Montreal",
+    "dates": "Oct 2024 – Jan 2026",
     "featured": true,
     "featuredRank": 4,
     "industry": [
@@ -360,8 +427,7 @@
     "workType": [
       "UX Research",
       "Behavioral & Physiological Research",
-      "Data Analysis",
-      "AI Implementation"
+      "Data Analysis"
     ],
     "methods": [
       "Multimodal physiological measurement (eye-tracking, pupillometry, EEG, ECG)",
@@ -371,11 +437,11 @@
       "Ethics"
     ],
     "tools": [
-      "iMotions / Tobii",
+      "Tobii",
       "EEG & ECG hardware",
       "SAS",
-      "R",
-      "Statistical analysis"
+      "statistical analysis",
+      "GenAI"
     ],
     "researchSkills": [
       "Study design",
@@ -393,10 +459,10 @@
       "Strategic thinking"
     ],
     "star": {
-      "situation": "AI tutors personalize learning. We had little direct evidence of how that personalization affects a learner's cognitive load in real time.",
-      "task": "Design and run a study measuring how Generative AI personalization changes behaviour and cognitive load, rigorous enough for both a thesis and a publication.",
-      "action": "I designed the full study from literature review and ethics through data collection, then captured multimodal physiological signals (eye-tracking, pupillometry, ECG, EEG) while participants worked through AI-mediated tasks. I analyzed the combined behavioural and physiological data to read cognitive load instead of relying on self-report.",
-      "result": "The work became my master's thesis (honours with great distinction, 3.85 GPA) and a conference-track FLAIRS publication, with design recommendations for AI tutor systems. I was lead author on the related paper on LLM-based personalized math tutoring."
+      "situation": "I had spent months preparing a neuroadaptive study built on a biocybernetic feedback loop. A week before data collection, the specially designed EEG set the whole design depended on broke. The lab time, the participant pool, and the testing window were already committed.",
+      "task": "Rebuild a study that could still answer a real question about AI-mediated learning, use the equipment we had left, and hold up as both a thesis and a publication. The window would not move.",
+      "action": "I went back to the literature and found the open question I could still answer with available instrumentation: AI tutors personalize learning, but there was little direct evidence of how that personalization changes a learner's cognitive load in real time. With the team's support, I redesigned the study inside a week, from research question through ethics, then ran it, capturing eye-tracking, pupillometry, ECG, and EEG while participants worked through AI-mediated math tasks. I analyzed behavioural and physiological data together to read cognitive load rather than relying on self-report.",
+      "result": "The study became my master's thesis and a FLAIRS conference publication, with design recommendations for AI tutor systems. The finding held: quiz scores stayed flat while pupil dilation dropped, meaning learners with a personalized AI processed the same material under less cognitive load."
     },
     "links": [
       {
@@ -404,21 +470,33 @@
         "url": "https://hecmontreal.on.worldcat.org/oclc/1578112535"
       }
     ],
-    "_internalReferences": "A. Karran (supervisor); P-M. Leger (director) [confirm + ask permission]"
+    "_internalReferences": "A. Karran (supervisor); P-M. Léger (director) [confirm + ask permission]",
+    "fr": {
+      "title": "Tech3Lab : étude sur le tutorat par IA générative (thèse et FLAIRS)",
+      "job": "Chercheur aux cycles supérieurs, Tech3Lab, HEC Montréal",
+      "dates": "oct. 2024 – janv. 2026",
+      "star": {
+        "situation": "J'avais passé des mois à préparer une étude neuroadaptative fondée sur une boucle de rétroaction biocybernétique. Une semaine avant la collecte de données, le casque EEG spécialement conçu sur lequel reposait tout le devis a brisé. Le temps de laboratoire, le bassin de participants et la fenêtre de test étaient déjà réservés.",
+        "task": "Reconstruire une étude qui pouvait encore répondre à une vraie question sur l'apprentissage assisté par IA, avec l'équipement restant, et tenir la route à la fois comme thèse et comme publication. La fenêtre ne bougerait pas.",
+        "action": "Je suis retourné à la littérature et j'ai trouvé la question ouverte à laquelle je pouvais encore répondre avec l'instrumentation disponible : les tuteurs d'IA personnalisent l'apprentissage, mais il y avait peu de preuves directes de la façon dont cette personnalisation modifie la charge cognitive d'un apprenant en temps réel. Avec le soutien de l'équipe, j'ai reconçu l'étude en une semaine, de la question de recherche à l'éthique, puis je l'ai menée, en captant l'oculométrie, la pupillométrie, l'ECG et l'EEG pendant que les participants travaillaient des tâches de mathématiques assistées par IA. J'ai analysé ensemble les données comportementales et physiologiques pour lire la charge cognitive plutôt que de me fier à l'auto-évaluation.",
+        "result": "L'étude est devenue ma thèse de maîtrise et une publication à la conférence FLAIRS, avec des recommandations de conception pour les systèmes de tutorat par IA. Le constat a tenu : les résultats aux quiz sont restés stables tandis que la dilatation pupillaire baissait, ce qui signifie que les apprenants avec une IA personnalisée traitaient le même contenu avec une charge cognitive moindre."
+      }
+    }
   },
   {
     "id": "sexodev-automation",
     "title": "UQAM SEXODEV: Workflow Automation",
-    "job": "UQAM SEXODEV (Workflow Automation & Process Optimization Consultant)",
-    "dates": "Apr 2026 to present",
+    "job": "Workflow Automation Consultant, UQAM SEXODEV",
+    "dates": "Apr 2026 – present",
     "featured": false,
-    "featuredRank": null,
     "industry": [
-      "Academic Research"
+      "Academic Research",
+      "AI & Technology"
     ],
     "sector": "Academic",
     "client": [
-      "Internal / Employee"
+      "Internal / Employee",
+      "Academic / Participants"
     ],
     "workType": [
       "AI Automation",
@@ -429,13 +507,14 @@
     "methods": [
       "Stakeholder interviews",
       "Bottleneck diagnosis",
-      "AI workflow design (recordings to tasks / summaries / docs)",
+      "AI workflow design (recordings → tasks / summaries / docs)",
       "Notion system design",
       "Onboarding documentation"
     ],
     "tools": [
-      "Notion",
-      "AI transcription / automation",
+      "Microsoft Power Automate",
+      "Claude",
+      "Trello",
       "OneDrive / SharePoint (replaced)"
     ],
     "researchSkills": [
@@ -451,27 +530,38 @@
       "Client relations"
     ],
     "star": {
-      "situation": "A research chair's small remote team was buried in manual coordination. Notes were scattered across OneDrive and SharePoint, follow-ups depended on whoever took notes, and the Chair carried too much operational load.",
+      "situation": "A research chair and her small remote team were buried in manual overload.",
       "task": "Diagnose the bottlenecks and build a system that cuts that load and improves accountability.",
-      "action": "I started with stakeholder interviews to find where work actually stalled, then designed AI-driven workflows that turn meeting recordings into assigned tasks, individual action summaries, and filed documentation. I set up a Notion workspace as the single source of truth with naming conventions, folder structure, and permissions, and wrote onboarding guides so the process survives staff turnover.",
+      "action": "I started with stakeholder interviews to find where work actually stalled, then designed AI-driven workflows that turn meeting recordings into assigned tasks, individual action summaries, and filed documentation. I set up automations to help with note-taking during meetings, personalized participant survey distribution and research communication. I also presented on organizational changes that could help the team.",
       "result": "The team replaced manual note-taking with an automated pipeline and consolidated scattered files into one organized workspace."
     },
     "links": [],
-    "_internalReferences": "SEXODEV Chair / PI [confirm]"
+    "_internalReferences": "SEXODEV Chair / PI [confirm]",
+    "fr": {
+      "title": "UQAM SEXODEV : automatisation des flux de travail",
+      "job": "Consultant en automatisation et optimisation des processus, UQAM SEXODEV",
+      "dates": "avr. 2026 – présent",
+      "star": {
+        "situation": "Une chaire de recherche et sa petite équipe à distance étaient ensevelies sous une surcharge manuelle.",
+        "task": "Diagnostiquer les goulots d'étranglement et bâtir un système qui réduit cette charge et améliore la reddition de comptes.",
+        "action": "J'ai commencé par des entrevues avec les parties prenantes pour repérer où le travail bloquait réellement, puis j'ai conçu des flux pilotés par l'IA qui transforment les enregistrements de réunions en tâches assignées, en résumés d'actions individuels et en documentation classée. J'ai mis en place des automatisations pour la prise de notes en réunion, la distribution personnalisée de sondages aux participants et la communication de recherche. J'ai aussi présenté des changements organisationnels susceptibles d'aider l'équipe.",
+        "result": "L'équipe a remplacé la prise de notes manuelle par un pipeline automatisé et regroupé des fichiers éparpillés dans un espace de travail unique et organisé."
+      }
+    }
   },
   {
     "id": "allen-thomas-ediscovery",
     "title": "Allen & Thomas: E-Discovery AI",
-    "job": "Allen & Thomas, LLP (AI Search & Implementation Specialist)",
-    "dates": "Mar to Apr 2026",
+    "job": "AI Search & Implementation Specialist (Contractor), Allen & Thomas LLP",
+    "dates": "Mar – Apr 2026",
     "featured": false,
-    "featuredRank": null,
     "industry": [
-      "Legal"
+      "Legal",
+      "AI & Technology"
     ],
     "sector": "Private",
     "client": [
-      "B2B"
+      "Business (B2B)"
     ],
     "workType": [
       "AI Implementation",
@@ -485,8 +575,9 @@
       "Remote-workflow design"
     ],
     "tools": [
-      "E-discovery tooling",
-      "Supervised-learning models"
+      "E-discovery tooling (Datamine)",
+      "supervised-learning models",
+      "Notion"
     ],
     "researchSkills": [
       "Search strategy",
@@ -500,24 +591,34 @@
       "Adaptability"
     ],
     "star": {
-      "situation": "A law firm running an investigation needed to search and review a large document database across a remote team, and the existing approach was slow.",
-      "task": "Improve how the database was searched and prioritize what got reviewed first.",
-      "action": "I implemented e-discovery systems and tooling, developed search strategies and data-mining processes, and applied supervised learning to rank documents for review. I coordinated the review across the team and built repeatable remote workflows.",
-      "result": "The team searched and reviewed the database more efficiently, with a prioritized review queue in place of a flat pile."
+      "situation": "A law firm needed to search and review a large document database (E-discovery) across a remote team, and needed a way to coordinate the search and quickly learn to use the database search tools available.",
+      "task": "Set up a system to improve how the database was searched and initiate tools to help with this process.",
+      "action": "I implemented a systematic search process considering many constraints/requirements and implemented various forms of AI as search tools (applied supervised learning to rank documents for review). I coordinated the search across the team by setting up a Notion workspace with onboarding guides so the process survives staff turnover.",
+      "result": "The team was able to share findings more quickly, search more efficiently while working remotely and understand how to use the database platform with the information in my Notion page."
     },
     "links": [],
-    "_internalReferences": "Allen & Thomas contact [confirm]"
+    "_internalReferences": "Allen & Thomas contact [confirm]",
+    "fr": {
+      "title": "Allen & Thomas : IA pour l'e-discovery",
+      "job": "Spécialiste en recherche et implémentation d'IA (contractuel), Allen & Thomas LLP",
+      "dates": "mars – avr. 2026",
+      "star": {
+        "situation": "Un cabinet d'avocats devait chercher et réviser une grande base de documents (e-discovery) au sein d'une équipe à distance, et avait besoin de coordonner la recherche et d'apprendre rapidement à utiliser les outils de recherche de la base de données.",
+        "task": "Mettre en place un système pour améliorer la façon dont la base de données était interrogée et instaurer des outils pour soutenir ce processus.",
+        "action": "J'ai implémenté un processus de recherche systématique tenant compte de nombreuses contraintes et exigences, et j'ai intégré diverses formes d'IA comme outils de recherche (j'ai appliqué l'apprentissage supervisé pour classer les documents à réviser). J'ai coordonné la recherche au sein de l'équipe en montant un espace Notion avec des guides d'intégration, pour que le processus survive au roulement de personnel.",
+        "result": "L'équipe a pu partager ses constats plus rapidement, chercher plus efficacement à distance et comprendre comment utiliser la plateforme grâce à l'information de ma page Notion."
+      }
+    }
   },
   {
     "id": "notion-anki-pipeline",
     "title": "Notion to AI to Anki Pipeline",
-    "job": "Self-directed (Johns Hopkins Agentic AI coursework)",
+    "job": "Self-directed (Johns Hopkins Agentic AI)",
     "dates": "2026",
     "featured": false,
-    "featuredRank": null,
     "industry": [
-      "AI & Technology",
-      "Education & EdTech"
+      "Education & EdTech",
+      "AI & Technology"
     ],
     "sector": "Personal",
     "client": [
@@ -525,8 +626,7 @@
     ],
     "workType": [
       "AI Automation",
-      "AI Implementation",
-      "Data Analysis"
+      "AI Implementation"
     ],
     "methods": [
       "Spec-first design",
@@ -540,7 +640,7 @@
       "Notion API",
       "AnkiConnect",
       "Python",
-      ".env / git-ignore"
+      "env / git-ignore"
     ],
     "researchSkills": [],
     "softSkills": [
@@ -549,21 +649,31 @@
       "Security awareness"
     ],
     "star": {
-      "situation": "My Johns Hopkins coursework lived in Notion as text, tables, and lecture screenshots. Reading it back didn't make it stick, and hand-writing Anki cards was slow enough that I never kept up.",
-      "task": "Point a tool at a Notion page and get reviewed spaced-repetition cards out the other end, while staying in control of what I study.",
-      "action": "I wrote the architecture as a spec first, then directed Claude Code to build a two-stage pipeline. Stage one reads the full page and screenshots and sends them to a vision model that returns atomic question-and-answer cards, which land in a review file I prune. Stage two loads the approved cards into Anki through AnkiConnect.",
+      "situation": "My course notes lived in Notion as text, tables, and lecture screenshots. I love flashcards for studying, but the digital ones cost money and I did not always have time to make them, and I did not want to give up spaced repetition on the go.",
+      "task": "Point an open-source study card tool (Anki) at a Notion page and get reviewed spaced-repetition cards out the other end, while staying in control of what I study.",
+      "action": "I wrote the architecture as a spec first, then directed Claude Code to build a two-stage pipeline. Stage one reads the full page and screenshots and sends them to a vision model that returns atomic Q&A cards, which land in a review file I prune. Stage two loads the approved cards into Anki through AnkiConnect.",
       "result": "The first run produced 58 accurate cards from 1,876 content blocks and 137 screenshots for about two cents, and the model derived 25 hierarchical week tags on its own from my lecture headings. None needed deleting. The manual step that kept me off spaced repetition is gone, and the review checkpoint stayed in by design."
     },
     "links": [],
-    "_internalReferences": "n/a (personal)"
+    "_internalReferences": "n/a (personal)",
+    "fr": {
+      "title": "Pipeline Notion vers IA vers Anki",
+      "job": "Projet autonome (cours en IA agentielle, Johns Hopkins)",
+      "dates": "2026",
+      "star": {
+        "situation": "Mes notes de cours vivaient dans Notion sous forme de texte, de tableaux et de captures d'écran de cours magistraux. J'adore les cartes mémoire pour étudier, mais les versions numériques coûtent de l'argent et je n'avais pas toujours le temps d'en faire, et je ne voulais pas renoncer à la répétition espacée en déplacement.",
+        "task": "Pointer un outil de cartes d'étude libre (Anki) vers une page Notion et obtenir à l'autre bout des cartes de répétition espacée révisées, tout en gardant le contrôle de ce que j'étudie.",
+        "action": "J'ai d'abord rédigé l'architecture sous forme de spécification, puis j'ai dirigé Claude Code pour bâtir un pipeline en deux étapes. La première lit la page complète et les captures d'écran et les envoie à un modèle de vision qui retourne des cartes questions-réponses atomiques, qui atterrissent dans un fichier de révision que j'élague. La seconde charge les cartes approuvées dans Anki via AnkiConnect.",
+        "result": "La première exécution a produit 58 cartes exactes à partir de 1 876 blocs de contenu et 137 captures d'écran pour environ deux cents, et le modèle a dérivé seul 25 étiquettes hebdomadaires hiérarchiques à partir de mes titres de cours. Aucune n'a eu besoin d'être supprimée. L'étape manuelle qui me tenait loin de la répétition espacée a disparu, et le point de contrôle de révision est resté en place à dessein."
+      }
+    }
   },
   {
     "id": "ux-montreal",
     "title": "UX Montreal: Co-Director",
-    "job": "UX Montreal (Co-Director)",
-    "dates": "[confirm start] to present",
+    "job": "Co-Director, UX Montreal",
+    "dates": "Jan 2026 – present",
     "featured": false,
-    "featuredRank": null,
     "industry": [
       "Design Community"
     ],
@@ -572,14 +682,18 @@
       "Community / Public"
     ],
     "workType": [
-      "Project & Program Management"
+      "Project & Program Management",
+      "Business Development"
     ],
     "methods": [
       "Event programming",
       "Sliding-scale accessibility (promo codes)"
     ],
     "tools": [
-      "Luma"
+      "Luma",
+      "Lovable",
+      "Meetup",
+      "Notion"
     ],
     "researchSkills": [],
     "softSkills": [
@@ -589,30 +703,41 @@
       "Business development"
     ],
     "star": {
-      "situation": "UX Montreal is a local design community that needs consistent programming and accessible events.",
-      "task": "Co-direct the organization with Farah and Scarlett, running events and building the community.",
-      "action": "Programmed events and used sliding-scale ticketing through Luma so cost wasn't a barrier to attending.",
-      "result": "[Add your numbers: events run, attendance, growth.]"
+      "situation": "UX Montréal was born out of the idea that UX Professionals in Montreal could benefit from having additional learning and growth opportunities. UX MTL is a local design and research community that needs consistent programming and accessible events.",
+      "task": "Provide consistent programming and accessible events as Co-director of the organization. In summary, running events and building the community.",
+      "action": "Programmed events, acquired speakers, and sought out partnerships and venue spaces.",
+      "result": "Our first two events drew strong interest, with over 200 people signalling they wanted to attend. Speakers joined from Qatar, Ottawa, and Montreal, spanning academia, ex-Meta, and private consulting."
     },
     "links": [],
-    "_internalReferences": "Farah / Scarlett (co-directors) [confirm + permission]"
+    "_internalReferences": "Farah / Scarlett (co-directors) [confirm + permission]",
+    "fr": {
+      "title": "UX Montréal : codirecteur",
+      "job": "Codirecteur, UX Montréal",
+      "dates": "janv. 2026 – présent",
+      "star": {
+        "situation": "UX Montréal est né de l'idée que les professionnels UX de Montréal gagneraient à avoir plus d'occasions d'apprentissage et de croissance. UX MTL est une communauté locale de design et de recherche qui a besoin d'une programmation régulière et d'événements accessibles.",
+        "task": "Offrir une programmation régulière et des événements accessibles à titre de codirecteur de l'organisation. En résumé, organiser les événements et bâtir la communauté.",
+        "action": "J'ai programmé des événements, recruté des conférenciers et cherché des partenariats et des lieux.",
+        "result": "Nos deux premiers événements ont suscité un fort intérêt, plus de 200 personnes ayant signalé vouloir y assister. Des conférenciers sont venus du Qatar, d'Ottawa et de Montréal, provenant du milieu universitaire, d'ex-Meta et du conseil privé."
+      }
+    }
   },
   {
     "id": "karerwa-consulting",
     "title": "Karerwa Consulting: Project Management",
-    "job": "Karerwa Consulting (PM & Owner)",
-    "dates": "Apr 2022 to Aug 2024",
+    "job": "Project Management Consultant & Owner, Karerwa Consulting",
+    "dates": "Apr 2022 – Aug 2024",
     "featured": false,
-    "featuredRank": null,
     "industry": [
       "Nonprofit & Social Impact"
     ],
     "sector": "Private",
     "client": [
-      "B2B"
+      "Business (B2B)"
     ],
     "workType": [
-      "Project & Program Management"
+      "Project & Program Management",
+      "Business Development"
     ],
     "methods": [
       "Contract drafting",
@@ -623,7 +748,6 @@
       "Status reporting"
     ],
     "tools": [
-      "Asana",
       "Monday",
       "Coda",
       "HubSpot"
@@ -636,65 +760,87 @@
     ],
     "star": {
       "situation": "Ran my own consulting practice managing concurrent client engagements end to end.",
-      "task": "Keep multiple engagements on scope, on budget, and on schedule.",
+      "task": "",
       "action": "Handled contract drafting, scope definition, milestone tracking, status reporting, budgeting, and invoicing.",
-      "result": "[Add representative client outcomes or engagement volume.]"
+      "result": "In three years of operation, I supported more than five long-term clients with a range of project-management work (including IncluCity, KT Air, and Rainforest Alberta)."
     },
     "links": [],
-    "_internalReferences": "Client reference [confirm]"
+    "_internalReferences": "Client reference [confirm]",
+    "fr": {
+      "title": "Karerwa Consulting : gestion de projet",
+      "job": "Consultant en gestion de projet et propriétaire, Karerwa Consulting",
+      "dates": "avr. 2022 – août 2024",
+      "star": {
+        "situation": "J'ai dirigé ma propre pratique de conseil en gérant de bout en bout des mandats clients simultanés.",
+        "action": "J'ai géré la rédaction de contrats, la définition de la portée, le suivi des jalons, les rapports d'avancement, la budgétisation et la facturation.",
+        "result": "En trois ans d'activité, j'ai soutenu plus de cinq clients de longue date avec une gamme de services de gestion de projet (notamment IncluCity, KT Air et Rainforest Alberta)."
+      }
+    }
   },
   {
     "id": "rainforest-alberta",
     "title": "Rainforest Alberta: Partnership & Event Coordinator",
-    "job": "Rainforest Alberta (Partnership & Event Coordinator, Contract)",
-    "dates": "Aug 2023 to Dec 2023",
+    "job": "Partnership & Event Coordinator (Contract), Rainforest Alberta",
+    "dates": "Aug – Dec 2023",
     "featured": false,
-    "featuredRank": null,
     "industry": [
-      "Nonprofit & Social Impact"
+      "Workforce & Economic Development"
     ],
     "sector": "Nonprofit",
     "client": [
-      "B2B",
+      "Business (B2B)",
       "Community / Public"
     ],
     "workType": [
-      "Project & Program Management"
+      "Project & Program Management",
+      "Business Development"
     ],
     "methods": [
       "Partnership outreach",
       "Advisory-meeting planning"
     ],
-    "tools": [],
+    "tools": [
+      "Coda",
+      "Canva"
+    ],
     "researchSkills": [],
     "softSkills": [
       "Stakeholder management",
       "Business development",
-      "Communication"
+      "Communication",
+      "Event planning"
     ],
     "star": {
-      "situation": "Coordinated partnership outreach for a regional innovation network.",
-      "task": "Grow and maintain collaborator relationships across sectors.",
-      "action": "Connected with industry, academic, and government collaborators and planned engagement and advisory meetings.",
-      "result": "[Add what the partnerships produced.]"
+      "situation": "Coordinated partnership outreach for a regional innovation network (Rainforest) in preparation for a large event.",
+      "task": "",
+      "action": "Connected with industry, academic, and government collaborators and planned engagement and event planning meetings to prepare and execute the special day. Coordinated multi-partner programming and event execution.",
+      "result": "The inclusive innovation event was well attended, with well over 100 participants and nine partners."
     },
     "links": [],
-    "_internalReferences": "Rainforest Alberta contact [confirm]"
+    "_internalReferences": "Rainforest Alberta contact [confirm]",
+    "fr": {
+      "title": "Rainforest Alberta : coordination de partenariats et d'événements",
+      "job": "Coordonnateur de partenariats et d'événements (contractuel), Rainforest Alberta",
+      "dates": "août – déc. 2023",
+      "star": {
+        "situation": "J'ai coordonné le démarchage de partenariats pour un réseau régional d'innovation (Rainforest) en préparation d'un grand événement.",
+        "action": "J'ai établi des liens avec des collaborateurs de l'industrie, du milieu universitaire et du gouvernement, et planifié les rencontres d'engagement et d'organisation pour préparer et réaliser la journée. J'ai coordonné une programmation multipartenaire et l'exécution de l'événement.",
+        "result": "L'événement d'innovation inclusive a connu une belle affluence, avec bien plus de 100 participants et neuf partenaires présents."
+      }
+    }
   },
   {
     "id": "ccf-usability",
     "title": "Complete Complaints Foundation (CCF): Usability Evaluation",
-    "job": "IncluCity (Program Manager & Research Operations)",
-    "dates": "Apr–Jul 2022",
+    "job": "Program Manager & ReOps, IncluCity",
+    "dates": "Apr – Jul 2022",
     "featured": false,
-    "featuredRank": null,
     "industry": [
       "Nonprofit & Social Impact"
     ],
     "sector": "Nonprofit",
     "client": [
-      "B2B",
-      "Community / Public"
+      "Business (B2B)"
     ],
     "workType": [
       "Research Operations",
@@ -730,28 +876,38 @@
       "Resilience & grit"
     ],
     "star": {
-      "situation": "Complete Complaints Foundation was validating a new website across five user segments (career seekers, members, founders, investors, partners) and wanted to know how each group read the initial design before beta. We had no tester pool of our own and depended on the client's contact list, which meant rebooking sessions several times as the client's timeline slipped.",
-      "task": "Run moderated usability testing that surfaced barriers per segment (language, accessibility, navigation) and hand back prioritized, usable findings on a compressed schedule.",
-      "action": "I ran project operations and moderated eight virtual sessions using a dynamic script that swapped in segment-specific questions, so a founder and a career seeker were each tested against the tasks that mattered to them. I paired the sessions with an accessibility pass and a quantitative survey, then reported lean in Miro to keep the client oriented without a long document.",
+      "situation": "Complete Complaints Foundation was validating a new website across five user segments and wanted to know how each group read the initial design before beta. We had no tester pool of our own and depended on the client's contact list, which meant rebooking sessions several times as the client's timeline slipped.",
+      "task": "Organize testing schedule for moderated usability testing that surfaced barriers per segment (language, accessibility, navigation) and hand back prioritized, usable findings on a compressed schedule.",
+      "action": "I ran project operations and organized eight virtual sessions, where I edited a dynamic script that swapped in segment-specific questions for each user segment group. I paired the sessions with an accessibility pass and a quantitative survey.",
       "result": "Testing showed the site carried too much text and scrolling, that the search bar needed to be more prominent, and that terms like \"Insights\" and the partner-versus-sponsor distinction confused people. The client left with concrete design fixes: cut copy, surface search, and differentiate buttons from tags."
     },
     "links": [],
-    "_internalReferences": "IncluCity client (contact: Shane) [confirm + permission]"
+    "_internalReferences": "IncluCity client (contact: Shane) [confirm + permission]",
+    "fr": {
+      "title": "Complete Complaints Foundation (CCF) : évaluation d'utilisabilité",
+      "job": "Gestionnaire de programme et recherche-opérations, IncluCity",
+      "dates": "avr. – juill. 2022",
+      "star": {
+        "situation": "Complete Complaints Foundation validait un nouveau site auprès de cinq segments d'utilisateurs et voulait savoir comment chaque groupe lisait la conception initiale avant la bêta. Nous n'avions pas notre propre bassin de testeurs et dépendions de la liste de contacts du client, ce qui a exigé de reprogrammer les séances à plusieurs reprises à mesure que l'échéancier du client glissait.",
+        "task": "Organiser le calendrier de tests d'utilisabilité modérés qui faisaient ressortir les obstacles par segment (langue, accessibilité, navigation) et remettre des constats priorisés et exploitables dans un échéancier serré.",
+        "action": "J'ai géré les opérations du projet et organisé huit séances virtuelles, où j'ai adapté un script dynamique qui insérait des questions propres à chaque segment d'utilisateurs. J'ai jumelé les séances à une évaluation d'accessibilité et à un sondage quantitatif.",
+        "result": "Les tests ont montré que le site comportait trop de texte et de défilement, que la barre de recherche devait être plus visible, et que des termes comme « Insights » et la distinction partenaire-commanditaire semaient la confusion. Le client est reparti avec des correctifs concrets : réduire le texte, mettre la recherche en évidence et distinguer les boutons des étiquettes."
+      }
+    }
   },
   {
     "id": "brdge-usability",
     "title": "BRDGE: Usability Evaluation",
-    "job": "IncluCity (Program Manager & Research Operations)",
-    "dates": "Apr–Sep 2023",
+    "job": "Program Manager & ReOps, IncluCity",
+    "dates": "Apr – Sep 2023",
     "featured": false,
-    "featuredRank": null,
     "industry": [
       "AI & Technology"
     ],
-    "sector": "Private",
+    "sector": "Startup",
     "client": [
-      "B2B",
-      "B2C"
+      "Business (B2B)",
+      "Consumer (B2C)"
     ],
     "workType": [
       "Research Operations",
@@ -771,7 +927,9 @@
     ],
     "tools": [
       "Miro",
-      "testing tooling"
+      "testing tooling",
+      "Coda",
+      "Canva"
     ],
     "researchSkills": [
       "Recruitment",
@@ -797,22 +955,31 @@
       "result": "The findings held up. Participants who hit bad design also reported lower trust in the service, and confusion over portion sizes, prices, and product photos left people unsure about their orders, which pointed at the information hierarchy as the core problem. The lesson I carried forward is that client-moderated sessions bias results regardless of the client's UX training, and it changed how I scoped client involvement in later projects."
     },
     "links": [],
-    "_internalReferences": "IncluCity client (contacts: Kojo, Danielle, Stephen; team lead: Mo) [confirm + permission]"
+    "_internalReferences": "IncluCity client (contacts: Kojo, Danielle, Stephen; team lead: Mo) [confirm + permission]",
+    "fr": {
+      "title": "BRDGE : évaluation d'utilisabilité",
+      "job": "Gestionnaire de programme et recherche-opérations, IncluCity",
+      "dates": "avr. – sept. 2023",
+      "star": {
+        "situation": "BRDGE, une jeune entreprise de commande de nourriture, voulait des tests d'utilisabilité qui apprendraient aussi à son équipe à mener de la recherche elle-même. Le mandat s'est éloigné de l'énoncé de travail que j'avais proposé. Le client changeait constamment le script et le site en cours de route et restait très impliqué dans la modération des séances, ce qui ajoutait de la charge à une petite équipe à faible budget déjà à court de responsables.",
+        "task": "Livrer des constats crédibles sur l'expérience de commande tout en gérant un client qui voulait garder un contrôle direct sur la recherche.",
+        "action": "J'ai pris le rôle de responsable et recruté plus de bénévoles, en déléguant le travail pour qu'une petite équipe puisse tout de même livrer. Nous avons mené sept séances modérées avec une évaluation heuristique et d'accessibilité, puis présenté les constats sous forme de parcours utilisateur simplifié, sur lequel le client pouvait agir sans parcourir un long document.",
+        "result": "Les constats ont tenu la route. Les participants qui rencontraient une mauvaise conception rapportaient aussi une confiance moindre envers le service, et la confusion sur les portions, les prix et les photos de produits laissait les gens incertains de leurs commandes, ce qui pointait vers la hiérarchie de l'information comme problème central. La leçon que j'ai retenue : les séances modérées par le client biaisent les résultats, peu importe sa formation en UX, et cela a changé ma façon de cadrer l'implication du client dans les projets suivants."
+      }
+    }
   },
   {
     "id": "uofc-active-living",
     "title": "University of Calgary Active Living: Usability Evaluation",
-    "job": "IncluCity (Program Manager & Research Operations)",
-    "dates": "2022–2023",
+    "job": "Program Manager & ReOps, IncluCity",
+    "dates": "2022 – 2023",
     "featured": false,
-    "featuredRank": null,
     "industry": [
       "Education & EdTech"
     ],
     "sector": "Public",
     "client": [
-      "Government (B2G)",
-      "Community / Public"
+      "Government (B2G)"
     ],
     "workType": [
       "Research Operations",
@@ -829,7 +996,9 @@
     ],
     "tools": [
       "Miro",
-      "testing tooling"
+      "testing tooling",
+      "Coda",
+      "Canva"
     ],
     "researchSkills": [
       "Study / script design",
@@ -853,21 +1022,31 @@
       "result": "Testers struggled to find membership information, their cart, and course availability, and hit confusion in the booking and rental steps. The screen reader user met unlabeled links and sections that were hard to move through. The finding that traveled furthest was that pricing and program details only appeared after account login, which gave people a reason to abandon signup before they had enough to decide."
     },
     "links": [],
-    "_internalReferences": "IncluCity client (University of Calgary Active Living) [confirm + permission]"
+    "_internalReferences": "IncluCity client (University of Calgary Active Living) [confirm + permission]",
+    "fr": {
+      "title": "Université de Calgary, Active Living : évaluation d'utilisabilité",
+      "job": "Gestionnaire de programme et recherche-opérations, IncluCity",
+      "dates": "2022 – 2023",
+      "star": {
+        "situation": "Le site et le portail d'inscription Active Living de l'Université de Calgary comportaient trois processus lourds : la location d'équipement, l'inscription aux programmes et l'inscription aux cours. Le client voulait savoir comment un ensemble diversifié d'utilisateurs les parcourait et où la navigation, la langue ou l'accessibilité posaient problème.",
+        "task": "Tester les trois parcours auprès de groupes d'utilisateurs diversifiés et mener un projet d'envergure malgré le roulement de bénévoles.",
+        "action": "J'ai réparti la couverture sur deux scripts partant chacun d'un point d'entrée différent, qui ensemble atteignaient plus de contenu qu'une seule séance, puis j'ai mené douze séances facilitées à distance avec six testeurs par groupe, dont un utilisateur de lecteur d'écran. Côté opérations, la taille du projet mettait à l'épreuve la rétention des responsables d'équipe, alors j'ai géré la dotation et les transitions pour garder les séances en mouvement.",
+        "result": "Les testeurs peinaient à trouver l'information sur l'adhésion, leur panier et la disponibilité des cours, et se heurtaient à de la confusion dans les étapes de réservation et de location. L'utilisateur de lecteur d'écran a rencontré des liens non étiquetés et des sections difficiles à parcourir. Le constat qui a eu le plus de portée : les prix et les détails des programmes n'apparaissaient qu'après la connexion au compte, ce qui donnait aux gens une raison d'abandonner l'inscription avant d'en savoir assez pour décider."
+      }
+    }
   },
   {
     "id": "platform-calgary",
     "title": "Platform Calgary: Usability Evaluation",
-    "job": "IncluCity (Program Manager & Research Operations)",
-    "dates": "2022–2023",
+    "job": "Program Manager & ReOps, IncluCity",
+    "dates": "2022 – 2023",
     "featured": false,
-    "featuredRank": null,
     "industry": [
-      "Nonprofit & Social Impact"
+      "Workforce & Economic Development"
     ],
     "sector": "Nonprofit",
     "client": [
-      "B2B",
+      "Business (B2B)",
       "Community / Public"
     ],
     "workType": [
@@ -884,7 +1063,9 @@
     ],
     "tools": [
       "Miro",
-      "testing tooling"
+      "testing tooling",
+      "Coda",
+      "Notably"
     ],
     "researchSkills": [
       "Study design",
@@ -908,21 +1089,31 @@
       "result": "The client got cleaner data from focused sessions and a phase-over-phase read on the same participants, and IncluCity's other projects kept their people and timelines."
     },
     "links": [],
-    "_internalReferences": "IncluCity client (Platform Calgary) [confirm + permission]"
+    "_internalReferences": "IncluCity client (Platform Calgary) [confirm + permission]",
+    "fr": {
+      "title": "Platform Calgary : évaluation d'utilisabilité",
+      "job": "Gestionnaire de programme et recherche-opérations, IncluCity",
+      "dates": "2022 – 2023",
+      "star": {
+        "situation": "Platform Calgary a mené des tests d'utilisabilité sur deux phases, et à la deuxième nous ramenions des participants de la première pour voir comment l'expérience avait changé. Le client voulait mettre plus de contenu dans chaque séance que l'heure ne le permettait.",
+        "task": "Maintenir la qualité des séances tout en évitant qu'un projet retardé n'empiète sur les ressources dont d'autres projets d'IncluCity avaient besoin.",
+        "action": "J'ai résisté à l'allongement des séances et expliqué le raisonnement : au-delà d'une heure environ, l'attention des participants chute et la qualité des réponses avec elle, alors étirer le script ne fait qu'échanger la qualité des données contre quelques tâches de plus. Nous avons gardé les séances serrées, mené douze participants en phase un et huit en phase deux dont deux de retour, et j'ai géré le calendrier pour que les retards du client ne détournent pas le personnel d'autres travaux.",
+        "result": "Le client a obtenu des données plus propres grâce à des séances ciblées et une lecture d'une phase à l'autre auprès des mêmes participants, et les autres projets d'IncluCity ont conservé leur personnel et leurs échéanciers."
+      }
+    }
   },
   {
     "id": "ywca-usability",
     "title": "YWCA: Expert Usability Evaluation",
-    "job": "IncluCity (Program Manager & Research Operations)",
-    "dates": "Oct–Dec 2022",
+    "job": "Program Manager & ReOps, IncluCity",
+    "dates": "Oct – Dec 2022",
     "featured": false,
-    "featuredRank": null,
     "industry": [
       "Nonprofit & Social Impact"
     ],
     "sector": "Nonprofit",
     "client": [
-      "B2B"
+      "Business (B2B)"
     ],
     "workType": [
       "Research Operations",
@@ -936,7 +1127,8 @@
     ],
     "tools": [
       "Miro",
-      "testing tooling"
+      "testing tooling",
+      "Coda"
     ],
     "researchSkills": [
       "Study scoping",
@@ -953,27 +1145,37 @@
       "Resilience & grit"
     ],
     "star": {
-      "situation": "On a YWCA evaluation, I staffed a team lead I rated highly, and early on she started causing delays. The deliverable had shifted from what we scoped, outside pressures were mounting, and she reached a point where she did not feel she could commit to the role.",
-      "task": "Keep the project moving and treat the team lead fairly while doing it.",
+      "situation": "On a YWCA evaluation, I staffed a team lead I rated highly. The deliverable had shifted from what we scoped; outside pressures were mounting, and she reached a point where she no longer felt she could commit to the role, which was completely understandable.",
+      "task": "Keep the project moving and find another team lead for the project.",
       "action": "I moved her off the lead role, brought in more team members to cover the gap, and went back to the client to ask for more time rather than ship late or thin. Afterward I sat down with her to hear how it had gone from her side, and I owned that I had not brought her perspective into the plan as early as I should have.",
       "result": "We delivered a PURE and heuristic evaluation on the revised timeline. The bigger return was operational. I started bringing leads into timeline and scope conversations from the start and set expectations with clients earlier. I also got more honest with myself about how to estimate timelines. Asking for more time is fine when you flag it early."
     },
     "links": [],
-    "_internalReferences": "IncluCity client (YWCA) [confirm + permission]"
+    "_internalReferences": "IncluCity client (YWCA) [confirm + permission]",
+    "fr": {
+      "title": "YWCA : évaluation d'utilisabilité par experts",
+      "job": "Gestionnaire de programme et recherche-opérations, IncluCity",
+      "dates": "oct. – déc. 2022",
+      "star": {
+        "situation": "Sur une évaluation pour le YWCA, j'avais confié le rôle de responsable d'équipe à une personne que j'estimais beaucoup. Le livrable avait changé par rapport à ce qui avait été cadré, les pressions externes s'accumulaient, et elle a atteint un point où elle ne sentait plus pouvoir s'engager dans ce rôle, ce qui était tout à fait compréhensible.",
+        "task": "Garder le projet en mouvement et trouver un autre responsable d'équipe.",
+        "action": "Je l'ai retirée du rôle de responsable, intégré d'autres membres pour combler l'écart et je suis retourné voir le client pour demander plus de temps plutôt que de livrer en retard ou de façon incomplète. Ensuite, je me suis assis avec elle pour entendre comment elle avait vécu la situation, et j'ai reconnu que je n'avais pas intégré son point de vue au plan aussi tôt que j'aurais dû.",
+        "result": "Nous avons livré une évaluation PURE et heuristique selon l'échéancier révisé. Le plus grand gain a été opérationnel. J'ai commencé à intégrer les responsables aux discussions d'échéancier et de portée dès le début, et à établir les attentes avec les clients plus tôt. Je suis aussi devenu plus honnête avec moi-même sur l'estimation des échéanciers. Demander plus de temps est correct quand on le signale tôt."
+      }
+    }
   },
   {
     "id": "chic-geek-usability",
     "title": "Chic Geek: Usability Evaluation",
-    "job": "IncluCity (Program Manager & Research Operations)",
-    "dates": "Jul–Nov 2022",
+    "job": "Program Manager & ReOps, IncluCity",
+    "dates": "Jul – Nov 2022",
     "featured": false,
-    "featuredRank": null,
     "industry": [
       "Nonprofit & Social Impact"
     ],
     "sector": "Nonprofit",
     "client": [
-      "B2B"
+      "Business (B2B)"
     ],
     "workType": [
       "Research Operations",
@@ -985,7 +1187,8 @@
     ],
     "tools": [
       "Miro",
-      "testing tooling"
+      "testing tooling",
+      "Canva"
     ],
     "researchSkills": [
       "Recruitment",
@@ -1002,26 +1205,37 @@
     "star": {
       "situation": "Chic Geek, a Calgary nonprofit in the women-in-tech space, was one of my earliest projects at IncluCity. It was where I learned how the organization ran day to day, from its volunteer community to how projects moved from scoping to a client readout.",
       "task": "Contribute to a usability evaluation while getting up to speed on IncluCity's people and process.",
-      "action": "I worked project operations on an eight-participant moderated usability study, from recruitment and scheduling through to the final presentation, and used it to understand how a volunteer-heavy research team coordinates real client work.",
+      "action": "I worked project operations alongside two other overlapping projects, on an eight-participant moderated usability study, from recruitment and scheduling through to the final presentation, and used it to understand how a volunteer-heavy research team coordinates real client work.",
       "result": "The study delivered on schedule, and the grounding I got here in how IncluCity operated set up the operations work I took on across later projects."
     },
     "links": [],
-    "_internalReferences": "IncluCity client (Chic Geek) [confirm + permission]"
+    "_internalReferences": "IncluCity client (Chic Geek) [confirm + permission]",
+    "fr": {
+      "title": "Chic Geek : évaluation d'utilisabilité",
+      "job": "Gestionnaire de programme et recherche-opérations, IncluCity",
+      "dates": "juill. – nov. 2022",
+      "star": {
+        "situation": "Chic Geek, un organisme sans but lucratif de Calgary dans le milieu des femmes en technologie, a été l'un de mes tout premiers projets à IncluCity. C'est là que j'ai appris le fonctionnement quotidien de l'organisation, de sa communauté de bénévoles à la façon dont les projets passaient du cadrage à la présentation au client.",
+        "task": "Contribuer à une évaluation d'utilisabilité tout en me familiarisant avec les gens et les processus d'IncluCity.",
+        "action": "J'ai géré les opérations du projet en parallèle de deux autres projets qui se chevauchaient, sur une étude d'utilisabilité modérée à huit participants, du recrutement et de la planification jusqu'à la présentation finale, et je m'en suis servi pour comprendre comment une équipe de recherche portée par des bénévoles coordonne un vrai travail client.",
+        "result": "L'étude a été livrée dans les délais, et l'ancrage que j'y ai acquis sur le fonctionnement d'IncluCity a préparé le travail opérationnel que j'ai pris en charge dans les projets suivants."
+      }
+    }
   },
   {
     "id": "shift-recruitment",
     "title": "Shift: Participant Recruitment (Longitudinal Study)",
-    "job": "IncluCity (Program Manager & Research Operations)",
-    "dates": "Nov 2022–May 2023",
+    "job": "Program Manager & ReOps, IncluCity",
+    "dates": "Nov 2022 – May 2023",
     "featured": false,
-    "featuredRank": null,
     "industry": [
       "Health & Wellness",
       "Nonprofit & Social Impact"
     ],
     "sector": "Nonprofit",
     "client": [
-      "B2B"
+      "Business (B2B)",
+      "Academic / Participants"
     ],
     "workType": [
       "Research Operations"
@@ -1050,32 +1264,44 @@
     "star": {
       "situation": "Shift was recruiting for a long-term study, the kind that asks participants to stay engaged and check in every few months. The population was specific and vulnerable, so a poor match would drop out partway and cost the study time it could not spare.",
       "task": "Recruit, screen, and onboard participants who would stay the course, working as a team of one.",
-      "action": "I owned recruitment from end to end. I pre-screened against tight criteria, then walked each candidate through what a multi-month commitment with recurring check-ins actually asked of them, so people signed on knowing what they were agreeing to. Retention over that timeline came down to fit, so I treated screening as the part of the work most worth getting right.",
+      "action": "I owned recruitment from end to end. I pre-screened against tight criteria, then walked each candidate through what a multi-month commitment with recurring check-ins actually asked of them, so people signed on knowing what they were agreeing to. Retention over that timeline came down to fit, so I focused on the screening process.",
       "result": "I delivered eleven screened, prepared participants matched to the study's population and set up to stay engaged through its check-in cycle."
     },
     "links": [],
-    "_internalReferences": "IncluCity client (Shift) [confirm + permission]"
+    "_internalReferences": "IncluCity client (Shift) [confirm + permission]",
+    "fr": {
+      "title": "Shift : recrutement de participants (étude longitudinale)",
+      "job": "Gestionnaire de programme et recherche-opérations, IncluCity",
+      "dates": "nov. 2022 – mai 2023",
+      "star": {
+        "situation": "Shift recrutait pour une étude de longue durée, le genre qui demande aux participants de rester engagés et de faire un suivi tous les quelques mois. La population était précise et vulnérable, alors un mauvais appariement abandonnerait en cours de route et coûterait à l'étude un temps qu'elle ne pouvait pas se permettre.",
+        "task": "Recruter, présélectionner et intégrer des participants qui iraient jusqu'au bout, en travaillant en équipe d'un.",
+        "action": "J'ai pris en charge le recrutement de bout en bout. J'ai présélectionné selon des critères stricts, puis expliqué à chaque candidat ce qu'un engagement de plusieurs mois avec des suivis récurrents demandait réellement, pour que les gens s'engagent en sachant à quoi ils consentaient. La rétention sur cette durée dépendait de l'appariement, alors je me suis concentré sur le processus de présélection.",
+        "result": "J'ai livré onze participants présélectionnés et préparés, appariés à la population de l'étude et prêts à rester engagés tout au long de son cycle de suivis."
+      }
+    }
   },
   {
     "id": "rainforest-inclucity-reops",
     "title": "Rainforest Alberta: Usability Evaluation (IncluCity ReOps)",
-    "job": "IncluCity (Program Manager & Research Operations)",
-    "dates": "Sep 2022–Jan 2023",
+    "job": "Program Manager & ReOps, IncluCity",
+    "dates": "Sep 2022 – Jan 2023",
     "featured": false,
-    "featuredRank": null,
     "industry": [
+      "Workforce & Economic Development",
       "Nonprofit & Social Impact"
     ],
     "sector": "Nonprofit",
     "client": [
-      "B2B",
+      "Business (B2B)",
       "Community / Public"
     ],
     "workType": [
       "Research Operations",
       "UX Research",
       "Usability Evaluation",
-      "Project & Program Management"
+      "Project & Program Management",
+      "Data Analysis"
     ],
     "methods": [
       "Heuristic evaluation",
@@ -1084,7 +1310,7 @@
       "Data-management system design"
     ],
     "tools": [
-      "Coda (first use)",
+      "Coda",
       "Miro",
       "testing tooling"
     ],
@@ -1103,12 +1329,23 @@
       "Communication"
     ],
     "star": {
-      "situation": "Rainforest was the largest study IncluCity had run to that point, around twenty participants, which was more than double our usual recruitment effort. That scale made both the logistics and the volume of data harder to manage cleanly.",
+      "situation": "Rainforest was the largest qualitative study IncluCity had run to that point, around twenty participants, which was more than double our usual recruitment effort. That scale made both the logistics and the volume of data harder to manage cleanly. Each participant group focused on a different object plus one shared object, which let us compare across groups.",
       "task": "Recruit and run a study at a size the team had not handled before, and keep the data organized enough to report on.",
       "action": "I led recruitment for the twenty participants and set up Coda for the first time to manage participants and testing data as the study grew. Getting the data structure right up front was what kept a study this size from turning into a pile we could not sort later.",
       "result": "We ran and reported the study, and the recruitment and data-management setup I built here carried into how I ran recruitment and data on later projects. This work is also how I first connected with Rainforest, which later brought me on directly as a project management contractor (see the Rainforest Alberta coordinator card)."
     },
     "links": [],
-    "_internalReferences": "IncluCity client (Rainforest Alberta) [confirm + permission]"
+    "_internalReferences": "IncluCity client (Rainforest Alberta) [confirm + permission]",
+    "fr": {
+      "title": "Rainforest Alberta : évaluation d'utilisabilité (recherche-opérations IncluCity)",
+      "job": "Gestionnaire de programme et recherche-opérations, IncluCity",
+      "dates": "sept. 2022 – janv. 2023",
+      "star": {
+        "situation": "Rainforest était la plus grande étude qualitative qu'IncluCity avait menée jusque-là, environ vingt participants, soit plus du double de notre effort de recrutement habituel. Cette échelle rendait la logistique et le volume de données plus difficiles à gérer proprement. Chaque groupe de participants se concentrait sur un objet différent plus un objet commun, ce qui permettait de comparer entre les groupes.",
+        "task": "Recruter et mener une étude d'une taille que l'équipe n'avait pas encore gérée, et garder les données assez organisées pour en rendre compte.",
+        "action": "J'ai dirigé le recrutement des vingt participants et configuré Coda pour la première fois afin de gérer les participants et les données de test à mesure que l'étude grandissait. Bien structurer les données dès le départ est ce qui a empêché une étude de cette taille de se transformer en un amas impossible à trier plus tard.",
+        "result": "Nous avons mené et rapporté l'étude, et la configuration de recrutement et de gestion des données que j'ai bâtie ici s'est répercutée sur ma façon de gérer le recrutement et les données dans les projets suivants. C'est aussi ainsi que j'ai d'abord connu Rainforest, qui m'a plus tard engagé directement comme contractuel en gestion de projet (voir la fiche du coordonnateur Rainforest Alberta)."
+      }
+    }
   }
 ]
