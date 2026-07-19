@@ -39,6 +39,18 @@
 
   var els = {}; // cached DOM refs
 
+  // --- i18n: card content and tag chips render in the page language ----------
+  // Filter keys/URL params stay English; this is display-only. FR data lives on
+  // each project's `fr` object (projects.json) and in window.WORK_I18N.
+  var I18N = window.WORK_I18N || { labels: {}, groups: {}, facets: {}, ui: {} };
+  function isFR() { return document.documentElement.getAttribute("lang") === "fr"; }
+  function TR(v) { return isFR() && I18N.labels[v] ? I18N.labels[v] : v; }           // tag value
+  function GT(v) { return isFR() && I18N.groups[v] ? I18N.groups[v] : v; }           // category label
+  function FT(v) { return isFR() && I18N.facets[v] ? I18N.facets[v] : v; }           // facet label
+  function UI(k, en) { return isFR() && I18N.ui[k] ? I18N.ui[k] : en; }             // ui string, English fallback
+  function projStar(p) { return (isFR() && p.fr && p.fr.star) ? p.fr.star : p.star; }
+  function projField(p, f) { return (isFR() && p.fr && p.fr[f]) ? p.fr[f] : p[f]; }
+
   // --- data helpers ---------------------------------------------------------
 
   function facetValues(p, facet) {
@@ -110,7 +122,7 @@
     wrap.appendChild(el("span", "pf-chiprow-label", label));
     var list = el("div", "pf-chiplist");
     values.forEach(function (v) {
-      list.appendChild(el("span", "pf-schip" + (extraClass ? " " + extraClass : ""), v));
+      list.appendChild(el("span", "pf-schip" + (extraClass ? " " + extraClass : ""), TR(v)));
     });
     wrap.appendChild(list);
     return wrap;
@@ -142,7 +154,7 @@
 
   // A single toggle chip. Used by both the primary categories and secondary facets.
   function makeChip(facetKey, value) {
-    var btn = el("button", "pf-chip", value);
+    var btn = el("button", "pf-chip", TR(value));
     btn.type = "button";
     btn.setAttribute("aria-pressed", selection[facetKey].has(value) ? "true" : "false");
     btn.setAttribute("data-facet", facetKey);
@@ -176,7 +188,7 @@
       toggle.type = "button";
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
       toggle.setAttribute("aria-controls", panelId);
-      toggle.appendChild(el("span", "pf-cat-label", group.label));
+      toggle.appendChild(el("span", "pf-cat-label", GT(group.label)));
       var badge = el("span", "pf-badge pf-cat-badge", String(selInCat));
       badge.hidden = selInCat === 0;
       toggle.appendChild(badge);
@@ -210,8 +222,8 @@
       if (isPrimary(facet)) return;
       var group = el("div", "pf-facet");
       group.setAttribute("role", "group");
-      group.setAttribute("aria-label", facet.label);
-      group.appendChild(el("span", "pf-facet-label", facet.label));
+      group.setAttribute("aria-label", FT(facet.label));
+      group.appendChild(el("span", "pf-facet-label", FT(facet.label)));
       var chips = el("div", "pf-chips");
       uniqueValues(facet).forEach(function (value) { chips.appendChild(makeChip(facet.key, value)); });
       group.appendChild(chips);
@@ -234,8 +246,9 @@
 
   function renderResultHeader(shown) {
     // Live count.
-    els.count.textContent =
-      "Showing " + shown.length + " of " + projects.length + " projects";
+    els.count.textContent = isFR()
+      ? UI("countTemplate", "").replace("{n}", shown.length).replace("{total}", projects.length)
+      : "Showing " + shown.length + " of " + projects.length + " projects";
 
     // Active filter chips (removable).
     els.active.textContent = "";
@@ -243,8 +256,8 @@
       selection[facet.key].forEach(function (value) {
         var chip = el("button", "pf-activechip");
         chip.type = "button";
-        chip.setAttribute("aria-label", "Remove filter: " + value);
-        chip.appendChild(el("span", "pf-activechip-text", value));
+        chip.setAttribute("aria-label", UI("removeFilter", "Remove filter: ") + TR(value));
+        chip.appendChild(el("span", "pf-activechip-text", TR(value)));
         chip.appendChild(el("span", "pf-activechip-x", "×"));
         chip.addEventListener("click", function () {
           selection[facet.key].delete(value);
@@ -261,31 +274,32 @@
     var card = el("article", "pf-card");
     card.id = p.id;
 
-    card.appendChild(el("h3", "pf-card-title", p.title));
+    card.appendChild(el("h3", "pf-card-title", projField(p, "title")));
 
     var meta = el("p", "pf-card-meta");
-    meta.appendChild(el("span", "pf-card-job", p.job));
+    meta.appendChild(el("span", "pf-card-job", projField(p, "job")));
     if (p.dates) {
       meta.appendChild(el("span", "pf-card-sep", "·"));
-      meta.appendChild(el("span", "pf-card-dates", p.dates));
+      meta.appendChild(el("span", "pf-card-dates", projField(p, "dates")));
     }
     card.appendChild(meta);
 
     // Work type as headline tags.
     if (Array.isArray(p.workType) && p.workType.length) {
       var wt = el("div", "pf-worktags");
-      p.workType.forEach(function (v) { wt.appendChild(el("span", "pf-tag", v)); });
+      p.workType.forEach(function (v) { wt.appendChild(el("span", "pf-tag", TR(v))); });
       card.appendChild(wt);
     }
 
-    // STAR narrative.
-    if (p.star) {
+    // STAR narrative (in the page language).
+    var st = projStar(p);
+    if (st) {
       var star = el("div", "pf-star");
       [
-        ["Situation", p.star.situation],
-        ["Task", p.star.task],
-        ["Action", p.star.action],
-        ["Result", p.star.result]
+        [UI("situation", "Situation"), st.situation],
+        [UI("task", "Task"), st.task],
+        [UI("action", "Action"), st.action],
+        [UI("result", "Result"), st.result]
       ].forEach(function (pair) {
         if (!pair[1]) return;
         var block = el("div", "pf-star-block");
@@ -297,19 +311,19 @@
     }
 
     // Methods + tools as secondary display chips (kept separate from facets).
-    var methods = chipRow("Methods", p.methods);
+    var methods = chipRow(UI("methods", "Methods"), p.methods);
     if (methods) card.appendChild(methods);
-    var tools = chipRow("Tools", p.tools);
+    var tools = chipRow(UI("tools", "Tools"), p.tools);
     if (tools) card.appendChild(tools);
 
     // Research skills — optional, collapsed secondary detail.
     if (Array.isArray(p.researchSkills) && p.researchSkills.length) {
       var details = el("details", "pf-details");
-      var summary = el("summary", "pf-details-summary", "Research skills");
+      var summary = el("summary", "pf-details-summary", UI("researchSkills", "Research skills"));
       details.appendChild(summary);
       var list = el("div", "pf-chiplist");
       p.researchSkills.forEach(function (v) {
-        list.appendChild(el("span", "pf-schip", v));
+        list.appendChild(el("span", "pf-schip", TR(v)));
       });
       details.appendChild(list);
       card.appendChild(details);
@@ -334,15 +348,15 @@
 
   function renderEmptyState() {
     var box = el("div", "pf-empty");
-    box.appendChild(el("p", "pf-empty-title", "Nothing matches that exact combination."));
+    box.appendChild(el("p", "pf-empty-title", UI("emptyTitle", "Nothing matches that exact combination.")));
     box.appendChild(el("p", "pf-empty-text",
-      "Try removing a filter, or reach out and I'll point you to the right work."));
+      UI("emptyText", "Try removing a filter, or reach out and I'll point you to the right work.")));
     var actions = el("div", "pf-empty-actions");
-    var clear = el("button", "pf-ctl", "Clear all filters");
+    var clear = el("button", "pf-ctl", UI("emptyClear", "Clear all filters"));
     clear.type = "button";
     clear.addEventListener("click", clearAll);
     actions.appendChild(clear);
-    var contact = el("a", "pf-btn", "Contact me directly");
+    var contact = el("a", "pf-btn", UI("emptyContact", "Contact me directly"));
     contact.href = "mailto:" + CONTACT_EMAIL;
     actions.appendChild(contact);
     box.appendChild(actions);
@@ -422,10 +436,10 @@
     var url = location.href;
     var done = function () {
       els.copy.classList.add("is-copied");
-      els.copy.textContent = "Copied ✓";
+      els.copy.textContent = UI("copied", "Copied ✓");
       setTimeout(function () {
         els.copy.classList.remove("is-copied");
-        els.copy.textContent = "Copy link";
+        els.copy.textContent = UI("copyLink", "Copy link");
       }, 1800);
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -446,18 +460,32 @@
         document.body.removeChild(t);
         done();
       } catch (e) {
-        els.copy.textContent = "Press Ctrl/Cmd+C";
+        els.copy.textContent = UI("copyManual", "Press Ctrl/Cmd+C");
       }
     }
   }
 
   // --- main render ----------------------------------------------------------
 
+  // Static chrome the engine owns (not data-t): view buttons, more-filters
+  // label, clear/copy, section count, prompt. Set per language on each render.
+  function syncChrome() {
+    if (els.sectionCount) els.sectionCount.textContent = projects.length + " " + UI("projectsWord", "projects");
+    if (els.viewCurrent) els.viewCurrent.textContent = UI("viewCurrent", "Current projects");
+    if (els.viewAll) els.viewAll.textContent = UI("viewAll", "Show all");
+    if (els.viewReset) els.viewReset.textContent = UI("viewReset", "Reset");
+    if (els.clear) els.clear.textContent = UI("clearAll", "Clear all");
+    if (!els.copy.classList.contains("is-copied")) els.copy.textContent = UI("copyLink", "Copy link");
+    if (els.moreLabel) els.moreLabel.textContent = UI("moreFilters", "More filters");
+    if (els.prompt) els.prompt.textContent = UI("prompt", "What kind of work do you want to see?");
+  }
+
   function render() {
     var shown = computeShown();
     renderFilters();
     renderResultHeader(shown);
     updateViewButtons();
+    syncChrome();
     renderResults(shown);
     syncURL();
   }
@@ -478,6 +506,8 @@
     els.viewReset = document.getElementById("pf-view-reset");
     els.results = document.getElementById("pf-results");
     els.sectionCount = document.getElementById("pf-section-count");
+    els.moreLabel = document.querySelector(".pf-more-label");
+    els.prompt = document.querySelector(".pf-prompt");
     if (!els.primary || !els.results) return;
 
     els.clear.addEventListener("click", clearAll);
@@ -485,6 +515,12 @@
     if (els.viewCurrent) els.viewCurrent.addEventListener("click", function () { setView("current"); });
     if (els.viewAll) els.viewAll.addEventListener("click", function () { setView("all"); });
     if (els.viewReset) els.viewReset.addEventListener("click", function () { setView("current"); });
+
+    // Re-render cards and chrome in the new language when the FR/EN toggle flips.
+    var langBtn = document.getElementById("lang-toggle");
+    if (langBtn) langBtn.addEventListener("click", function () {
+      setTimeout(function () { if (projects.length) render(); }, 0);
+    });
 
     // "More filters" disclosure: toggle the secondary panel (mouse + keyboard).
     if (els.moreToggle && els.secondary) {

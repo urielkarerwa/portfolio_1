@@ -120,7 +120,10 @@
       "mw4_p": `Évaluation d'utilisabilité à méthodes mixtes d'un assistant d'achat grand public propulsé par l'IA, révélant des obstacles de confiance et de clarté dans une expérience de commerce conversationnel.`,
       "foot_big": `Discutons. <a href="mailto:karerwau@gmail.com">karerwau@gmail.com</a>`,
       "foot_colophon": `Uriel Karerwa · Recherche UX et conception d'interaction IA · Conçu en 2026`,
-      "foot_copy": `© 2026 Uriel Karerwa. Tous droits réservés.`
+      "foot_copy": `© 2026 Uriel Karerwa. Tous droits réservés.`,
+      "pf_title": `Explorer mon travail`,
+      "pf_intro": `Choisissez ce que vous voulez voir et la page assemble les études de cas correspondantes en direct. Partagez n'importe quelle vue avec « Copier le lien ». Chaque étude de cas est rédigée au format <strong>STAR</strong> : <strong>S</strong>ituation, <strong>T</strong>âche, <strong>A</strong>ction, <strong>R</strong>ésultat, une façon structurée de raconter un projet qui va du contexte et de l'objectif, jusqu'à ce que j'ai fait et au résultat obtenu.`,
+      "pf_note": `Ce portfolio est un travail en cours en date de juillet 2026. Plusieurs études de cas sont encore en rédaction et en révision, et d'autres ajouts et modifications seront publiés ici au fur et à mesure.`
     };
     var cacheEN = {};
     function apply(lang){
