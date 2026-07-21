@@ -180,9 +180,9 @@
 
   /* ---------- photo band ---------- */
   .photo-band{margin:44px auto 4px;display:grid;gap:16px;grid-template-columns:1fr}
-  /* narrower, left-aligned pair so the images sit with the text column instead of
-     spanning the full width; each image is centre-cropped square */
-  @media(min-width:720px){.photo-band{grid-template-columns:repeat(2,minmax(0,330px));justify-content:start}}
+  /* two equal columns filling the content width, so the pair aligns with the
+     full-width top-section text; each image is centre-cropped square */
+  @media(min-width:720px){.photo-band{grid-template-columns:1fr 1fr}}
   .pb-fig{margin:0;display:flex;flex-direction:column}
   /* the framed image: keeps the existing border, radius and hover treatment */
   .pb-frame{
