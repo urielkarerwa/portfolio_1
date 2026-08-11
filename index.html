@@ -320,6 +320,59 @@
     </div>
   </article>
 
+  <!-- ============ CASE 05 — FARIS HYTIAA ============ -->
+  <article class="case reveal">
+    <div class="case-num">05</div>
+    <div class="tags">
+      <span class="tag" data-t="tag_agentic">Agentic Delivery</span>
+      <span class="tag" data-t="tag_designsys">Design Systems</span>
+      <span class="tag" data-t="tag_arts">Arts &amp; Entertainment</span>
+    </div>
+    <h3 data-t="c5_h3">What does the designer's job become when the AI writes the code?</h3>
+    <div class="case-meta">
+      <span data-t="c5_m1"><b>Role</b> Designer, researcher &amp; technical lead</span>
+      <span data-t="c5_m2"><b>Client</b> Faris Hytiaa</span>
+      <span data-t="c5_m3"><b>Period</b> 2026</span>
+      <span data-t="c5_m4"><b>Scale</b> 13 hours · research → spec → agentic build</span>
+    </div>
+
+    <div class="blocks">
+      <div class="block">
+        <div class="lbl" data-t="lbl_problem">The problem</div>
+        <p data-t="c5_p1">Faris Hytiaa is a Juno-nominated stand-up comedian who hosts Canada's only late-night talk show. He had no website. Bookers, press and fans searching for him landed on Wikipedia, IMDb, a corporate-gigs marketplace, or whichever venue happened to rank that week. His tour dates were scattered across Instagram posts, Eventbrite, a tourism-board listing and individual club box offices, and no two agreed. Meanwhile ticket-broker domain squatters already owned the .org and .net of several comedians at his level. He had the career; the internet just had no canonical place to find it.</p>
+      </div>
+      <div class="block">
+        <div class="lbl" data-t="lbl_did">What I did</div>
+        <p data-t="c5_p2">I ran a full discovery-to-launch pass in 13 hours, acting as researcher and designer while Claude Code wrote the implementation. First a research dossier: every credit, festival, award, venue and press mention in the public record, sorted into confidence tiers. That verification pass caught something. His own bio claimed a festival credit the published source did not support, most likely a stream mismatch rather than an error, but not something to publish unchecked. Then a design system built on the observation that Alberta prairie and Sudanese desert share a palette, which let the site carry his heritage through colour and light instead of flags. Then a build spec detailed enough that the agent could implement it without inventing facts, with every unverified claim marked as a placeholder rather than filled in.</p>
+      </div>
+      <div class="block">
+        <div class="lbl" data-t="lbl_changed">What changed</div>
+        <p data-t="c5_p3">The spec, not the code, was the bottleneck, and that is the transferable finding. Writing the brief took longer than generating the site, because an agent will confidently produce a plausible tour date if you let it. The controls that mattered were structural: typed content files instead of hardcoded copy, bracketed placeholders the agent was instructed never to fill, and a review gate at every factual claim. He now has one canonical source for his dates, structured event data so those dates surface directly in search, and a documented handoff for updating it without me.</p>
+      </div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric"><div class="v">13 hrs</div><div class="k" data-t="c5_k1">discovery → launch-ready</div></div>
+      <div class="metric"><div class="v">4 → 1</div><div class="k" data-t="c5_k2">scattered listings to one canonical source</div></div>
+      <div class="metric"><div class="v">22 pp</div><div class="k" data-t="c5_k3">research dossier behind the build</div></div>
+      <div class="metric"><div class="v">1</div><div class="k" data-t="c5_k4">unverifiable claim caught before it shipped</div></div>
+    </div>
+
+    <div class="media grid-2">
+      <figure class="shot-fig">
+        <a class="shot-link" href="https://www.farishytiaa.com" target="_blank" rel="noopener">
+          <span class="shot-ph"><span class="pl">IMAGE</span><span class="pn">images/faris-home.png</span></span>
+          <img class="shot" src="images/faris-home.png" alt="Faris Hytiaa website homepage" loading="lazy" onerror="this.closest('.shot-fig').classList.add('pending')">
+          <span class="shot-cap" data-t="cap_live">Live website <span class="ar">↗</span></span>
+        </a>
+      </figure>
+      <figure class="shot-fig pending" id="faris-video">
+        <span class="shot-ph"><span class="pl">VIDEO</span><span class="pn">images/faris-walkthrough.mp4</span></span>
+        <span class="shot-cap" data-t="cap_walkthrough">Website walkthrough <span class="ar">▶</span></span>
+      </figure>
+    </div>
+  </article>
+
   <div class="seemore-row">
     <a class="ulink see-more" href="work.html" data-t="seemore">See more projects →</a>
   </div>

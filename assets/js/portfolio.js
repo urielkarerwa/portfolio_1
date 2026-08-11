@@ -19,10 +19,10 @@
   // categories. Sub-values still filter the same single workType facet;
   // categories are disclosure only. Values absent from the data are skipped.
   var WORK_GROUPS = [
-    { label: "AI", values: ["AI Implementation", "AI Automation", "Prompt Engineering & RAG"] },
-    { label: "UX", values: ["UX Research", "UX Design", "Service Design"] },
+    { label: "AI", values: ["AI Implementation", "AI Automation", "Agentic Delivery", "Prompt Engineering & RAG"] },
+    { label: "UX", values: ["UX Research", "UX Design", "Service Design", "Design Systems", "Content Strategy"] },
     { label: "Project Management", values: ["Research Operations", "Project & Program Management", "Business Development"] },
-    { label: "Process", values: ["Data Analysis", "Behavioral & Physiological Research", "Usability Evaluation", "Information Architecture", "Inclusive Design"] }
+    { label: "Process", values: ["Data Analysis", "Behavioral & Physiological Research", "Usability Evaluation", "Information Architecture", "Inclusive Design", "SEO & Discoverability"] }
   ];
 
   var projects = [];
