@@ -59,7 +59,13 @@
       "action": "I ran early-stage exploratory moderated interviews to understand how employees reach for mental-health resources and built personas. I also tested the proposed Information Architecture with two rounds of treejack testing (29 participants). I facilitated two group design workshops with the team to ensure I incorporated the early-stage research into a prototype. While away from the project, a colleague completed the remaining work and facilitated later-stage usability testing on the new pages. I rejoined the initiative in the last month pre-deployment to work on the last few iterations of the webpages.",
       "result": "The revised architecture shipped as a working SharePoint site the team owns and updates without IT tickets, with an FAQ for employees new to SharePoint."
     },
-    "links": [],
+    "links": [
+      {
+        "label": "Video walkthrough series (Notion)",
+        "labelFr": "Série de vidéos explicatives (Notion)",
+        "url": "https://app.notion.com/p/ESDC-Design-Work-Portfolio-2f67856cf32c80799f05e9aa9ddd8df5?source=copy_link"
+      }
+    ],
     "_internalReferences": "WMH product owner / ESDC supervisor [confirm name + permission]",
     "fr": {
       "title": "Wellness Gym d'EDSC : refonte SharePoint",
@@ -467,7 +473,8 @@
     "links": [
       {
         "label": "Master's thesis",
-        "url": "https://hecmontreal.on.worldcat.org/oclc/1578112535"
+        "url": "https://hecmontreal.on.worldcat.org/oclc/1578112535",
+        "labelFr": "Thèse de maîtrise"
       }
     ],
     "_internalReferences": "A. Karran (supervisor); P-M. Léger (director) [confirm + ask permission]",

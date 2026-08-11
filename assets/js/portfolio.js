@@ -334,7 +334,8 @@
       var links = el("div", "pf-links");
       p.links.forEach(function (link) {
         if (!link || !link.url) return;
-        var a = el("a", "pf-btn", link.label || link.url);
+        var label = (isFR() && link.labelFr) ? link.labelFr : (link.label || link.url);
+        var a = el("a", "pf-btn", label);
         a.href = link.url;
         a.target = "_blank";
         a.rel = "noopener";
