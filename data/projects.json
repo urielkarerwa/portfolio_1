@@ -77,7 +77,8 @@
         "action": "J'ai mené des entrevues modérées exploratoires en amont pour comprendre comment les employés cherchent des ressources en santé mentale, et j'ai créé des personas. J'ai aussi testé l'architecture d'information proposée avec deux rondes de test Treejack (29 participants). J'ai animé deux ateliers de conception avec l'équipe afin d'intégrer cette recherche initiale dans un prototype. Pendant mon absence, un collègue a complété le reste du travail et animé les tests d'utilisabilité en aval sur les nouvelles pages. Je suis revenu le dernier mois avant le déploiement pour travailler sur les dernières itérations des pages.",
         "result": "L'architecture révisée a été livrée sous forme d'un site SharePoint fonctionnel que l'équipe possède et met à jour sans billet aux TI, avec une FAQ pour les employés peu familiers avec SharePoint."
       }
-    }
+    },
+    "video": "https://www.youtube.com/embed/P_Fs-lC2Znw"
   },
   {
     "id": "esdc-ai-implementation",
@@ -1428,6 +1429,7 @@
         "action": "J'ai mené une démarche complète, de la recherche au lancement, en 13 heures, à titre de chercheur et de designer, pendant que Claude Code écrivait l'implémentation. D'abord un dossier de recherche : chaque crédit, festival, prix, salle et mention de presse au dossier public, triés par niveau de confiance. Cette vérification a révélé quelque chose. Sa propre biographie revendiquait un crédit de festival que la source publiée ne confirmait pas, probablement une confusion de diffusion plutôt qu'une erreur, mais rien à publier sans vérification. Ensuite, un système de design fondé sur l'observation que la prairie albertaine et le désert soudanais partagent une palette, ce qui a permis au site de porter son héritage par la couleur et la lumière plutôt que par des drapeaux. Puis une spécification de construction assez détaillée pour que l'agent puisse l'implémenter sans inventer de faits, chaque affirmation non vérifiée étant marquée comme un espace réservé plutôt que remplie.",
         "result": "La spécification, et non le code, était le goulot d'étranglement, et c'est le constat transférable. Rédiger le brief a pris plus de temps que générer le site, parce qu'un agent produira avec assurance une date de tournée plausible si on le laisse faire. Les contrôles qui ont compté étaient structurels : des fichiers de contenu typés plutôt que du texte codé en dur, des espaces réservés entre crochets que l'agent avait pour consigne de ne jamais remplir, et un point de contrôle à chaque affirmation factuelle. Il dispose maintenant d'une source canonique unique pour ses dates, de données d'événements structurées pour que ces dates apparaissent directement dans la recherche, et d'un transfert documenté pour les mettre à jour sans moi."
       }
-    }
+    },
+    "video": "https://www.youtube.com/embed/3PMkwqQAsu8"
   }
 ]

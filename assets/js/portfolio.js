@@ -329,6 +329,20 @@
       card.appendChild(details);
     }
 
+    // Embedded video walkthrough (responsive 16:9 iframe).
+    if (p.video) {
+      var vwrap = el("div", "pf-video");
+      var iframe = document.createElement("iframe");
+      iframe.src = p.video;
+      iframe.title = projField(p, "title");
+      iframe.loading = "lazy";
+      iframe.setAttribute("allow", "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+      iframe.setAttribute("allowfullscreen", "");
+      iframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+      vwrap.appendChild(iframe);
+      card.appendChild(vwrap);
+    }
+
     // Links as buttons.
     if (Array.isArray(p.links) && p.links.length) {
       var links = el("div", "pf-links");
