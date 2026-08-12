@@ -195,6 +195,7 @@ window.WORK_I18N = {
     "Source verification": "Vérification des sources",
     "Fact-checking": "Vérification des faits",
     "Spec writing": "Rédaction de spécifications",
+    "Gap and competition analysis": "Analyse des écarts et de la concurrence",
     // soft skills
     "Adaptability": "Adaptabilité",
     "Business development": "Développement des affaires",
