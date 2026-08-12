@@ -19,10 +19,10 @@
   // categories. Sub-values still filter the same single workType facet;
   // categories are disclosure only. Values absent from the data are skipped.
   var WORK_GROUPS = [
-    { label: "AI", values: ["AI Implementation", "AI Automation", "Prompt Engineering & RAG"] },
-    { label: "UX", values: ["UX Research", "UX Design", "Service Design"] },
+    { label: "AI", values: ["AI Implementation", "AI Automation", "Agentic Delivery", "Prompt Engineering & RAG"] },
+    { label: "UX", values: ["UX Research", "UX Design", "Service Design", "Design Systems", "Content Strategy"] },
     { label: "Project Management", values: ["Research Operations", "Project & Program Management", "Business Development"] },
-    { label: "Process", values: ["Data Analysis", "Behavioral & Physiological Research", "Usability Evaluation", "Information Architecture", "Inclusive Design"] }
+    { label: "Process", values: ["Data Analysis", "Behavioral & Physiological Research", "Usability Evaluation", "Information Architecture", "Inclusive Design", "SEO & Discoverability"] }
   ];
 
   var projects = [];
@@ -329,12 +329,27 @@
       card.appendChild(details);
     }
 
+    // Embedded video walkthrough (responsive 16:9 iframe).
+    if (p.video) {
+      var vwrap = el("div", "pf-video");
+      var iframe = document.createElement("iframe");
+      iframe.src = p.video;
+      iframe.title = projField(p, "title");
+      iframe.loading = "lazy";
+      iframe.setAttribute("allow", "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+      iframe.setAttribute("allowfullscreen", "");
+      iframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+      vwrap.appendChild(iframe);
+      card.appendChild(vwrap);
+    }
+
     // Links as buttons.
     if (Array.isArray(p.links) && p.links.length) {
       var links = el("div", "pf-links");
       p.links.forEach(function (link) {
         if (!link || !link.url) return;
-        var a = el("a", "pf-btn", link.label || link.url);
+        var label = (isFR() && link.labelFr) ? link.labelFr : (link.label || link.url);
+        var a = el("a", "pf-btn", label);
         a.href = link.url;
         a.target = "_blank";
         a.rel = "noopener";

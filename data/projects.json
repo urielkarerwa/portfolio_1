@@ -59,7 +59,13 @@
       "action": "I ran early-stage exploratory moderated interviews to understand how employees reach for mental-health resources and built personas. I also tested the proposed Information Architecture with two rounds of treejack testing (29 participants). I facilitated two group design workshops with the team to ensure I incorporated the early-stage research into a prototype. While away from the project, a colleague completed the remaining work and facilitated later-stage usability testing on the new pages. I rejoined the initiative in the last month pre-deployment to work on the last few iterations of the webpages.",
       "result": "The revised architecture shipped as a working SharePoint site the team owns and updates without IT tickets, with an FAQ for employees new to SharePoint."
     },
-    "links": [],
+    "links": [
+      {
+        "label": "Video walkthrough series (Notion)",
+        "labelFr": "Série de vidéos explicatives (Notion)",
+        "url": "https://app.notion.com/p/ESDC-Design-Work-Portfolio-2f67856cf32c80799f05e9aa9ddd8df5?source=copy_link"
+      }
+    ],
     "_internalReferences": "WMH product owner / ESDC supervisor [confirm name + permission]",
     "fr": {
       "title": "Wellness Gym d'EDSC : refonte SharePoint",
@@ -71,7 +77,8 @@
         "action": "J'ai mené des entrevues modérées exploratoires en amont pour comprendre comment les employés cherchent des ressources en santé mentale, et j'ai créé des personas. J'ai aussi testé l'architecture d'information proposée avec deux rondes de test Treejack (29 participants). J'ai animé deux ateliers de conception avec l'équipe afin d'intégrer cette recherche initiale dans un prototype. Pendant mon absence, un collègue a complété le reste du travail et animé les tests d'utilisabilité en aval sur les nouvelles pages. Je suis revenu le dernier mois avant le déploiement pour travailler sur les dernières itérations des pages.",
         "result": "L'architecture révisée a été livrée sous forme d'un site SharePoint fonctionnel que l'équipe possède et met à jour sans billet aux TI, avec une FAQ pour les employés peu familiers avec SharePoint."
       }
-    }
+    },
+    "video": "https://www.youtube.com/embed/P_Fs-lC2Znw"
   },
   {
     "id": "esdc-ai-implementation",
@@ -467,7 +474,8 @@
     "links": [
       {
         "label": "Master's thesis",
-        "url": "https://hecmontreal.on.worldcat.org/oclc/1578112535"
+        "url": "https://hecmontreal.on.worldcat.org/oclc/1578112535",
+        "labelFr": "Thèse de maîtrise"
       }
     ],
     "_internalReferences": "A. Karran (supervisor); P-M. Léger (director) [confirm + ask permission]",
@@ -1347,5 +1355,80 @@
         "result": "Nous avons mené et rapporté l'étude, et la configuration de recrutement et de gestion des données que j'ai bâtie ici s'est répercutée sur ma façon de gérer le recrutement et les données dans les projets suivants. C'est aussi ainsi que j'ai d'abord connu Rainforest, qui m'a plus tard engagé directement comme contractuel en gestion de projet (voir la fiche du coordonnateur Rainforest Alberta)."
       }
     }
+  },
+  {
+    "id": "faris-hytiaa",
+    "title": "Faris Hytiaa: Comedian Website (Agentic Build)",
+    "job": "Designer, Researcher & Technical Lead, Faris Hytiaa",
+    "dates": "2026",
+    "featured": true,
+    "featuredRank": 5,
+    "industry": [
+      "Arts & Entertainment",
+      "Live Performance"
+    ],
+    "sector": "Private",
+    "client": [
+      "Business (B2B)"
+    ],
+    "workType": [
+      "Agentic Delivery",
+      "UX Research",
+      "UX Design",
+      "Content Strategy",
+      "Service Design",
+      "SEO & Discoverability"
+    ],
+    "methods": [
+      "Discovery research",
+      "Public-record verification",
+      "Design system design",
+      "Content modelling",
+      "Build specification",
+      "Handoff documentation"
+    ],
+    "tools": [
+      "Claude Code",
+      "Anthropic API"
+    ],
+    "researchSkills": [
+      "Public-record research",
+      "Source verification",
+      "Fact-checking",
+      "Spec writing",
+      "Handoff documentation",
+      "Gap and competition analysis"
+    ],
+    "softSkills": [
+      "Client relations",
+      "Communication & storytelling",
+      "Self-direction"
+    ],
+    "star": {
+      "situation": "Faris Hytiaa is a Juno-nominated stand-up comedian. He had no website. Bookers, press and fans searching for him landed on Wikipedia, IMDb, and venue ticket-sales pages. His tour dates were scattered across Instagram posts, Eventbrite, a tourism-board listing and individual club box offices. He had the career, but his fans had no canonical place to find him.",
+      "task": "Run a full discovery-to-launch sprint in under 15 billable hours, directing an AI agent to build the full site while I focused on content strategy.",
+      "action": "I completed the build sprint in 13 hours, acting as researcher and designer while Claude Code wrote the implementation. First a research dossier: every credit, festival, award, venue and press mention in the public record, sorted into confidence tiers. I supervised the build, verified the information and corrected it when necessary. I caught many errors and hallucinations while focusing on the high-level content strategy and the build process. I also built a design system based on aspects of his personal brand that hint at his comedy style and his heritage. Then I wrote a build spec detailed enough that the agent could implement it without inventing facts.",
+      "result": "The content of the site was the most important part, not the code, and that is the transferable finding. Writing the brief and doing the content research took longer than generating the site itself. He now has one canonical source for his dates, structured event data so those dates surface directly in search, and a documented handoff for updating it without me. The work also proved its value commercially: a talent-management agency later acquired the site and its domain, kept the underlying research, and re-skinned it to fit the house style across their roster of comedians."
+    },
+    "links": [
+      {
+        "label": "Visit the live site",
+        "labelFr": "Visiter le site en ligne",
+        "url": "https://www.farishytiaa.com"
+      }
+    ],
+    "_internalReferences": "Faris Hytiaa (client) [confirm + permission]",
+    "fr": {
+      "title": "Faris Hytiaa : site d'humoriste (construction agentielle)",
+      "job": "Designer, chercheur et responsable technique, Faris Hytiaa",
+      "dates": "2026",
+      "star": {
+        "situation": "Faris Hytiaa est un humoriste de stand-up nommé aux prix Juno. Il n'avait pas de site web. Les diffuseurs, la presse et les fans qui le cherchaient tombaient sur Wikipédia, IMDb et des sites de billetterie de salles. Ses dates de tournée étaient éparpillées entre des publications Instagram, Eventbrite, une liste d'office de tourisme et les billetteries de clubs individuels. Il avait la carrière, mais ses fans n'avaient aucun endroit canonique pour le trouver.",
+        "task": "Mener une démarche complète, de la recherche au lancement, en moins de 15 heures facturables, en dirigeant un agent d'IA pour construire le site complet pendant que je me concentrais sur la stratégie de contenu.",
+        "action": "J'ai réalisé le sprint de construction en 13 heures, à titre de chercheur et de designer, pendant que Claude Code écrivait l'implémentation. D'abord un dossier de recherche : chaque crédit, festival, prix, salle et mention de presse au dossier public, triés par niveau de confiance. J'ai supervisé la construction, vérifié l'information et corrigé au besoin. J'ai repéré de nombreuses erreurs et hallucinations tout en me concentrant sur la stratégie de contenu de haut niveau et le processus de construction. J'ai aussi bâti un système de design fondé sur des aspects de sa marque personnelle qui évoquent son style d'humour et son héritage. Puis j'ai rédigé une spécification assez détaillée pour que l'agent puisse l'implémenter sans inventer de faits.",
+        "result": "Le contenu du site était l'aspect le plus important, pas le code, et c'est le constat transférable. Rédiger le brief et faire la recherche de contenu a pris plus de temps que générer le site lui-même. Il dispose maintenant d'une source canonique unique pour ses dates, de données d'événements structurées pour que ces dates apparaissent directement dans la recherche, et d'un transfert documenté pour les mettre à jour sans moi. Le travail a aussi prouvé sa valeur commerciale : une agence de gestion d'artistes a par la suite acquis le site et son domaine, conservé la recherche sous-jacente et l'a réhabillé pour l'aligner sur le style maison de sa liste d'humoristes."
+      }
+    },
+    "video": "https://www.youtube.com/embed/3PMkwqQAsu8"
   }
 ]
