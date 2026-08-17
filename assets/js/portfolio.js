@@ -329,6 +329,27 @@
       card.appendChild(details);
     }
 
+    // Optional figure (e.g. a tall portrait flow diagram). Shows a dashed
+    // placeholder until the image file exists.
+    if (p.image && p.image.src) {
+      var fig = el("figure", "pf-shot" + (p.image.portrait ? " pf-shot-portrait" : ""));
+      var ph = el("span", "pf-shot-ph");
+      ph.appendChild(el("span", "pl", "IMAGE"));
+      ph.appendChild(el("span", "pn", p.image.src));
+      fig.appendChild(ph);
+      var pimg = document.createElement("img");
+      pimg.src = p.image.src;
+      pimg.alt = (isFR() && p.image.altFr) ? p.image.altFr : (p.image.alt || "");
+      pimg.loading = "lazy";
+      pimg.onerror = function () { fig.classList.add("pending"); };
+      fig.appendChild(pimg);
+      if (p.image.caption) {
+        fig.appendChild(el("figcaption", "pf-shot-cap",
+          (isFR() && p.image.captionFr) ? p.image.captionFr : p.image.caption));
+      }
+      card.appendChild(fig);
+    }
+
     // Embedded video walkthrough (responsive 16:9 iframe).
     if (p.video) {
       var vwrap = el("div", "pf-video");
