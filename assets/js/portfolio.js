@@ -329,19 +329,18 @@
       card.appendChild(details);
     }
 
-    // Optional figure (e.g. a tall portrait flow diagram). Shows a dashed
-    // placeholder until the image file exists.
+    // Optional figure (e.g. a tall portrait flow diagram). Starts as a dashed
+    // placeholder and reveals the image only once it actually loads.
     if (p.image && p.image.src) {
-      var fig = el("figure", "pf-shot" + (p.image.portrait ? " pf-shot-portrait" : ""));
+      var fig = el("figure", "pf-shot pending" + (p.image.portrait ? " pf-shot-portrait" : ""));
       var ph = el("span", "pf-shot-ph");
       ph.appendChild(el("span", "pl", "IMAGE"));
       ph.appendChild(el("span", "pn", p.image.src));
       fig.appendChild(ph);
       var pimg = document.createElement("img");
-      pimg.src = p.image.src;
       pimg.alt = (isFR() && p.image.altFr) ? p.image.altFr : (p.image.alt || "");
-      pimg.loading = "lazy";
-      pimg.onerror = function () { fig.classList.add("pending"); };
+      pimg.onload = function () { if (pimg.naturalWidth > 0) fig.classList.remove("pending"); };
+      pimg.src = p.image.src;
       fig.appendChild(pimg);
       if (p.image.caption) {
         fig.appendChild(el("figcaption", "pf-shot-cap",
