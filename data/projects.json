@@ -555,6 +555,14 @@
         "action": "J'ai commencé par des entrevues avec les parties prenantes pour repérer où le travail bloquait réellement, puis j'ai conçu des flux pilotés par l'IA qui transforment les enregistrements de réunions en tâches assignées, en résumés d'actions individuels et en documentation classée. J'ai mis en place des automatisations pour la prise de notes en réunion, la distribution personnalisée de sondages aux participants et la communication de recherche. J'ai aussi présenté des changements organisationnels susceptibles d'aider l'équipe.",
         "result": "L'équipe a remplacé la prise de notes manuelle par un pipeline automatisé et regroupé des fichiers éparpillés dans un espace de travail unique et organisé."
       }
+    },
+    "image": {
+      "src": "images/sexodev-flow.png",
+      "alt": "The Power Automate flow built for the SEXODEV research team",
+      "altFr": "Le flux Power Automate conçu pour l'équipe de recherche SEXODEV",
+      "portrait": true,
+      "caption": "The Power Automate flow: meeting recordings become assigned tasks and filed documentation",
+      "captionFr": "Le flux Power Automate : les enregistrements de réunions deviennent des tâches assignées et de la documentation classée"
     }
   },
   {
@@ -1414,7 +1422,7 @@
       {
         "label": "Visit the live site",
         "labelFr": "Visiter le site en ligne",
-        "url": "https://www.farishytiaa.com"
+        "url": "https://faris.urielk.ca"
       }
     ],
     "_internalReferences": "Faris Hytiaa (client) [confirm + permission]",
